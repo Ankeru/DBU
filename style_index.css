@@ -1,0 +1,110 @@
+.mainpart {
+    /* float: left; */
+    width: 70%;
+}
+
+div.mainpart textarea{
+    display: block;
+    resize: none;
+}
+div.mainpart div textarea.textarea_standart_size1{
+    width: 250px;
+    height: 100px;
+}
+div.mainpart div textarea.textarea_standart_size2{
+    width: 100%;
+    height: 63px;
+}
+
+/* Для корректного отображения
+вместе со столбцом "Хроника" */
+.menu {
+    width: 70%;
+    box-sizing: border-box;
+}
+
+/* Боковой столбец "Хроника" */
+.sidebar {
+    /* position: relative; */
+    float: right;
+    width:25%;
+    background: gray;
+    box-sizing: border-box;
+    border: solid 2px;
+    margin: 20px 0 0 0;
+    height: 500px;
+}
+select[name="serial_num"]{
+    display: inline;
+    vertical-align: middle;
+}
+img#okay, img#history {
+    display: inline-block;
+    width: 40px;
+    height: auto;
+    float: none;
+    vertical-align: middle;
+}
+img#history {
+    margin-left: 15px;
+}
+
+div#seans_block {
+    height: 200px;
+}
+
+img#type_foto{
+    display: block;
+    position: relative;    
+    height: 172px;
+    width: auto;
+    float: right;
+    border: solid 1px black;
+
+}
+
+div.seans div{
+    /* width: 50%; */
+    float: left;
+    
+}
+div.seans div#seans_table{
+    width: 70%;
+}
+div.seans div#seans_data{
+    width: 30%;
+    /* margin: 0 2px 0 0; */
+}
+
+div.seans div div{
+    width: 90%;
+    float: right;
+}
+
+div.seans div table{
+    width: 100%;
+    height: 150px;
+}
+
+div.seans div table,
+div.seans div table tr,
+div.seans div table td, 
+div.seans div table th{
+    border: solid 1px black;
+    border-spacing: 0;
+}
+
+div.process_buttons {
+    border-top: solid 1px black;
+}
+div.process_buttons input[type=button]{
+    display: block;
+    position: relative;
+    margin-top: 5px;
+
+}
+
+
+
+
+
