@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+   }
+body {
+    position: relative;
+    /* display: table; */
+    min-width: 1024px;
+    width: 100%;
+    height: 100%;
+    /* border-spacing: 0; */
+    /* border-collapse: collapse; */
+    background: 
+    rgb(180, 170, 170);
+    
+}
+/* Класс, задающий размер страницы и выравнивание по центру */
+.container {
+    margin: auto;
+    width: 1024px;
+    display: block;
+    position: relative;
+}
+
+header {
+    background: #333;
+    display: block;
+}
+main {
+    display: block;
+}
+footer {
+    margin-top: 25px;
+    background: #34e0a1;
+    display: block;
+    
+}
+.menu{
+    float: left;
+    display: block;
+    margin: 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 10px #333 solid;
+    width: 70%;
+}
+
+.menu a{
+    text-decoration: none;
+    outline: none;
+    color: black;
+    margin: 5px 50px 0 0;
+
+}
+
+.mainpart {
+    /* float: left; */
+    width: 70%;
+}
+/* div.mainpart img{
+    display: block;
+    position: relative;    
+    width: 190px;
+    height: auto;
+    float: right;
+}   */
+div.mainpart textarea{
+    display: block;
+    resize: none;
+}
+div.mainpart div textarea.textarea_standart_size1{
+    width: 250px;
+    height: 100px;
+}
+div.mainpart div textarea.textarea_standart_size2{
+    width: 100%;
+    height: 63px;
+}
+
+header .container div.pagename {
+    position: absolute;
+    margin: 0 0 0px 200px;
+    bottom: 40px;
+    color: white;
+    font-size: 24pt;
+}
+
+header .container a{
+    float: right;
+    margin: 10px 10px 0 0;    
+    text-decoration: none;
+    outline: none;
+    color: rgb(12, 241, 12);
+}
+header .container a:hover{
+    color: rgb(226, 236, 226);
+}
+header div.container span{
+    color: rgb(255, 255, 255);
+    display: block;    
+}
+
+.menu a:hover{
+    color: rgb(48, 42, 63);
+    text-decoration: underline;
+}
+
+.menu a:visited {
+    /* color: initial; */
+    text-decoration: none;    
+}
+
+.sidebar {
+    position: relative;
+    float: right;
+    width: 25%;
+    background: gray;
+    border: solid 2px;
+    margin-top: 20px;
+    height: 500px;
+}
+#logo {
+    /* float: left; */
+    /* width: 100px;
+    height: 100px */
+}
+select[name="serial_num"]{
+    display: inline;
+    vertical-align: middle;
+}
+img#okay, img#history {
+    display: inline-block;
+    width: 40px;
+    height: auto;
+    float: none;
+    vertical-align: middle;
+}
+img#history {
+    margin-left: 15px;
+}
+div.seans div{
+    /* width: 50%; */
+    float: left;
+    
+}
+div.seans div#seans_table{
+    width: 70%;
+}
+div.seans div#seans_data{
+    width: 30%;
+    /* margin: 0 2px 0 0; */
+}
+
+div.seans div div{
+    width: 90%;
+    float: right;
+}
+
+div.seans div table{
+    width: 100%;
+    height: 150px;
+}
+
+div.seans div table,
+div.seans div table tr,
+div.seans div table td, 
+div.seans div table th{
+    border: solid 1px black;
+    border-spacing: 0;
+}
+
+div.process_buttons {
+    border-top: solid 1px black;
+}
+div.process_buttons input[type=button]{
+    display: block;
+    position: relative;
+    margin-top: 5px;
+
+}
+
+div#seans_block {
+    height: 200px;
+}
+
+img#type_foto{
+    display: block;
+    position: relative;    
+    height: 172px;
+    width: auto;
+    float: right;
+    border: solid 1px black;
+
+}
+
+
+
