@@ -1,16 +1,7 @@
 .mainpart {
-    /* float: left; */
     width: 70%;
 }
 
-div.mainpart textarea{
-    display: block;
-    resize: none;
-}
-div.mainpart div textarea.textarea_standart_size1{
-    width: 250px;
-    height: 100px;
-}
 div.mainpart div textarea.textarea_standart_size2{
     width: 100%;
     height: 63px;
@@ -19,17 +10,18 @@ div.mainpart div textarea.textarea_standart_size2{
 /* Для корректного отображения
 вместе со столбцом "Хроника" */
 .menu {
-    width: 70%;
     box-sizing: border-box;
+    width: 70%;
+    float: left;
 }
 
 /* Боковой столбец "Хроника" */
 .sidebar {
     /* position: relative; */
+    box-sizing: border-box;
     float: right;
     width:25%;
     background: gray;
-    box-sizing: border-box;
     border: solid 2px;
     margin: 20px 0 0 0;
     height: 500px;
@@ -51,16 +43,6 @@ img#history {
 
 div#seans_block {
     height: 200px;
-}
-
-img#type_foto{
-    display: block;
-    position: relative;    
-    height: 172px;
-    width: auto;
-    float: right;
-    border: solid 1px black;
-
 }
 
 div.seans div{
@@ -104,6 +86,11 @@ div.process_buttons input[type=button]{
 
 }
 
+/* Выделение вкладки страницы, на которой
+сейчас находимся */
+a#chosen_page {
+    text-decoration: underline;
+}
 
 
 
