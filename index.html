@@ -15,18 +15,14 @@
         </div>      
     </header>  
     <main>
-      <div class="container">
-      
+      <div class="container">      
         <div class="menu">
           <a href="index.html" class="ref_button" id="chosen_page" >Главная</a>
           <a href="view.html" class="ref_button">Просмотр</a>
-        </div>
-        
-        
+        </div>                
         <div class="sidebar">
           <span>Хроника</span>       
         </div>    
-
         <div class="mainpart">
           <img id="type_foto" src="img/logo-gosniias.png" alt="Фото типа">
           <div>
@@ -40,6 +36,7 @@
             </select>
             <div>Дополнительно</div>
             <textarea class="textarea_standart_size1">Какой-то комментарий</textarea>
+            <div><label for="loc_of_soft">ПО хранится:<br></label><textarea class="textarea_standart_size3" id="loc_of_soft">В шкафу рядом с аквариумом</textarea></div>
           </div>              
           <div>
             <div>
@@ -67,8 +64,8 @@
                   </tr>
                   <tr>
                     <td>Дата</td>
-                    <td>01.01.01</td>
-                    <td>12.12.12</td>
+                    <td><input type="date" id="date_taken"></td>
+                    <td><input type="date" id="date_return"></td>
                   </tr>
                   <tr>
                     <td>Пользователь</td>

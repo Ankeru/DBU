@@ -40,7 +40,13 @@ div#tabs {
 }
 
 div#view_type {
-    margin-bottom: 50px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px black;
+}
+
+div#view_type div {
+    position: relative;
 }
 
 img#type_foto{
@@ -62,7 +68,49 @@ div#img_box div a{
     margin-top: 5px;
 }
 
-/* div#view_profile div div.profile_property{
-    display: 
+div#view_history table,
+div#view_history table tr,
+div#view_history table td, 
+div#view_history table th{
+    border: solid 1px black;
+    border-spacing: 0;
+}
 
-} */
+input#submit_type_change {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    /* background: #34e0a1; */
+    color: rgb(48, 42, 63);
+}
+
+input.submit_change {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background: #34e0a1; */
+    color: rgb(48, 42, 63);
+}
+
+.one_line_blocks {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.one_line_blocks div.profile_property {
+    margin-top: 8px;
+}
+
+.rel_pos {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+div#view_profile {
+    padding-bottom: 10px;
+    border-bottom: solid black 1px;
+    margin-bottom: 10px;
+
+}

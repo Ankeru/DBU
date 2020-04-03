@@ -42,11 +42,16 @@
                         </select>
                         <div>Дополнительно</div>
                         <textarea class="textarea_standart_size1">Какой-то комментарий</textarea>
-                        <input type="submit" value="Сохранить изменения для типа">
+                        <div>
+                            <label for="loc_of_soft">ПО хранится:<br></label>
+                            <textarea class="textarea_standart_size3" id="loc_of_soft">В шкафу рядом с аквариумом</textarea>
+                            <input type="submit" id="submit_type_change" value="Сохранить изменения для типа">
+                        </div>
                     </div>   
                 </div>
+                <div class="rel_pos"><h2>Анкета</h2><input type="submit" class="submit_change" id="submit_profile_change" value="Сохранить изменения в Анкете"></div>
                 <div id="view_serial_num">
-                    <div>
+                    <div class="one_line_blocks">
                       <div>Серийный №</div>
                       <select name="serial_num" title='Серийный №'>              
                         <option disabled>Выберите серийный №!</option>
@@ -56,62 +61,64 @@
                         <option>4</option>
                       </select>                      
                     </div>
+                    <div class="one_line_blocks">
+                        <div class="profile_property"><input type="checkbox" class="checkbox" id="special_check" ><label for="special_check"> Спецпроверка</label></div>                           
+                        
+                    </div>
+                    <div class="one_line_blocks">
+                    <div class="profile_property"><input type="checkbox" class="checkbox" id="available"><label for="available"> Свободен</label></div>                             
                 </div>
-                <caption>Анкета</caption>
+                </div>                
                 <div id="view_profile">
-                    <div>
-                        <div class="profile_property"><label for="special_check">Спецпроверка: </label><input type="checkbox" id="special_check"></div>                           
-                        <div class="profile_property"><label for="available">Свободен: </label><input type="checkbox" id="available"></div>                             
+                    <div>                                                                        
                         <div class="profile_property"></label><input type="date" id="production_date"><label for="production_date"> Дата изготовления</div>
+                        <div class="profile_property"><label for="label_ref">Этикетка: </label><a href="index.html" download>index.html </a><input type="file" id="label_ref"></div>                        
+                        <div class="profile_property"><label for="loc_of_storage_original_label">Место хранения оригинала этикетки: </label><input type="text" id="loc_of_storage_original_label"></div>                        
                         <div class="profile_property"></label><input type="date" id="date_of_delivery"><label for="date_of_delivery"> Дата поставки</div>
                         <div class="profile_property"><label for="delivery_document">Документ поставки: </label><a href="index.html" download>index.html </a><input type="file" id="delivery_document"></div>
                         <div class="profile_property"><label for="loc_of_storage_original_delivery_document">Место хранения оригинала документа поставки: </label><input type="text" id="loc_of_storage_original_delivery_document"></div>
-                        <div class="profile_property"></div><label for="label_ref">Этикетка: </label><a href="index.html" download>index.html </a><input type="file" id="label_ref"></div>                        
-                        <div class="profile_property"><label for="loc_of_storage_original_label">Место хранения оригинала этикетки: </label><input type="text" id="loc_of_storage_original_label"></div>
-                        <div class="profile_property"><label for="loc_of_soft">Необходимое ПО хранится: </label><input type="text" id="loc_of_soft"></div>
                     </div>
                 </div>
+                <div class="rel_pos"><h2>История</h2><input type="submit" class="submit_change" id="submit_history_change" value="Сохранить изменения в истории"></div>
                 <div id="view_history">                 
                     <table>
                         <tr>           
-                            <th title="Серийный номер">С/Н</th>
-                            <th title="Признак доступности для взятия">Свободен</th>
-                            <th title="Признак спецпроверки">С/П</th>
-                            <th title="Дата изготовления">Изготовлен</th>                
-                            <th title="Дата поставки">Поставлен</th>
-                            <th title="Место хранения оригинала документа поставки">Док. Поставки</th>
-                            <th title="Ссылка на этикету">Этикетка</th>
-                            <th title="Ссылка на необходимое ПО">ПО</th>
+                            <th title="Номер сеанса">Сеанс №</th>
+                            <th colspan="2" title="Дата взятия и возвращения">Дата</th>
+                            <th title="Место взятия">Куда</th>
+                            <th title="Имя пользователь">Пользователь</th>                
+                            <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
+                            <th title="Комментарий к сеансу">Комментарий</th>
                         </tr>
                         <tr>    
-                            <td>2343423</td>
-                            <td>Да</td>
-                            <td>Да</td>
-                            <td>02.12.20</td>
-                            <td>13.12.20</td>
-                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
-                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                            <td></td>
+                            <td>Взятие</td>
+                            <td>Сдача</td>
+                            <td></td>
+                            <td></td>
+                            <td>Выдача</td>
+                            <td>Прием</td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>2343423</td>
-                            <td>Да</td>
-                            <td>Да</td>
-                            <td>02.12.20</td>
-                            <td>13.12.20</td>
-                            <td class="fixed_size">/home/ankeru/Рабочий стол/Проекты/DBU/view.html</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
+                            <td>2</td>
+                            <td><input type="date" id="date_taken"></td>
+                            <td><input type="date" id="date_return"></td>
+                            <td>КПРМ-1203 6s-703</td>
+                            <td>Сергей Алексеевич Ильичевский</td>
+                            <td>Антон Артьемьев</td>
+                            <td>Витас Кущински</td>
+                            <td>Взято для тестов голосового управления Эмминой отверткой</td>
                         </tr>
                         <tr>
-                            <td>2343423</td>
-                            <td>Да</td>
-                            <td>Да</td>
-                            <td>02.12.20</td>
-                            <td>13.12.20</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU/view.html</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
+                            <td>1</td>
+                            <td><input type="date" id="date_taken"></td>
+                            <td><input type="date" id="date_return"></td>
+                            <td>К1ыМ-121 вs-0ф3</td>
+                            <td>Сергей Алексеевич Ильичевский</td>
+                            <td>Антон Ын</td>
+                            <td>Лукас Керноговски-Сибиряк</td>
+                            <td>Мама сказала взять</td>
                         </tr>
                     </table>
                 </div>
