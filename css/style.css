@@ -44,13 +44,13 @@ main {
 
 }
 
-.ref_button a:hover{
-    color: rgb(48, 42, 63);
-    text-decoration: underline;
+.ref_button:hover{
+    color: rgb(58, 10, 190);
 }
 
-.ref_button a:visited {
-    text-decoration: none;    
+.ref_button:visited {
+    text-decoration: none;  
+    outline: none;
 }
 
 header .container div.pagename {
