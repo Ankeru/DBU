@@ -1,5 +1,5 @@
 const filtrating_list_queue = ["type", "serial_num", "status", "spec_check", "date_made", "date_delivered", "doc_delivered", "label", "soft_link"];
-const filtrating_list_direction = ["asc", "asc", "asc", "asc", "asc", "asc", "asc", "asc", "asc"];
+const filtrating_list_direction = ["desc", "desc", "desc", "desc", "desc", "desc", "desc", "desc", "desc"];
 
 function manage_par_sequence()
 {   
@@ -46,7 +46,7 @@ function manage_par_sequence()
 
 $('.table_manager').on("click", function(){    
     let initial_ind, new_direction, column_name;
-    column_name = $(this).attr("id");
+    column_name = $(this).attr("name");
     initial_ind = filtrating_list_queue.indexOf(column_name);
     if (filtrating_list_direction[initial_ind] === "asc") 
     new_direction = "desc"
