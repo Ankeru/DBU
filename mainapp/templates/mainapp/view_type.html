@@ -1,0 +1,103 @@
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_view.css">
+  </head>
+  <body>
+    <header>        
+        <div class="container">
+            <a href="#">Войти</a>
+            <img id="logo" src="img/logo-gosniias.png" alt='logo'>
+            <div class="pagename"><a href='index.html'>DBU</a></div>          
+        </div>      
+    </header>  
+    <main>
+        <div class="container">
+            
+            <div class="menu">
+                <a href="index.html" class="ref_button">Главная</a>
+                <a href="view.html" class="ref_button" id="chosen_page">Просмотр</a>
+            </div>
+        
+            <div class="mainpart">
+                <div id="tabs"><a href="view.html">Список</a> > <a href="view_type.html">PCI-429-4-3C</a></div>              
+                <div id="view_type">
+                    <div id="img_box">
+                        <img id="type_foto" src="img/logo-gosniias.png" alt="Фото типа">
+                        <div>
+                            <a href="#">Загрузить Фото</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>Тип</div>
+                        <select name="type" title='Тип'>              
+                        <option disabled>Выберите тип!</option>
+                        <option>Тип1</option>
+                        <option>Тип2</option>
+                        <option selected>Тип3</option>
+                        <option>Тип4</option>
+                        </select>
+                        <div>Дополнительно</div>
+                        <textarea class="textarea_standart_size1">Какой-то комментарий</textarea>
+                        <div>
+                            <label for="loc_of_soft">ПО хранится:<br></label>
+                            <textarea class="textarea_standart_size3" id="loc_of_soft">В шкафу рядом с аквариумом</textarea>                                                        
+                        </div>        
+                          
+                    </div> 
+                    <input type="submit" id="submit_type_change" value="Сохранить изменения для типа">
+                </div>
+                <caption>Наименования</caption>
+                <div id="entity_table">                 
+                    <table>
+                        <tr>           
+                            <th title="Серийный номер">С/Н</th>
+                            <th title="Признак доступности для взятия">Свободен</th>
+                            <th title="Признак спецпроверки">С/П</th>
+                            <th title="Дата изготовления">Изготовлен</th>                
+                            <th title="Дата поставки">Поставлен</th>
+                            <th title="Место хранения оригинала документа поставки">Док. Поставки</th>
+                            <th title="Ссылка на этикету">Этикетка</th>
+                            <th title="Ссылка на необходимое ПО">ПО</th>
+                        </tr>
+                        <tr>    
+                            <td><a href="view_serial_num.html">2343423</a></td>
+                            <td>Да</td>
+                            <td>Да</td>
+                            <td>02.12.20</td>
+                            <td>13.12.20</td>
+                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
+                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                        </tr>
+                        <tr>
+                            <td>2343423</td>
+                            <td>Да</td>
+                            <td>Да</td>
+                            <td>02.12.20</td>
+                            <td>13.12.20</td>
+                            <td class="fixed_size">/home/ankeru/Рабочий стол/Проекты/DBU/view.html</td>
+                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
+                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
+                        </tr>
+                        <tr>
+                            <td>2343423</td>
+                            <td>Да</td>
+                            <td>Да</td>
+                            <td>02.12.20</td>
+                            <td>13.12.20</td>
+                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU/view.html</td>
+                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
+                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>    
+  </body>
+</html>
+  

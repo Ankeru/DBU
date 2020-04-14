@@ -1,0 +1,98 @@
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_index.css">
+  </head>
+  <body>
+    <header>        
+        <div class="container">
+            <a href="#">Войти</a>
+            <img id="logo" src="img/logo-gosniias.png" alt='logo'>
+            <div class="pagename"><a href='index.html'>DBU</a></div>        
+        </div>      
+    </header>  
+    <main>
+      <div class="container">      
+        <div class="menu">
+          <a href="index.html" class="ref_button" id="chosen_page" >Главная</a>
+          <a href="view.html" class="ref_button">Просмотр</a>
+        </div>                    
+        <div class="mainpart">
+          <img id="type_foto" src="img/logo-gosniias.png" alt="Фото типа">
+          <div>
+            <div>Тип</div>
+            <select name="type" title='Тип'>              
+              <option disabled>Выберите тип!</option>
+              <option>Тип1</option>
+              <option>Тип2</option>
+              <option selected>Тип3</option>
+              <option>Тип4</option>
+            </select>
+            <div>Дополнительно</div>
+            <textarea id="additional_info" class="textarea_standart_size1">Какой-то комментарий</textarea>
+            <div><label for="loc_of_soft">ПО хранится:<br></label><textarea class="textarea_standart_size3" id="loc_of_soft">В шкафу рядом с аквариумом</textarea></div>
+          </div>              
+          <div>
+            <div>
+              <div>Серийный №</div>
+              <select name="serial_num" title='Серийный №'>              
+                <option disabled>Выберите серийный №!</option>
+                <option>1</option>
+                <option>2</option>
+                <option selected>3</option>
+                <option>4</option>
+              </select>
+              <img id="okay" src="img/okay.png" title="Признак спецпроверки" alt='Признак спецпроверки'>
+              <a href="#"><img id="history" src="img/history.png" title="История" alt="История"></a>    
+            </div>
+          </div>
+          <div id="seans_block">
+            <div class="seans">
+              <div id="seans_table">
+                <table>
+                  <caption>Данные последнего сеанса</caption>
+                  <tr>
+                    <th></th>                
+                    <th>Взятие</th>
+                    <th>Сдача</th>                
+                  </tr>
+                  <tr>
+                    <td>Дата</td>
+                    <td><input type="date" id="date_taken"></td>
+                    <td><input type="date" id="date_return"></td>
+                  </tr>
+                  <tr>
+                    <td>Пользователь</td>
+                    <td>Александр Альбертович Розенбаум</td>
+                    <td>Сдана</td>
+                  </tr>
+                  <tr>
+                    <td>Администратор</td>
+                    <td>Владимир Федорченко</td>
+                    <td>Антон Белов</td>
+                  </tr>
+                </table>
+              </div>
+              <div id="seans_data">
+                <div>
+                  <caption>Комментарий</caption>
+                  <textarea class="textarea_standart_size2">Комментарий к последнему сеансу</textarea>
+                </div>
+                <div>
+                  <caption>Куда</caption>
+                  <textarea class="textarea_standart_size2">Куда была взята плата</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="process_buttons">
+            <input type="button" value="Выдать">
+          </div>
+        </div>        
+      </div>
+    </main>    
+  </body>
+</html>

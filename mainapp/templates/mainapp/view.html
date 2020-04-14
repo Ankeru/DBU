@@ -1,0 +1,83 @@
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_view.css">
+  </head>
+  <body>
+    <header>        
+        <div class="container">
+            <a href="#">Войти</a>
+            <img id="logo" src="img/logo-gosniias.png" alt='logo'>
+            <div class="pagename"><a href='index.html'>DBU</a></div>          
+        </div>      
+    </header>  
+    <main>
+        <div class="container">
+            
+            <div class="menu">
+                <a href="index.html" class="ref_button">Главная</a>
+                <a href="view.html" class="ref_button" id="chosen_page">Просмотр</a>
+            </div>
+        
+            <div class="mainpart">
+              <div id="tabs" ><a href="view.html">Список</a></div>
+              <div id="entity_table">
+                <table>
+                  <tr>                   
+                    <th title="Тип"><a id="type_button" name="type" class="ref_button table_manager">Тип</a></th>                
+                    <th title="Серийный номер"><a id="serial_num_button" name="serial_num" class="ref_button table_manager">С/Н</a></th>
+                    <th title="Признак доступности для взятия"><a id="availible_button" name="status" class="ref_button table_manager">Свободен</a></th>
+                    <th title="Признак спецпроверки"><a id="spec_check_button" name="spec_check" class="ref_button table_manager">С/П</a></th>
+                    <th title="Дата изготовления"><a id="date_made_button" name="date_made" class="ref_button table_manager">Изготовлен</a></th>                
+                    <th title="Дата поставки"><a id="date_delivery_button" name="date_delivered" class="ref_button table_manager">Поставлен</a></th>
+                    <th title="Место хранения оригинала документа поставки"><a id="doc_delivery_button" name="doc_delivered" class="ref_button table_manager">Док. Поставки</a></th>
+                    <th title="Ссылка на этикету"><a id="label_button" name="label" class="ref_button table_manager">Этикетка</a></th>
+                    <th title="Ссылка на необходимое ПО"><a id="soft_button" name="soft_link" class="ref_button table_manager">ПО</a></th>
+                  </tr>
+                  <tr>
+                    <td><a href="view_type.html">BCI-429-4-3C</a></td>
+                    <td><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view_serial_num.html">7343423</a></td>
+                    <td>Да</td>
+                    <td>Да</td>
+                    <td><input type="date" value="2010-03-22"></td>
+                    <td><input type="date" value="2014-02-01"></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="view_type.html">ACI-429-4-3C</a></td>
+                    <td><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view_serial_num.html">3343423</a></td>
+                    <td>Нет</td>
+                    <td>Да</td>
+                    <td><input type="date" value="2015-07-22"></td>
+                    <td><input type="date" value="2018-07-22"></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="view_type.html">BCI-429-4-3C</a></td>
+                    <td><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view_serial_num.html">2343423</a></td>
+                    <td>Да</td>
+                    <td>Нет</td>
+                    <td><input type="date" value="2016-03-12"></td>
+                    <td><input type="date" value="2016-12-12"></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>      
+    <script src="js/table_manage.js"></script>
+  </body>
+</html>
+  

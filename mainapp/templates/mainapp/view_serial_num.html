@@ -1,0 +1,130 @@
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/style_view.css">
+  </head>
+  <body>
+    <header>        
+        <div class="container">
+            <a href="#">Войти</a>
+            <img id="logo" src="img/logo-gosniias.png" alt='logo'>
+            <div class="pagename"><a href='index.html'>DBU</a></div>          
+        </div>      
+    </header>  
+    <main>
+        <div class="container">
+            
+            <div class="menu">
+                <a href="index.html" class="ref_button">Главная</a>
+                <a href="view.html" class="ref_button" id="chosen_page">Просмотр</a>
+            </div>
+        
+            <div class="mainpart">
+                <div id="tabs"><a href="view.html">Список</a>><a href="view_type.html">PCI-429-4-3C</a>><a href="view_serial_num.html">2343423</a></div>              
+                <div id="view_type">
+                    <div id="img_box">
+                        <img id="type_foto" src="img/logo-gosniias.png" alt="Фото типа">
+                        <div>
+                            <a href="#">Загрузить Фото</a>
+                        </div>
+                    </div>
+                    <div>
+                        <div>Тип</div>
+                        <select name="type" title='Тип'>              
+                        <option disabled>Выберите тип!</option>
+                        <option>Тип1</option>
+                        <option>Тип2</option>
+                        <option selected>Тип3</option>
+                        <option>Тип4</option>
+                        </select>
+                        <div>Дополнительно</div>
+                        <textarea class="textarea_standart_size1">Какой-то комментарий</textarea>
+                        <div>
+                            <label for="loc_of_soft">ПО хранится:<br></label>
+                            <textarea class="textarea_standart_size3" id="loc_of_soft">В шкафу рядом с аквариумом</textarea>                            
+                        </div> 
+                    </div>  
+                    <input type="submit" id="submit_type_change" value="Сохранить изменения для типа">                        
+                </div>
+                <div class="rel_pos"><h2>Анкета</h2><input type="submit" class="submit_change" id="submit_profile_change" value="Сохранить изменения в Анкете"></div>
+                <div id="view_serial_num">
+                    <div class="one_line_blocks">
+                      <div>Серийный №</div>
+                      <select name="serial_num" title='Серийный №'>              
+                        <option disabled>Выберите серийный №!</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option selected>3</option>
+                        <option>4</option>
+                      </select>                      
+                    </div>
+                    <div class="one_line_blocks">
+                        <div class="profile_property"><input type="checkbox" class="checkbox" id="special_check" ><label for="special_check"> Спецпроверка</label></div>                           
+                        
+                    </div>
+                    <div class="one_line_blocks">
+                    <div class="profile_property"><input type="checkbox" class="checkbox" id="available"><label for="available"> Свободен</label></div>                             
+                </div>
+                </div>                
+                <div id="view_profile">
+                    <div>                                                                        
+                        <div class="profile_property"></label><input type="date" id="production_date"><label for="production_date"> Дата изготовления</div>
+                        <div class="profile_property"><label for="label_ref">Этикетка: </label><a href="index.html" download>index.html </a><input type="file" id="label_ref"></div>                        
+                        <div class="profile_property"><label for="loc_of_storage_original_label">Место хранения оригинала этикетки: </label><input type="text" id="loc_of_storage_original_label"></div>                        
+                        <div class="profile_property"></label><input type="date" id="date_of_delivery"><label for="date_of_delivery"> Дата поставки</div>
+                        <div class="profile_property"><label for="delivery_document">Документ поставки: </label><a href="index.html" download>index.html </a><input type="file" id="delivery_document"></div>
+                        <div class="profile_property"><label for="loc_of_storage_original_delivery_document">Место хранения оригинала документа поставки: </label><input type="text" id="loc_of_storage_original_delivery_document"></div>
+                    </div>
+                </div>
+                <div class="rel_pos"><h2>История</h2><input type="submit" class="submit_change" id="submit_history_change" value="Сохранить изменения в истории"></div>
+                <div id="view_history">                 
+                    <table>
+                        <tr>           
+                            <th title="Номер сеанса">Сеанс №</th>
+                            <th colspan="2" title="Дата взятия и возвращения">Дата</th>
+                            <th title="Место взятия">Куда</th>
+                            <th title="Имя пользователь">Пользователь</th>                
+                            <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
+                            <th title="Комментарий к сеансу">Комментарий</th>
+                        </tr>
+                        <tr>    
+                            <td></td>
+                            <td>Взятие</td>
+                            <td>Сдача</td>
+                            <td></td>
+                            <td></td>
+                            <td>Выдача</td>
+                            <td>Прием</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><input type="date" id="date_taken"></td>
+                            <td><input type="date" id="date_return"></td>
+                            <td>КПРМ-1203 6s-703</td>
+                            <td>Сергей Алексеевич Ильичевский</td>
+                            <td>Антон Артьемьев</td>
+                            <td>Витас Кущински</td>
+                            <td>Взято для тестов голосового управления Эмминой отверткой</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td><input type="date" id="date_taken"></td>
+                            <td><input type="date" id="date_return"></td>
+                            <td>К1ыМ-121 вs-0ф3</td>
+                            <td>Сергей Алексеевич Ильичевский</td>
+                            <td>Антон Ын</td>
+                            <td>Лукас Керноговски-Сибиряк</td>
+                            <td>Мама сказала взять</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>    
+  </body>
+</html>
+  
