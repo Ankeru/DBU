@@ -1,52 +1,55 @@
+{% load static %}
 <!Doctype html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>DBU</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/style_index.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_index.css' %}">
   </head>
   <body>
     <header>        
         <div class="container">
             <a href="#">Войти</a>
-            <img id="logo" src="img/logo-gosniias.png" alt='logo'>
-            <div class="pagename"><a href='index.html'>DBU</a></div>        
+            <img id="logo" src={% static 'mainapp/images/common/logo-gosniias.png' %} alt='logo'>
+            <div class="pagename"><a href="{% url 'index' %}">DBU</a></div>        
         </div>      
     </header>  
     <main>
       <div class="container">      
         <div class="menu">
-          <a href="index.html" class="ref_button" id="chosen_page" >Главная</a>
+          <a href="{% url 'index' %}" class="ref_button" id="chosen_page" >Главная</a>
           <a href="view.html" class="ref_button">Просмотр</a>
         </div>                    
         <div class="mainpart">
-          <img id="type_foto" src="img/logo-gosniias.png" alt="Фото типа">
+          <img id="type_foto" src={% static 'mainapp/images/common/logo-gosniias.png' %} alt="Фото типа">
           <div>
             <div>Тип</div>
-            <select name="type" title='Тип'>              
+            <select name="type" title='Тип' id="select_type">              
               <option disabled>Выберите тип!</option>
-              <option>Тип1</option>
-              <option>Тип2</option>
-              <option selected>Тип3</option>
-              <option>Тип4</option>
+              {% for type_ in type_list %}                
+                <option {% if type_ == chosen_type.name %}selected{% endif %}
+                >{{ type_ }}</option>                  
+              {% endfor %}
             </select>
             <div>Дополнительно</div>
-            <textarea id="additional_info" class="textarea_standart_size1">Какой-то комментарий</textarea>
-            <div><label for="loc_of_soft">ПО хранится:<br></label><textarea class="textarea_standart_size3" id="loc_of_soft">В шкафу рядом с аквариумом</textarea></div>
+            <textarea id="additional_info" class="textarea_standart_size1" readonly>{{ type_list.additional_info }}</textarea>
+            <div>
+              <label for="loc_of_soft">ПО хранится:<br></label>
+              <textarea class="textarea_standart_size3" id="loc_of_soft" readonly>{{ type_list.soft_link }}</textarea></div>
           </div>              
           <div>
             <div>
               <div>Серийный №</div>
-              <select name="serial_num" title='Серийный №'>              
-                <option disabled>Выберите серийный №!</option>
-                <option>1</option>
-                <option>2</option>
-                <option selected>3</option>
-                <option>4</option>
+              <select name="serial_num" title='Серийный №' id="select_serial_num">              
+                <option disabled>Выберите серийный №!</option>                
+                {% for serial_num_ in serial_num_list %}                
+                  <option {% if serial_num_ == chosen_entity.serial_num  %}selected{% endif %}
+                  >{{ serial_num_ }}</option>                  
+                {% endfor %}
               </select>
-              <img id="okay" src="img/okay.png" title="Признак спецпроверки" alt='Признак спецпроверки'>
-              <a href="#"><img id="history" src="img/history.png" title="История" alt="История"></a>    
+              <img id="okay" src={% static 'mainapp/images/index/okay.png' %} title="Признак спецпроверки" alt='Признак спецпроверки'>
+              <a href="#"><img id="history" src={% static 'mainapp/images/index/history.png' %} title="История" alt="История"></a>    
             </div>
           </div>
           <div id="seans_block">
@@ -79,11 +82,11 @@
               <div id="seans_data">
                 <div>
                   <caption>Комментарий</caption>
-                  <textarea class="textarea_standart_size2">Комментарий к последнему сеансу</textarea>
+                  <textarea class="textarea_standart_size2" readonly>Комментарий к последнему сеансу</textarea>
                 </div>
                 <div>
                   <caption>Куда</caption>
-                  <textarea class="textarea_standart_size2">Куда была взята плата</textarea>
+                  <textarea class="textarea_standart_size2" readonly>Куда была взята плата</textarea>
                 </div>
               </div>
             </div>
@@ -93,6 +96,8 @@
           </div>
         </div>        
       </div>
-    </main>    
+    </main>  
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="{% static 'mainapp/js/index/index_manage.js' %}"></script>  
   </body>
 </html>

@@ -1,0 +1,84 @@
+.mainpart {
+    /* width: 70%; */
+}
+
+div.mainpart div textarea.textarea_standart_size2{
+    width: 100%;
+    height: 53px;
+}
+
+.menu {
+    /* box-sizing: border-box; */
+    /* width: 70%; */
+    /* float: left; */
+}
+
+select[name="serial_num"]{
+    display: inline;
+    vertical-align: middle;
+}
+img#okay, img#history {
+    display: inline-block;
+    width: 40px;
+    height: auto;
+    float: none;
+    vertical-align: middle;
+}
+img#history {
+    margin-left: 15px;
+}
+
+div#seans_block {
+    height: 200px;
+}
+
+div.seans div{
+    /* width: 50%; */
+    float: left;
+    
+}
+div.seans div#seans_table{
+    width: 70%;
+}
+div.seans div#seans_data{
+    width: 30%;
+    /* margin: 0 2px 0 0; */
+}
+
+div.seans div div{
+    width: 90%;
+    float: right;
+}
+
+div.seans div table{
+    width: 100%;
+    height: 150px;
+}
+
+div.seans div table,
+div.seans div table tr,
+div.seans div table td, 
+div.seans div table th{
+    border: solid 1px black;
+    border-spacing: 0;
+}
+
+div.process_buttons {
+    border-top: solid 1px black;
+}
+div.process_buttons input[type=button]{
+    display: block;
+    position: relative;
+    margin-top: 5px;
+
+}
+
+/* Выделение вкладки страницы, на которой
+сейчас находимся */
+a#chosen_page {
+    text-decoration: underline;
+}
+
+
+
+
