@@ -53,20 +53,21 @@ main {
     outline: none;
 }
 
-header .container div.pagename {
-    position: absolute;
-    left: 200px;
-    bottom: 40px;
+header .container div#pagename {
+    height: 76px;
+    padding: 20px 0 10px 10px;
     color: white;
-    font-size: 24pt;
+    font-size: 40pt;
 }
 
-header .container a{
-    float: right;
-    margin: 10px 10px 0 0;    
+header .container a{        
     text-decoration: none;
     outline: none;
     color: #34e0a1;
+}
+#login_button{
+    float: right;
+    margin: 10px 10px 0 0;
 }
 header .container a:hover{
     color: rgb(226, 236, 226);

@@ -3,14 +3,12 @@
 }
 
 div.mainpart div textarea.textarea_standart_size2{
-    width: 100%;
+    width: 96%;
     height: 53px;
 }
 
-.menu {
-    /* box-sizing: border-box; */
-    /* width: 70%; */
-    /* float: left; */
+#serial_num_block {
+    margin: 20px 0;
 }
 
 select[name="serial_num"]{

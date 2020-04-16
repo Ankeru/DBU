@@ -32,9 +32,6 @@ class Entity(models.Model):
     def __str__(self):
         return self.serial_num
 
-    # e = Entity(entity_name=Entity_type.objects.all()[0].name, status='True', spec_check='True', date_made="2020-12-12", date_delivered="2020-12-12", doc_delivered='pifpaf', label='aaa', label_original='in_bathroom', note='sdf')
-# Entity_type(name="1", img_link="2", soft_link='3', additional_info="1")
-
 class History(models.Model):    
     serial_num =  models.ForeignKey(Entity, on_delete=models.CASCADE)
     date_taken = models.DateField()
@@ -44,11 +41,9 @@ class History(models.Model):
     admin_return = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
     place = models.CharField(max_length=200)
     comment = models.CharField(max_length=400)
-    user_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
-    admin_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
-    admin_return = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
-    place = models.CharField(max_length=200)
-    comment = models.CharField(max_length=400)
 
-    # def __str__(self):
-    #     return self.serial_num
+
+    # e = Entity(entity_name=Entity_type.objects.all()[0].name, status='True', spec_check='True', date_made="2020-12-12", date_delivered="2020-12-12", doc_delivered='pifpaf', label='aaa', label_original='in_bathroom', note='sdf')
+# Entity_type(name="1", img_link="2", soft_link='3', additional_info="1")
+# with open(f'/home/ankeru/Рабочий стол/Проекты/DBU/log.txt', 'a') as f:
+            #     f.write(' type_name=True')
