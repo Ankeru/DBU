@@ -1,8 +1,11 @@
-from django.urls import path
+from django.urls import path, include
+
 
 from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('<str:type_name>/<str:serial_number>/', views.index_chosen, name='index_chosen'),
+    # path('profile/', views.profile, name='profile'),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('proccess_index_form/', views.proccess_index_form, name='proccess_index_form'),
 ]

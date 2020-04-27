@@ -8,11 +8,14 @@
   </head>
   <body>
     <header>        
-        <div class="container">
-            <a href="#">Войти</a>
-            <img id="logo" src="img/logo-gosniias.png" alt='logo'>
-            <div class="pagename"><a href='index.html'>DBU</a></div>          
-        </div>      
+      <div class="container">
+        {% if user.is_authenticated %}
+        <a id="login_button"href="{% url 'admin:index' %}">{{ user.get_username }}</a>
+        {% else %}
+        <a id="login_button"href="{% url 'admin:index' %}">Войти</a>
+        {% endif %}             
+        <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+      </div>      
     </header>  
     <main>
         <div class="container">

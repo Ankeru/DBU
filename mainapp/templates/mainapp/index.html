@@ -10,92 +10,146 @@
   <body>
     <header>        
         <div class="container">
-            <a id="login_button"href="#">Войти</a>
-            <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+          {% if user.is_authenticated %}
+            <a id="login_button"href="{% url 'login' %}">{{ user.get_username }}</a>
+          {% else %}
+            <a id="login_button"href="{% url 'login' %}">Войти</a>
+          {% endif %}             
+          <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
         </div>      
     </header>  
     <main>
       <div class="container">      
         <div class="menu">
-          <a href="{% url 'index' %}" class="ref_button" id="chosen_page" >Главная</a>
-          <a href="view.html" class="ref_button">Просмотр</a>
-        </div>                    
-        <div class="mainpart">
-          <img id="type_foto" src={% static chosen_type.img_link %} alt="Фото типа">
-          <div>
-            <div>Тип</div>
-            <select name="type" title='Тип' id="select_type">              
-              <option disabled>Выберите тип!</option>
-              {% for type_ in type_list %}                
-                <option {% if type_.name == chosen_type.name %}selected{% endif %}
-                >{{ type_.name }}</option>                  
-              {% endfor %}
-            </select>
-            <div>Дополнительно</div>
-            <textarea id="additional_info" class="textarea_standart_size1" readonly>{{ chosen_type.additional_info }}</textarea>
+          <a href="{% url 'index' %}" class="ref_button" id="chosen_page">Главная</a>
+          <a href="view" class="ref_button">Просмотр</a>
+          <a href="{% url 'login' %}" class="ref_button">Профиль</a>
+        </div> 
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+        <form action={% url "proccess_index_form" %} method="post">  
+        {% csrf_token %}                   
+          <div class="mainpart">
+            <img id="type_foto" src={% static chosen_type.img_link %} alt="Фото типа">
             <div>
-              <label for="loc_of_soft">ПО хранится:<br></label>
-              <textarea class="textarea_standart_size3" id="loc_of_soft" readonly>{{ chosen_type.soft_link }}</textarea></div>
-          </div>              
-          <div>
-            <div id="serial_num_block">
-              <div>Серийный №</div>
-              <select name="serial_num" title='Серийный №' id="select_serial_num">              
-                <option disabled>Выберите серийный №!</option>                
-                {% for serial_num_ in serial_num_list %}                
-                  <option {% if serial_num_.serial_num == chosen_entity.serial_num  %}selected{% endif %}
-                  >{{ serial_num_.serial_num }}</option>                  
+              <div>Тип</div>
+              <select name="type" title='Тип' id="select_type">              
+                <option disabled>Выберите тип!</option>
+                {% for type_ in type_list %}                
+                  <option {% if type_.name == chosen_type.name %}selected{% endif %}
+                  >{{ type_.name }}</option>                  
                 {% endfor %}
               </select>
-              <img id="okay" src={% static 'mainapp/images/index/okay.png' %} title="Признак спецпроверки" alt='Признак спецпроверки'>
-              <a href="#"><img id="history" src={% static 'mainapp/images/index/history.png' %} title="История" alt="История"></a>    
-                <div>Примечание:</div>
-                <textarea class="textarea_standart_size3" id="note" readonly>{{ chosen_entity.note }}</textarea>
-            </div>
-          </div>
-          <div id="seans_block">
-            <div class="seans">
-              <div id="seans_table">
-                <table>
-                  <caption>Данные последнего сеанса</caption>
-                  <tr>
-                    <th>№ {{ history_sample.id }}</th>                
-                    <th>Взятие</th>
-                    <th>Сдача</th>                
-                  </tr>
-                  <tr>
-                    <td>Дата</td>
-                    <td><input type="date" id="date_taken" readonly></td>
-                    <td><input type="date" id="date_return" readonly></td>
-                  </tr>
-                  <tr>
-                    <td>Пользователь</td>
-                    <td>Александр Альбертович Розенбаум</td>
-                    <td>Сдана</td>
-                  </tr>
-                  <tr>
-                    <td>Администратор</td>
-                    <td>Владимир Федорченко</td>
-                    <td>Антон Белов</td>
-                  </tr>
-                </table>
-              </div>
-              <div id="seans_data">
-                <div>
-                  <caption>Комментарий</caption>
-                  <textarea class="textarea_standart_size2" readonly>{{ chosen_entity.note }}</textarea>
-                </div>
-                <div>
-                  <caption>Куда</caption>
-                  <textarea class="textarea_standart_size2" readonly></textarea>
-                </div>
+              <div>Дополнительно</div>
+              <textarea id="additional_info" class="textarea_standart_size1" name="additional_info" readonly>{{ chosen_type.additional_info }}</textarea>
+              <div>
+                <label for="loc_of_soft">ПО хранится:<br></label>
+                <textarea class="textarea_standart_size3" id="loc_of_soft" name="loc_of_soft" readonly>{{ chosen_type.soft_link }}</textarea></div>
+            </div>              
+            <div>
+              <div id="serial_num_block">
+                <div>Серийный №</div>
+                <select name="serial_num" title='Серийный №' id="select_serial_num">              
+                  <option disabled>Выберите серийный №!</option>                
+                  {% for serial_num_ in serial_num_list %}                
+                    <option {% if serial_num_.serial_num == chosen_entity.serial_num  %}selected{% endif %}
+                    >{{ serial_num_.serial_num }}</option>                  
+                  {% endfor %}
+                </select>
+                <img id="okay" src={% static 'mainapp/images/index/okay.png' %} title="Признак спецпроверки" alt='Признак спецпроверки'>
+                <a href="#"><img id="history" src={% static 'mainapp/images/index/history.png' %} title="История" alt="История"></a>    
+                  <div>Примечание:</div>
+                  <textarea class="textarea_standart_size3" id="note" name="note" readonly>{{ chosen_entity.note }}</textarea>
               </div>
             </div>
-          </div>
-          <div class="process_buttons">
-            <input type="button" value="Выдать">
-          </div>
-        </div>        
+            <div id="seans_block">
+              <div class="seans">
+                <div id="seans_table">
+                  <table>
+                    <caption>Данные последнего сеанса</caption>
+                    <tr>
+                      <th name="number">№ {{ history_sample.number }}</th>                
+                      <th>Взятие</th>
+                      <th>Сдача</th>                
+                    </tr>
+                    <tr>
+                      <td>Дата</td>
+                      <td><input type="date" name="date_taken" id="date_taken" value={{ history_sample.date.taken }} readonly></td>
+                      <td><input type="date" name="date_return" id="date_return" value={{ history_sample.date.return }} readonly></td>
+                    </tr>
+                    <tr>
+                      <td>Пользователь</td>
+                      <td>
+                        {% if chosen_entity.status %}
+                          {{ history_sample.user.taken }}
+                        {% else %}
+                          {% if user.is_authenticated %}
+                            <select>
+                              {% for user_ in history_sample.user.taken %}                
+                                <option> {{ user_.username }}</option>                  
+                              {% endfor %}                          
+                            </select>
+                          {% endif %} 
+                        {% endif %}                              
+                      </td>
+                      <td>
+                        {% if user.is_authenticated %}                    
+                        {% else %}
+                          {{ history_sample.user.return }}
+                          {% if not chosen_entity.status %}
+                          Сдан
+                          {% endif %}
+                        {% endif %}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Администратор</td>
+                      {% if chosen_entity.status %}
+                        {% if user.is_authenticated %}
+                        <td>{{ history_sample.admin.taken }}</td>
+                        <td>{{ user.get_username }}</td>
+                        {% else %}
+                          <td>{{ history_sample.admin.taken }}</td>
+                          <td></td>                            
+                        {% endif %}
+                      {% else %}
+                        {% if user.is_authenticated %}
+                          <td>{{ user.get_username }}</td>
+                          <td></td>
+                        {% else %}
+                          <td></td>
+                          <td></td>                            
+                        {% endif %}
+                      {% endif %}
+                    </tr>
+                  </table>
+                </div>
+                <div id="seans_data">
+                  <div>
+                    <caption>Комментарий</caption>
+                    <textarea class="textarea_standart_size2" readonly>{{ chosen_entity.note }}</textarea>
+                  </div>
+                  <div>
+                    <caption>Куда</caption>
+                    <textarea class="textarea_standart_size2" readonly></textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <input type="text" hidden="true" name='free' id="free"
+              {% if chosen_entity.status %}
+              value="1"
+              {% else %}
+              value="0"
+              {% endif %}>
+          </input>
+            {% if user.is_authenticated %}
+            <div class="process_buttons">
+              <input type="submit" value="Выдать">
+            </div>
+            {% endif %}
+          </div> 
+          
+      </form>       
       </div>
     </main>  
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
