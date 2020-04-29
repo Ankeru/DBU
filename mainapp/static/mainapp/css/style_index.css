@@ -77,6 +77,12 @@ a#chosen_page {
     text-decoration: underline;
 }
 
+.submit_input{
+    background: 
+    rgb(180, 170, 170); 
+    color: black;
+    text-align: center;
+}
 
 
 

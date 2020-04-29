@@ -1,29 +1,34 @@
+{% load static %}
 <!Doctype html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>DBU</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/style_view.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_view.css' %}">
   </head>
   <body>
     <header>        
         <div class="container">
-            <a href="#">Войти</a>
-            <img id="logo" src="img/logo-gosniias.png" alt='logo'>
-            <div class="pagename"><a href='index.html'>DBU</a></div>          
+          {% if user.is_authenticated %}
+            <a id="login_button"href="{% url 'login' %}">{{ user.get_username }}</a>
+          {% else %}
+            <a id="login_button"href="{% url 'login' %}">Войти</a>
+          {% endif %}             
+          <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
         </div>      
-    </header>  
+    </header> 
     <main>
         <div class="container">
             
             <div class="menu">
-                <a href="index.html" class="ref_button">Главная</a>
-                <a href="view.html" class="ref_button" id="chosen_page">Просмотр</a>
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
+                <a href="{% url 'login' %}" class="ref_button">Профиль</a>
             </div>
         
             <div class="mainpart">
-                <div id="tabs"><a href="view.html">Список</a> > <a href="view_type.html">PCI-429-4-3C</a></div>              
+                <div id="tabs"><a href="{% url 'view' %}">Список</a> > <a href="{% url 'view_type' type %}">{{ type }}</a></div>              
                 <div id="view_type">
                     <div id="img_box">
                         <img id="type_foto" src="img/logo-gosniias.png" alt="Фото типа">
@@ -33,18 +38,18 @@
                     </div>
                     <div>
                         <div>Тип</div>
-                        <select name="type" title='Тип'>              
-                        <option disabled>Выберите тип!</option>
-                        <option>Тип1</option>
-                        <option>Тип2</option>
-                        <option selected>Тип3</option>
-                        <option>Тип4</option>
-                        </select>
+                        <select name="type" title='Тип' id="select_type">              
+                            <option disabled>Выберите тип!</option>
+                            {% for type_ in type_list %}                
+                              <option {% if type_.name == chosen_type.name %}selected{% endif %}
+                              >{{ type_.name }}</option>                  
+                            {% endfor %}
+                          </select>
                         <div>Дополнительно</div>
-                        <textarea class="textarea_standart_size1">Какой-то комментарий</textarea>
+                        <textarea class="textarea_standart_size1">{{ type_sample.additional_info }}</textarea>
                         <div>
                             <label for="loc_of_soft">ПО хранится:<br></label>
-                            <textarea class="textarea_standart_size3" id="loc_of_soft">В шкафу рядом с аквариумом</textarea>                                                        
+                            <textarea class="textarea_standart_size3" id="loc_of_soft">{{ type_sample.soft_link }}</textarea>                                                        
                         </div>        
                           
                     </div> 
@@ -63,36 +68,19 @@
                             <th title="Ссылка на этикету">Этикетка</th>
                             <th title="Ссылка на необходимое ПО">ПО</th>
                         </tr>
-                        <tr>    
-                            <td><a href="view_serial_num.html">2343423</a></td>
-                            <td>Да</td>
-                            <td>Да</td>
-                            <td>02.12.20</td>
-                            <td>13.12.20</td>
-                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
-                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                            <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                        </tr>
+                        {% for ent in Entity_list %}
                         <tr>
-                            <td>2343423</td>
-                            <td>Да</td>
-                            <td>Да</td>
-                            <td>02.12.20</td>
-                            <td>13.12.20</td>
-                            <td class="fixed_size">/home/ankeru/Рабочий стол/Проекты/DBU/view.html</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
+                            <!-- <td><a href="{% url 'view_type' ent.entity_name.name %}">{{ ent.entity_name.name }}</a></td> -->
+                            <td><a href="{% url 'view_serial_num' ent.entity_name.name ent.serial_num %}">{{ ent.serial_num }}</a></td>
+                            <td>{{ ent.status }}</td>
+                            <td>{{ ent.spec_check }}</td>
+                            <td><input type="date" value="{{ ent.date_made }}" readonly></td>
+                            <td><input type="date" value="{{ ent.date_delivered }}" readonly></td>
+                            <td class="fixed_size no_overflow"><a href="{{ ent.doc_delivered }}" download>{{ ent.doc_delivered }}</a></td>
+                            <td class="fixed_size no_overflow"><a href="{{ ent.label }}" download>{{ ent.label }}</a></td>
+                            <td class="fixed_size no_overflow"><a href="{{ ent.note }}" download>{{ ent.note }}</a></td>
                         </tr>
-                        <tr>
-                            <td>2343423</td>
-                            <td>Да</td>
-                            <td>Да</td>
-                            <td>02.12.20</td>
-                            <td>13.12.20</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU/view.html</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
-                            <td class="fixed_size no_overflow">/home/ankeru/Рабочий стол/Проекты/DBU</td>
-                        </tr>
+                        {% endfor %}                  
                     </table>
                 </div>
             </div>

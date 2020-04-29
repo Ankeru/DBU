@@ -18,25 +18,25 @@ class Entity_type(models.Model):
         return self.name
 
 class Entity(models.Model):
-    id = models.IntegerField(primary_key = True)   
+    id = models.AutoField(auto_created=True, primary_key=True, default=1)   
     serial_num = models.CharField(max_length=200)
     entity_name = models.ForeignKey(Entity_type, on_delete=models.CASCADE)
     status = models.BooleanField()
     spec_check = models.BooleanField()
-    date_made = models.DateField()
-    date_delivered = models.DateField()
+    date_made = models.DateField(null=True)
+    date_delivered = models.DateField(null=True)
     doc_delivered = models.CharField(max_length=200)
     label = models.FilePathField(path=label_path)
     label_original = models.CharField(max_length=200)
     note = models.CharField(max_length=400) 
 
 class History(models.Model):    
-    id =  models.ForeignKey(Entity, on_delete=models.CASCADE, primary_key=True, unique=True)
+    id =  models.AutoField(auto_created=True, primary_key=True, default=1, unique=True)  
     serial_num = models.CharField(max_length=200)
-    date_taken = models.DateField()
-    date_return = models.DateField()
+    date_taken = models.DateField(null=True)
+    date_return = models.DateField(null=True)
     user_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
     admin_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
-    admin_return = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
+    admin_return = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+', null=True)
     place = models.CharField(max_length=200)
-    comment = models.CharField(max_length=400)
+    comment = models.CharField(max_length=400, null=True, blank=True)

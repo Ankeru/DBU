@@ -1,32 +1,32 @@
+{% load static %}
 <!Doctype html>
 <html lang="ru">
   <head>
     <meta charset="utf-8">
     <title>DBU</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/style_view.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_view.css' %}">    
   </head>
   <body>
     <header>        
       <div class="container">
         {% if user.is_authenticated %}
-        <a id="login_button"href="{% url 'admin:index' %}">{{ user.get_username }}</a>
+          <a id="login_button"href="{% url 'login' %}">{{ user.get_username }}</a>
         {% else %}
-        <a id="login_button"href="{% url 'admin:index' %}">Войти</a>
+          <a id="login_button"href="{% url 'login' %}">Войти</a>
         {% endif %}             
         <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
       </div>      
-    </header>  
+  </header>   
     <main>
-        <div class="container">
-            
+        <div class="container">            
             <div class="menu">
-                <a href="index.html" class="ref_button">Главная</a>
-                <a href="view.html" class="ref_button" id="chosen_page">Просмотр</a>
-            </div>
-        
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
+                <a href="{% url 'login' %}" class="ref_button">Профиль</a>
+            </div>        
             <div class="mainpart">
-              <div id="tabs" ><a href="view.html">Список</a></div>
+              <div id="tabs" ><a href="{% url 'view' %}">Список</a></div>
               <div id="entity_table">
                 <table>
                   <tr>                   
@@ -40,39 +40,19 @@
                     <th title="Ссылка на этикету"><a id="label_button" name="label" class="ref_button table_manager">Этикетка</a></th>
                     <th title="Ссылка на необходимое ПО"><a id="soft_button" name="soft_link" class="ref_button table_manager">ПО</a></th>
                   </tr>
+                  {% for ent in Entity_list%}
                   <tr>
-                    <td><a href="view_type.html">BCI-429-4-3C</a></td>
-                    <td><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view_serial_num.html">7343423</a></td>
-                    <td>Да</td>
-                    <td>Да</td>
-                    <td><input type="date" value="2010-03-22"></td>
-                    <td><input type="date" value="2014-02-01"></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
+                    <td><a href="{% url 'view_type' ent.entity_name.name %}">{{ ent.entity_name.name }}</a></td>
+                    <td><a href="{% url 'view_serial_num' ent.entity_name.name ent.serial_num %}">{{ ent.serial_num }}</a></td>
+                    <td>{{ ent.status }}</td>
+                    <td>{{ ent.spec_check }}</td>
+                    <td><input type="date" value="{{ ent.date_made }}" readonly></td>
+                    <td><input type="date" value="{{ ent.date_delivered }}" readonly></td>
+                    <td class="fixed_size no_overflow"><a href="{{ ent.doc_delivered }}" download>{{ ent.doc_delivered }}</a></td>
+                    <td class="fixed_size no_overflow"><a href="{{ ent.label }}" download>{{ ent.label }}</a></td>
+                    <td class="fixed_size no_overflow"><a href="{{ ent.note }}" download>{{ ent.note }}</a></td>
                   </tr>
-                  <tr>
-                    <td><a href="view_type.html">ACI-429-4-3C</a></td>
-                    <td><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view_serial_num.html">3343423</a></td>
-                    <td>Нет</td>
-                    <td>Да</td>
-                    <td><input type="date" value="2015-07-22"></td>
-                    <td><input type="date" value="2018-07-22"></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="view_type.html">BCI-429-4-3C</a></td>
-                    <td><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view_serial_num.html">2343423</a></td>
-                    <td>Да</td>
-                    <td>Нет</td>
-                    <td><input type="date" value="2016-03-12"></td>
-                    <td><input type="date" value="2016-12-12"></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU/view.html</a></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                    <td class="fixed_size no_overflow"><a href="/home/ankeru/Рабочий стол/Проекты/DBU/view.html" download>/home/ankeru/Рабочий стол/Проекты/DBU</a></td>
-                  </tr>
+                  {% endfor %}                
                 </table>
               </div>
             </div>
@@ -80,7 +60,7 @@
     </main>
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>      
-    <script src="js/table_manage.js"></script>
+    <script src="{% static 'mainapp/js/table_manage.js' %}"></script>  
   </body>
 </html>
   

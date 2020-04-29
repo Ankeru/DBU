@@ -22,7 +22,7 @@
       <div class="container">      
         <div class="menu">
           <a href="{% url 'index' %}" class="ref_button" id="chosen_page">Главная</a>
-          <a href="view" class="ref_button">Просмотр</a>
+          <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
           <a href="{% url 'login' %}" class="ref_button">Профиль</a>
         </div> 
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -49,7 +49,7 @@
               <div id="serial_num_block">
                 <div>Серийный №</div>
                 <select name="serial_num" title='Серийный №' id="select_serial_num">              
-                  <option disabled>Выберите серийный №!</option>                
+                  <option readonly>Выберите серийный №!</option>                
                   {% for serial_num_ in serial_num_list %}                
                     <option {% if serial_num_.serial_num == chosen_entity.serial_num  %}selected{% endif %}
                     >{{ serial_num_.serial_num }}</option>                  
@@ -67,7 +67,8 @@
                   <table>
                     <caption>Данные последнего сеанса</caption>
                     <tr>
-                      <th name="number">№ {{ history_sample.number }}</th>                
+                      <th><input class="submit_input" type="text" name="number" value="{{ history_sample.number }}" 
+                         readonly></th>                
                       <th>Взятие</th>
                       <th>Сдача</th>                
                     </tr>
@@ -79,23 +80,23 @@
                     <tr>
                       <td>Пользователь</td>
                       <td>
-                        {% if chosen_entity.status %}
-                          {{ history_sample.user.taken }}
-                        {% else %}
+                        {% if chosen_entity.status == True %}                        
                           {% if user.is_authenticated %}
-                            <select>
-                              {% for user_ in history_sample.user.taken %}                
-                                <option> {{ user_.username }}</option>                  
-                              {% endfor %}                          
-                            </select>
-                          {% endif %} 
+                              <select name="user_taken">
+                                {% for user_ in history_sample.user.taken %}                
+                                  <option> {{ user_.username }}</option>                  
+                                {% endfor %}                          
+                              </select>
+                          {% endif %}
+                        {% else %}
+                          <input class="submit_input" type="text" name="user_taken" value="{{ history_sample.user.taken }}" readonly>                                                 
                         {% endif %}                              
                       </td>
                       <td>
                         {% if user.is_authenticated %}                    
                         {% else %}
                           {{ history_sample.user.return }}
-                          {% if not chosen_entity.status %}
+                          {% if chosen_entity.status == True %}
                           Сдан
                           {% endif %}
                         {% endif %}
@@ -103,21 +104,21 @@
                     </tr>
                     <tr>
                       <td>Администратор</td>
-                      {% if chosen_entity.status %}
+                      {% if chosen_entity.status == False %}
                         {% if user.is_authenticated %}
-                        <td>{{ history_sample.admin.taken }}</td>
-                        <td>{{ user.get_username }}</td>
+                        <td><input class="submit_input" type="text" name="admin_taken" value="{{ history_sample.admin.taken }}" readonly></td>
+                        <td><input class="submit_input" type="text" name="admin_return" value="{{ user.get_username }}" readonly></td>
                         {% else %}
-                          <td>{{ history_sample.admin.taken }}</td>
-                          <td></td>                            
+                          <td><input class="submit_input" type="text" name="admin_taken" value="{{ history_sample.admin.taken }}" readonly></td>
+                          <td><input class="submit_input" type="text" name="admin_return" value="" readonly></td>                            
                         {% endif %}
                       {% else %}
                         {% if user.is_authenticated %}
-                          <td>{{ user.get_username }}</td>
-                          <td></td>
+                          <td><input class="submit_input" type="text" name="admin_taken" value="{{ user.get_username }}" readonly></td>
+                          <td><input class="submit_input" type="text" name="admin_return" value="" readonly></td>
                         {% else %}
-                          <td></td>
-                          <td></td>                            
+                          <td><input class="submit_input" type="text" name="admin_taken" value="" readonly></td>
+                          <td><input class="submit_input" type="text" name="admin_return" value="" readonly></td>                            
                         {% endif %}
                       {% endif %}
                     </tr>
@@ -126,25 +127,40 @@
                 <div id="seans_data">
                   <div>
                     <caption>Комментарий</caption>
-                    <textarea class="textarea_standart_size2" readonly>{{ chosen_entity.note }}</textarea>
+                    <textarea class="textarea_standart_size2" name="comment"
+                    {% if user.is_authenticated %}
+                    {% else %}                     
+                    readonly
+                    {% endif %}
+                    >{{ history_sample.note }}</textarea>
                   </div>
                   <div>
                     <caption>Куда</caption>
-                    <textarea class="textarea_standart_size2" readonly></textarea>
+                    <textarea class="textarea_standart_size2" name="location" 
+                    {% if user.is_authenticated %}
+                    {% else %}                     
+                    readonly
+                    {% endif %}
+                    required>{{ history_sample.place }}</textarea>
                   </div>
                 </div>
               </div>
             </div>
             <input type="text" hidden="true" name='free' id="free"
-              {% if chosen_entity.status %}
+              {% if chosen_entity.status == True %}
               value="1"
               {% else %}
               value="0"
               {% endif %}>
-          </input>
             {% if user.is_authenticated %}
             <div class="process_buttons">
-              <input type="submit" value="Выдать">
+              <input type="submit" value=
+              {% if chosen_entity.status == True %}
+              "Выдать"
+              {% else %}
+              "Принять"
+              {% endif %}
+              >
             </div>
             {% endif %}
           </div> 
