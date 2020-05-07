@@ -4,14 +4,14 @@ from django.db import models
 from django.contrib.auth.models import User
 
 def images_path():
-    return os.path.join(settings.BASE_DIR, 'img')
+    return os.path.join(settings.MEDIA_ROOT, 'images')
 
 def label_path():
     return os.path.join(settings.BASE_DIR, 'documents/labels')
 
 class Entity_type(models.Model):
     name = models.CharField(max_length=200, primary_key=True)
-    img_link = models.FilePathField(path=images_path)
+    img_link = models.ImageField(upload_to='images/')
     soft_link = models.CharField(max_length=200)
     additional_info = models.CharField(max_length=200)
     def __str__(self):

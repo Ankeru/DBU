@@ -6,6 +6,12 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 
 from .models import Entity, Entity_type, History
+from django.conf import settings
+from django.conf.urls.static import static
+
+import os
+from DBU.settings import MEDIA_ROOT, MEDIA_URL
+
 
 # Обработчик кнопки "Принять"/"Выдать"
 def proccess_index_form(request):
@@ -46,6 +52,25 @@ def proccess_index_form(request):
                 ent.save()
 
     return HttpResponseRedirect(reverse('index', args=()))
+
+
+def proccess_type_form(request):
+    type_ = request.POST["type_"]
+    add_info = request.POST["additional_info"]
+    my_file = request.FILES['img_file']
+    #Меняем путь до картинки
+    change_img_path = Entity_type.objects.get(name=type_)
+    change_img_path.img_link = my_file.name
+    change_img_path.save()
+    #Загружаем картитнку
+    handle_uploaded_file(my_file, my_file.name)
+    return HttpResponseRedirect(reverse( "view_type", args=(type_, )))
+
+
+def handle_uploaded_file(f, file_name):
+    with open(os.path.join(MEDIA_ROOT, file_name), 'wb+') as dest:
+        for chunk in f.chunks():
+            dest.write(chunk)
 
 def index(request):
     try:
@@ -125,17 +150,13 @@ def index(request):
                     number= History.objects.all().count()
                     should_fill = True
                 else:
-                    should_fill = False  
-                
-            
+                    should_fill = False              
     except History.DoesNotExist:
         history_sample = None
         should_fill = False   
     except IndexError:
         history_sample = None
-        should_fill = False    
-
-    
+        should_fill = False        
     if should_fill:
         hist = {                
                 "number": number,
