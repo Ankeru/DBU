@@ -261,13 +261,15 @@ def view_serial_num(request, type_, serial_num):
     type_list = Entity_type.objects.all()
     entity_list = Entity.objects.all()
     entity_ = entity_list.get(entity_name=Entity_type.objects.all().get(name=type_), serial_num=serial_num)    
-    type_sample = type_list.get(name=type_)    
+    type_sample = type_list.get(name=type_) 
+    history_list = History.objects.order_by("-id")
     context = {
         "type": type_,
         "type_sample": type_sample,
         "type_list": type_list,
         "Entity": entity_,
-        'entity_list': entity_list,        
+        "entity_list": entity_list,        
         "serial_num": serial_num,
+        "history_list": history_list,
     }
     return render(request, 'mainapp/view_serial_num.html', context)
