@@ -29,7 +29,7 @@
         <form action={% url "proccess_index_form" %} method="post">  
         {% csrf_token %}                   
           <div class="mainpart">
-            <img id="type_foto" src={{ chosen_type.url }} alt="Фото типа">
+            <img id="type_foto" src="{{ chosen_type.img_link }}" alt="Фото типа">
             <div>
               <div>Тип</div>
               <select name="type" title='Тип' id="select_type">              

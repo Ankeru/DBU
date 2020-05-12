@@ -10,7 +10,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 import os
-from DBU.settings import MEDIA_ROOT, MEDIA_URL
+from DBU.settings import MEDIA_ROOT, MEDIA_URL, STATIC_URL
 
 
 # Обработчик кнопки "Принять"/"Выдать"
@@ -53,17 +53,56 @@ def proccess_index_form(request):
 
     return HttpResponseRedirect(reverse('index', args=()))
 
+# Обработчик кнопки "Сохранить изменения в Анкете"
+def proccess_profile_form(request):
+    if "chosen_type" in request.COOKIES: 
+        # Работа с не-файловыми полями
+        type_ = request.COOKIES["chosen_type"]
+        serial_num = request.POST["serial_num"]
+        entity_sample = Entity.objects.get(entity_name=Entity_type.objects.get(name=type_),
+                                        serial_num=serial_num)
+        entity_sample.status = ("available" in request.POST)
+        entity_sample.spec_check = ("special_check" in request.POST)  
+        if request.POST['production_date']:
+            entity_sample.date_made = request.POST['production_date']
+        if request.POST['date_of_delivery']:
+            entity_sample.date_delivered = request.POST['date_of_delivery']    
+               
+        entity_sample.doc_delivered_original  = request.POST['loc_of_storage_original_delivery_document']
+        entity_sample.label_original = request.POST['loc_of_storage_original_label']
+        entity_sample.note = request.POST['note']
+        # Работа с файлами
+        doc_delivered_file = request.FILES.get('delivery_document')
+        if doc_delivered_file is not None:
+            relative_path = os.path.join("labels", doc_delivered_file.name)
+            entity_sample.doc_delivered = os.path.join(MEDIA_URL, relative_path)             
+            #Загружаем файл
+            handle_uploaded_file(doc_delivered_file, relative_path)    
+        label_ref_file = request.FILES.get('label_ref')
+        if label_ref_file is not None:
+            relative_path = os.path.join("labels",label_ref_file.name) 
+            entity_sample.label = os.path.join(MEDIA_URL, relative_path)                
+            #Загружаем файл
+            handle_uploaded_file(label_ref_file, relative_path)    
+        # Сохранение изменений
+        entity_sample.save()
+    return HttpResponseRedirect(reverse( "view_serial_num", args=(type_,serial_num, )))
 
 def proccess_type_form(request):
     type_ = request.POST["type_"]
     add_info = request.POST["additional_info"]
-    my_file = request.FILES['img_file']
-    #Меняем путь до картинки
-    change_img_path = Entity_type.objects.get(name=type_)
-    change_img_path.img_link = my_file.name
-    change_img_path.save()
-    #Загружаем картитнку
-    handle_uploaded_file(my_file, my_file.name)
+    my_file = request.FILES.get('img_file')
+    change_type_sample = Entity_type.objects.get(name=type_)
+    if my_file is not None:
+        relative_path = os.path.join("images",my_file.name)
+        #Меняем путь до картинки        
+        change_type_sample.img_link = os.path.join(MEDIA_URL, relative_path)             
+        #Загружаем картитнку
+        handle_uploaded_file(my_file, relative_path)    
+    change_type_sample.soft_link = request.POST["loc_of_soft"]
+    change_type_sample.additional_info = request.POST["additional_info"]
+    change_type_sample.save()
+
     return HttpResponseRedirect(reverse( "view_type", args=(type_, )))
 
 
@@ -112,7 +151,7 @@ def index(request):
         if ent is None:
             history_sample = None
         else:
-            history_sample = History.objects.all().filter(serial_num=ent.serial_num).order_by('date_taken')  
+            history_sample = History.objects.all().filter(serial_num=ent).order_by('date_taken')  
             if (request.user.is_authenticated and request.user.is_staff) :                
                 should_fill = True
                 if ((len(history_sample) > 0 ) and (not ent.status)):
@@ -202,15 +241,7 @@ def index(request):
     return render(request, 'mainapp/index.html', context)
 
 def view(request):
-    # Entity_type
-    Entity_list = Entity.objects.all()
-    # ent_type = get_object_or_404(Entity_type.objects, name=type_name)
-    # request.session["chosen_type"] = type_name
-    # Entity
-    # serial_num_list = Entity.objects.all()
-    # ent = get_object_or_404(Entity.objects, serial_num=serial_number)
-    # request.session["chosen_serial_num"] = serial_number
-    
+    Entity_list = Entity.objects.all()    
     context = {"Entity_list": Entity_list}
     return render(request, 'mainapp/view.html', context)
 
@@ -222,15 +253,21 @@ def view_type(request, type_):
         "Entity_list": Entity_list,
         "type": type_,
         "type_list": type_list, 
-        "type_sample": type_sample
+        "type_sample": type_sample,
     }
     return render(request, 'mainapp/view_type.html', context)
 
 def view_serial_num(request, type_, serial_num):
-    Entity_ = Entity.objects.all().get(entity_name=Entity_type.objects.all().get(name=type_), serial_num=serial_num)    
+    type_list = Entity_type.objects.all()
+    entity_list = Entity.objects.all()
+    entity_ = entity_list.get(entity_name=Entity_type.objects.all().get(name=type_), serial_num=serial_num)    
+    type_sample = type_list.get(name=type_)    
     context = {
-        "Entity": Entity_,
         "type": type_,
+        "type_sample": type_sample,
+        "type_list": type_list,
+        "Entity": entity_,
+        'entity_list': entity_list,        
         "serial_num": serial_num,
     }
     return render(request, 'mainapp/view_serial_num.html', context)

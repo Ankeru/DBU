@@ -4,10 +4,10 @@ from django.db import models
 from django.contrib.auth.models import User
 
 def images_path():
-    return os.path.join(settings.MEDIA_ROOT, 'images')
+    return os.path.join(settings.MEDIA_ROOT, 'images/')
 
 def label_path():
-    return os.path.join(settings.BASE_DIR, 'documents/labels')
+    return os.path.join(settings.MEDIA_ROOT, 'labels/')
 
 class Entity_type(models.Model):
     name = models.CharField(max_length=200, primary_key=True)
@@ -25,14 +25,15 @@ class Entity(models.Model):
     spec_check = models.BooleanField()
     date_made = models.DateField(null=True)
     date_delivered = models.DateField(null=True)
-    doc_delivered = models.CharField(max_length=200)
-    label = models.FilePathField(path=label_path)
+    doc_delivered = models.FilePathField(path=label_path())
+    doc_delivered_original = models.CharField(max_length=200)
+    label = models.FilePathField(path=label_path())
     label_original = models.CharField(max_length=200)
     note = models.CharField(max_length=400) 
 
 class History(models.Model):    
     id =  models.AutoField(auto_created=True, primary_key=True, default=1, unique=True)  
-    serial_num = models.CharField(max_length=200)
+    serial_num = models.ForeignKey(Entity, on_delete=models.CASCADE)
     date_taken = models.DateField(null=True)
     date_return = models.DateField(null=True)
     user_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')

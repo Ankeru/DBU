@@ -14,6 +14,7 @@ urlpatterns = [
     path('<str:type_>/view_type/', views.view_type, name='view_type'),
     path('<str:type_>/<str:serial_num>/view_serial_num/', views.view_serial_num, name='view_serial_num'),
     path('proccess_type_form/', views.proccess_type_form, name='proccess_type_form'),
+    path('proccess_profile_form/', views.proccess_profile_form, name='proccess_profile_form'),
 
 ]
 if settings.DEBUG:

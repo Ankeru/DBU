@@ -19,8 +19,7 @@
         </div>      
     </header> 
     <main>
-        <div class="container">
-            
+        <div class="container">            
             <div class="menu">
                 <a href="{% url 'index' %}" class="ref_button">Главная</a>
                 <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
@@ -33,7 +32,7 @@
                   {% csrf_token %}               
                   <div id="view_type">
                       <div id="img_box">
-                          <img id="type_foto" src='{{ type_sample.img_link.url }}' alt="Фото типа" />                          
+                          <img id="type_foto" src='{{ type_sample.img_link }}' alt="Фото типа" />                          
                           {% if user.is_authenticated %}                                                    
                           <div>                                              
                             <input id="id_image" type="file" name="img_file" class="form-control" />                            
@@ -45,7 +44,7 @@
                           <select name="type_" title='Тип' id="select_type">              
                               <option disabled>Выберите тип!</option>
                               {% for type_ in type_list %}                
-                                <option {% if type_.name == chosen_type.name %}selected{% endif %}
+                                <option {% if type_.name == type_sample.name %}selected{% endif %}
                                 >{{ type_.name }}</option>                  
                               {% endfor %}
                             </select>
@@ -57,7 +56,7 @@
                           >{{ type_sample.additional_info }}</textarea>
                           <div>
                               <label for="loc_of_soft">ПО хранится:<br></label>
-                              <textarea class="textarea_standart_size3" id="loc_of_soft"
+                              <textarea class="textarea_standart_size3" id="loc_of_soft" name="loc_of_soft"
                               {% if not user.is_authenticated %}
                               readonly
                               {% endif %}
@@ -69,7 +68,7 @@
                       <input type="submit" id="submit_type_change" value="Сохранить изменения для типа">
                       {% endif %}
                   </div>
-              </form>
+                </form>
                 <caption>Наименования</caption>
                 <div id="entity_table">                 
                     <table>
@@ -100,7 +99,11 @@
                 </div>
             </div>
         </div>
-    </main>    
+    </main>  
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>      
+    <script src="{% static 'mainapp/js/view_type/table_manage.js' %}"></script>    
+    <script src="{% static 'mainapp/js/view_type/view_type_manage.js' %}"></script>  
   </body>
 </html>
   
