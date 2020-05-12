@@ -73,12 +73,12 @@
                       <th>Сдача</th>                
                     </tr>
                     <tr>
-                      <td>Дата</td>
-                      <td><input type="date" name="date_taken" id="date_taken" value={{ history_sample.date.taken }} readonly></td>
-                      <td><input type="date" name="date_return" id="date_return" value={{ history_sample.date.return }} readonly></td>
+                      <td class="text_center">Дата</td>
+                      <td class="text_center"><input type="date" name="date_taken" id="date_taken" value="{{ history_sample.date.taken|date:'Y-m-d' }}" readonly></td>
+                      <td class="text_center"><input type="date" name="date_return" id="date_return" value="{{ history_sample.date.return|date:'Y-m-d' }}"" readonly></td>
                     </tr>
                     <tr>
-                      <td>Пользователь</td>
+                      <td class="text_center">Пользователь</td>
                       <td>
                         {% if chosen_entity.status == True %}                        
                           {% if user.is_authenticated %}
@@ -103,7 +103,7 @@
                       </td>
                     </tr>
                     <tr>
-                      <td>Администратор</td>
+                      <td class="text_center">Администратор</td>
                       {% if chosen_entity.status == False %}
                         {% if user.is_authenticated %}
                         <td><input class="submit_input" type="text" name="admin_taken" value="{{ history_sample.admin.taken }}" readonly></td>

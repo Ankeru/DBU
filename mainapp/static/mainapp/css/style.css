@@ -149,3 +149,7 @@ img#type_foto{
 textarea {
     padding: 5px;
 }
+
+.text_center{
+    text-align: center;
+}

@@ -72,7 +72,13 @@
                 </form>
                 <form action={% url "proccess_profile_form" %} method="POST" enctype="multipart/form-data"> 
                     {% csrf_token %}   
-                    <div class="rel_pos"><h2>Анкета</h2><input type="submit" class="submit_change" id="submit_profile_change" value="Сохранить изменения в Анкете"></div>
+                    <div class="rel_pos">
+                        <h2>Анкета</h2>
+                        {% if user.is_authenticated %}
+                        <input type="submit" class="submit_change" id="submit_profile_change" 
+                        value="Сохранить изменения в Анкете" >
+                        {% endif %}
+                    </div>
                     <div id="view_serial_num">
                         <div class="one_line_blocks">
                         <div>Серийный №</div>
@@ -85,39 +91,68 @@
                         </select>                      
                         </div>
                         <div class="one_line_blocks">
-                            <div class="profile_property"><input type="checkbox" class="checkbox" id="special_check" name='special_check' {% if Entity.spec_check %}checked="checked"{% endif %}><label for="special_check"> Спецпроверка</label></div>                                                       
+                            <div class="profile_property">
+                                <input type="checkbox" class="checkbox" id="special_check" 
+                                name='special_check' {% if Entity.spec_check %}checked="checked"{% endif %}
+                                {% if not user.is_authenticated %}disabled{% endif%}>
+                                <label for="special_check"> Спецпроверка</label></div>                                                       
                         </div>
                         <div class="one_line_blocks">
-                            <div class="profile_property"><input type="checkbox" class="checkbox" id="available" name="available" {% if Entity.status %}checked="checked"{% endif %}><label for="available"> Свободен</label></div>                             
+                            <div class="profile_property">
+                                <input type="checkbox" class="checkbox" id="available" 
+                                name="available" {% if Entity.status %}checked="checked"{% endif %} 
+                                {% if not user.is_authenticated %}disabled{% endif%}>
+                                <label for="available"> Свободен</label>
+                            </div>                             
                         </div>
                     </div>                
                     <div id="view_profile">
                         <div>                                                                        
                             <div class="profile_property">                                
                                 </label>
-                                    <input type="date" id="production_date" name="production_date" value={{ Entity.date_made }}> Дата изготовления
+                                    <input type="date" id="production_date" name="production_date" 
+                                    value={{ Entity.date_made|date:"Y-m-d" }} 
+                                    {% if not user.is_authenticated %}
+                                    readonly
+                                    {% endif %}> Дата изготовления
                                 <label for="production_date"> 
                             </div>
                             <div class="profile_property">
                                 <label for="label_ref">Этикетка: </label>
                                 <a href="{{ Entity.label }}" download>{% if Entity.label %}Скачать{% endif %}</a>
-                                <input type="file" id="label_ref" name="label_ref">
+                                {% if user.is_authenticated %}
+                                    <input type="file" id="label_ref" name="label_ref">
+                                {% endif%}
                             </div>                        
                             <div class="profile_property">
                                 <label for="loc_of_storage_original_label">Место хранения оригинала этикетки: </label>
-                                <input type="text" id="loc_of_storage_original_label" name="loc_of_storage_original_label" value={{ Entity.label_original }}>
+                                <input type="text" id="loc_of_storage_original_label" name="loc_of_storage_original_label"
+                                value={{ Entity.label_original }} 
+                                {% if not user.is_authenticated %}
+                                readonly
+                                {% endif %}>
                             </div>                        
                             <div class="profile_property"><label>
-                                <input type="date" id="date_of_delivery" name="date_of_delivery" value={{ Entity.date_delivered }}>Дата поставки</label for="date_of_delivery">
+                                <input type="date" id="date_of_delivery" name="date_of_delivery"
+                                value={{ Entity.date_delivered|date:"Y-m-d" }} 
+                                {% if not user.is_authenticated %}
+                                    readonly
+                                {% endif %}>Дата поставки</label for="date_of_delivery">
                             </div>
                             <div class="profile_property">
                                 <label for="delivery_document">Документ поставки: </label>
                                 <a href="{{ Entity.doc_delivered }}" download>{% if Entity.doc_delivered %}Скачать{% endif %}</a>
-                                <input type="file" id="delivery_document" name="delivery_document">
+                                {% if user.is_authenticated %}
+                                    <input type="file" id="delivery_document" name="delivery_document">
+                                {% endif%}
                             </div>
                             <div class="profile_property">
                                 <label for="loc_of_storage_original_delivery_document">Место хранения оригинала документа поставки: </label>
-                                <input type="text" id="loc_of_storage_original_delivery_document" name="loc_of_storage_original_delivery_document" value={{ Entity.doc_delivered_original }}>
+                                <input type="text" id="loc_of_storage_original_delivery_document" name="loc_of_storage_original_delivery_document" 
+                                value={{ Entity.doc_delivered_original }}
+                                {% if not user.is_authenticated %}
+                                    readonly
+                                {% endif %}>
                             </div>
                             <div class="profile_property">
                                 <label for="note">Примечание: </label>
@@ -129,10 +164,79 @@
                             </div>
                         </div>
                     </div>
-                </form>
-                <div class="rel_pos"><h2>История</h2><input type="submit" class="submit_change" id="submit_history_change" value="Сохранить изменения в истории"></div>
-                <div id="view_history">                 
-                    <table>
+                </form>                
+                    <div class="rel_pos">
+                        <h2>История</h2>
+                        {% if user.is_authenticated %}
+                        <form action=# method="POST" enctype="multipart/form-data"> 
+                            <div id="stelth_block" hidden>                            
+                                <input type="submit" class="submit_change" id="submit_history_change" value="Сохранить изменения в истории">
+                                <h4>Редактирование</h4>
+                                <table class="view_history" id="stelth_table">
+                                    <tr>           
+                                        <th title="Номер сеанса" rowspan="2">Сеанс №</th>
+                                        <th colspan="2" title="Дата взятия и возвращения">Дата</th>
+                                        <th title="Место взятия" rowspan="2">Куда</th>
+                                        <th title="Имя пользователь" rowspan="2">Пользователь</th>                
+                                        <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
+                                        <th title="Комментарий к сеансу" rowspan="2">Комментарий</th>
+                                    </tr>
+                                    <tr>    
+                                        <!-- Подразделы пунктов таблицы -->
+                                        <td class="text_center">Взятие</td>
+                                        <td class="text_center">Сдача</td>                                                    
+                                        <td class="text_center">Выдача</td>
+                                        <td class="text_center">Прием</td>                    
+                                    </tr>
+                                    <tr>
+                                        <td class="text_center"><label id="seans_number" name="seans_number"></label></td>
+                                        <td><input type="date" id="date_taken" name="date_taken"></td>
+                                        <td><input type="date" id="date_return" name="date_return"></td>
+                                        <td><textarea id="place" name="place"></textarea></td>
+                                        <td>
+                                            {% if user.is_authenticated %}
+                                                <select name="admin_taken">
+                                                    {% for user_ in users_list %}                                                                
+                                                        <option> {{ user_.username }}</option>                                                                  
+                                                    {% endfor %}                          
+                                                </select>
+                                            {% endif %}
+
+                                        </td>
+                                        <td>
+                                            {% if user.is_authenticated %}
+                                                <select name="admin_taken">
+                                                    {% for user_ in users_list %}    
+                                                    {% if user_.is_staff %}            
+                                                        <option> {{ user_.username }}</option>   
+                                                    {% endif %}               
+                                                    {% endfor %}                          
+                                                </select>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if user.is_authenticated %}
+                                                <select name="admin_return">
+                                                    {% for user_ in users_list %}    
+                                                    {% if user_.is_staff %}            
+                                                        <option> {{ user_.username }}</option>   
+                                                    {% endif %}               
+                                                    {% endfor %}                          
+                                                </select>
+                                            {% endif %}
+
+                                        </td>
+                                        <td><textarea id="comment" name="comment"></textarea></td>
+                                    </tr>
+                                </table>  
+                            </div>
+                        </form>
+                        {% endif %}
+                    </div>
+                
+                
+                <div>                 
+                    <table class="view_history" id="open_table">
                         <tr>           
                             <th title="Номер сеанса" rowspan="2">Сеанс №</th>
                             <th colspan="2" title="Дата взятия и возвращения">Дата</th>
@@ -140,40 +244,41 @@
                             <th title="Имя пользователь" rowspan="2">Пользователь</th>                
                             <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
                             <th title="Комментарий к сеансу" rowspan="2">Комментарий</th>
+                            {% if user.is_authenticated %}
+                                <th title="Выберите для редактирования" rowspan="2">Править</th>
+                            {% endif %}
                         </tr>
                         <tr>    
-                            <td>Взятие</td>
-                            <td>Сдача</td>                                                    
-                            <td>Выдача</td>
-                            <td>Прием</td>                    
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td><input type="date" id="date_taken"></td>
-                            <td><input type="date" id="date_return"></td>
-                            <td>КПРМ-1203 6s-703</td>
-                            <td>Сергей Алексеевич Ильичевский</td>
-                            <td>Антон Артьемьев</td>
-                            <td>Витас Кущински</td>
-                            <td>Взято для тестов голосового управления Эмминой отверткой</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td><input type="date" id="date_taken"></td>
-                            <td><input type="date" id="date_return"></td>
-                            <td>К1ыМ-121 вs-0ф3</td>
-                            <td>Сергей Алексеевич Ильичевский</td>
-                            <td>Антон Ын</td>
-                            <td>Лукас Керноговски-Сибиряк</td>
-                            <td>Мама сказала взять</td>
-                        </tr>
+                            <!-- Подразделы пунктов таблицы -->
+                            <td class="text_center">Взятие</td>
+                            <td class="text_center">Сдача</td>                                                    
+                            <td class="text_center">Выдача</td>
+                            <td class="text_center">Прием</td>                    
+                        </tr>                          
+                        {% for history_sample in history_list %}                
+                            <tr>
+                                <td class="text_center">{{ history_sample.id }}</td>
+                                <td><input type="date" id="date_taken" value="{{ history_sample.date_taken|date:'Y-m-d' }}"></td>
+                                <td><input type="date" id="date_return" value="{{ history_sample.date_return|date:'Y-m-d' }}"></td>
+                                <td>{{ history_sample.place }}</td>
+                                <td>{{ history_sample.user_taken }}</td>
+                                <td>{{ history_sample.admin_taken }}</td>
+                                <td>{{ history_sample.admin_return }}</td>
+                                <td>{{ history_sample.comment }}</td>
+                                {% if user.is_authenticated %}
+                                    <td class="text_center">
+                                        <input type="radio" name="his_radio" value="{{ history_sample.id }}"> 
+                                    </td>
+                                {% endif %}
+                            </tr>        
+                        {% endfor %}                                         
                     </table>
                 </div>
             </div>
         </div>
     </main> 
     <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>   
-    <script src="{% static 'mainapp/js/view_type/view_serial_num_manage.js' %}"></script>    
+    <script src="{% static 'mainapp/js/view_serial_num/view_serial_num_manage.js' %}"></script>    
   </body>
 </html>
   

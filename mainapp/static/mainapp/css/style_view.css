@@ -83,12 +83,16 @@ div#img_box div a{
     margin-top: 5px;
 }
 
-div#view_history table,
-div#view_history table tr,
-div#view_history table td, 
-div#view_history table th{
+table.view_history,
+table.view_history tr,
+table.view_history td, 
+table.view_history th{
     border: solid 1px black;
     border-spacing: 0;
+    
+}
+table.view_history{
+    width: 1024px;
 }
 
 input#submit_type_change {

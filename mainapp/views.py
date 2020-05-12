@@ -40,7 +40,7 @@ def proccess_index_form(request):
             else:
                 his = History(   
                     id = History.objects.all().count()+1,             
-                    serial_num=ent.serial_num,
+                    serial_num=ent,
                     date_taken=request.POST['date_taken'],            
                     user_taken=User.objects.get(username=request.POST['user_taken']),
                     admin_taken=User.objects.get(username=request.POST['admin_taken']),
@@ -156,16 +156,16 @@ def index(request):
                 should_fill = True
                 if ((len(history_sample) > 0 ) and (not ent.status)):
                     history_sample = history_sample[0]
-                    date_taken = str(history_sample.date_taken.year) + '-' + str(history_sample.date_taken.month).rjust(2, '0') + '-' + str(history_sample.date_taken.day).rjust(2, '0')               
-                    date_return = str(datetime.date.today().year) + '-' + str(datetime.date.today().month).rjust(2, '0') + '-' + str(datetime.date.today().day).rjust(2, '0')
+                    date_taken = history_sample.date_taken
+                    date_return = datetime.date.today()
                     user_taken = history_sample.user_taken.username
                     admin_taken = history_sample.admin_taken.username
                     admin_return = request.user.username                    
                     comment = history_sample.comment
                     number = History.objects.all().count()
                     place = history_sample.place
-                else:
-                    date_taken = str(datetime.date.today().year) + '-' + str(datetime.date.today().month).rjust(2, '0') + '-' + str(datetime.date.today().day).rjust(2, '0')
+                else:                   
+                    date_taken = datetime.date.today()
                     date_return = 'YYYY-MM-DD'
                     user_taken = User.objects.all() 
                     admin_taken = request.user.username
@@ -179,8 +179,8 @@ def index(request):
             else:
                 if (len(history_sample) > 0 ):
                     history_sample = history_sample[0]
-                    date_taken =  str(history_sample.date_taken.year) + '-' + str(history_sample.date_taken.month).rjust(2, '0') + '-' + str(history_sample.date_taken.day).rjust(2, '0')               
-                    date_return = str(history_sample.date_return.year) + '-' + str(history_sample.date_return.month).rjust(2, '0') + '-' + str(history_sample.date_return.day).rjust(2, '0')               
+                    date_taken = history_sample.date_taken                
+                    date_return = history_sample.date_return
                     user_taken = history_sample.user_taken.username
                     admin_taken = history_sample.admin_taken.username
                     admin_return = ""                    
@@ -271,5 +271,6 @@ def view_serial_num(request, type_, serial_num):
         "entity_list": entity_list,        
         "serial_num": serial_num,
         "history_list": history_list,
+        "users_list": User.objects.all(),
     }
     return render(request, 'mainapp/view_serial_num.html', context)
