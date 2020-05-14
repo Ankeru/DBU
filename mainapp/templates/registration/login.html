@@ -9,12 +9,12 @@
   <body>
     <header>        
         <div class="container">
-            {% if user.is_authenticated %}
-            <a id="login_button"href="{% url 'admin:index' %}">{{ user.get_username }}</a>
-            {% else %}
-            <a id="login_button"href="{% url 'admin:index' %}">Войти</a>
-            {% endif %}             
-            <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+          {% if user.is_authenticated %}
+            <a id="login_button"href="{% url 'login' %}">{{ user.get_username }}</a>
+          {% else %}
+            <a id="login_button"href="{% url 'login' %}">Войти</a>
+          {% endif %}             
+          <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
         </div>      
     </header>  
     <main>
@@ -23,15 +23,14 @@
             <div class="menu">
               <a href="{% url 'index' %}" class="ref_button">Главная</a>
               <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
-              <a href="{% url 'login' %}" class="ref_button" id="chosen_page">Профиль</a>
+              <a href="{% url 'login' %}" class="ref_button" id="chosen_page">Профили</a>
+              <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
             </div>
         
             <div class="mainpart">
-            {% if user.is_authenticated %} 
-                <ul class="sidebar-nav">
-                    <li>Вы зашли как {{ user.get_username }}</li>
-                    <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>      
-                </ul>
+            {% if user.is_authenticated %}             
+                    Вы зашли как {{ user.get_username }}
+                    <a href="{% url 'logout'%}?next={{request.path}}">Logout</a>              
             {% else %}   
                 <form method="post" action="{% url 'login' %}">
                     {% csrf_token %}

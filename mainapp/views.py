@@ -88,6 +88,7 @@ def proccess_profile_form(request):
         entity_sample.save()
     return HttpResponseRedirect(reverse( "view_serial_num", args=(type_,serial_num, )))
 
+# Обработчик формы изменения типа
 def proccess_type_form(request):
     type_ = request.POST["type_"]
     add_info = request.POST["additional_info"]
@@ -104,8 +105,22 @@ def proccess_type_form(request):
     change_type_sample.save()
 
     return HttpResponseRedirect(reverse( "view_type", args=(type_, )))
-
-
+# Обработчик формы изменения истории
+def proccess_history_form(request):
+    type_ = request.POST["hidden_type"]
+    serial_num = request.POST["hidden_serial_num"]
+    id_num = request.POST["seans_number"]
+    history_sample = History.objects.get(id=id_num,
+        serial_num=Entity.objects.get(serial_num=serial_num,
+         entity_name=Entity_type.objects.get(name=type_)))
+    history_sample.date_taken = request.POST["date_taken"]
+    history_sample.date_return = request.POST["date_return"]
+    history_sample.user_taken = User.objects.get(username=request.POST["user_"])
+    history_sample.place = request.POST["place"]
+    history_sample.comment = request.POST["comment"]
+    history_sample.save()
+    return HttpResponseRedirect(reverse( "view_serial_num", args=(type_, serial_num, )))
+    
 def handle_uploaded_file(f, file_name):
     with open(os.path.join(MEDIA_ROOT, file_name), 'wb+') as dest:
         for chunk in f.chunks():
@@ -239,6 +254,13 @@ def index(request):
                 'history_sample':hist,                                                          
                 }
     return render(request, 'mainapp/index.html', context)
+
+def edit(request):
+    type_list = Entity_type.objects.all()
+    context = {
+        "type_list": type_list, 
+    }
+    return render(request, 'mainapp/edit.html', context)
 
 def view(request):
     Entity_list = Entity.objects.all()    

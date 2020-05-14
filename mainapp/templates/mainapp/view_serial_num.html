@@ -24,7 +24,8 @@
             <div class="menu">
                 <a href="{% url 'index' %}" class="ref_button">Главная</a>
                 <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
-                <a href="{% url 'login' %}" class="ref_button">Профиль</a>
+                <a href="{% url 'login' %}" class="ref_button">Профили</a>
+                <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
             </div>
         
             <div class="mainpart">
@@ -82,7 +83,7 @@
                     <div id="view_serial_num">
                         <div class="one_line_blocks">
                         <div>Серийный №</div>
-                        <select name="serial_num" title='Серийный №' >              
+                        <select name="serial_num" title='Серийный №' id="select_serial_num">              
                             <option disabled>Выберите серийный №!</option>
                             {% for one_entity in entity_list %}                
                                 <option {% if one_entity == Entity %}selected{% endif %}
@@ -111,10 +112,10 @@
                             <div class="profile_property">                                
                                 </label>
                                     <input type="date" id="production_date" name="production_date" 
-                                    value={{ Entity.date_made|date:"Y-m-d" }} 
+                                    value="{{ Entity.date_made|date:'Y-m-d' }}"
                                     {% if not user.is_authenticated %}
                                     readonly
-                                    {% endif %}> Дата изготовления
+                                    {% endif %}/> Дата изготовления
                                 <label for="production_date"> 
                             </div>
                             <div class="profile_property">
@@ -127,17 +128,17 @@
                             <div class="profile_property">
                                 <label for="loc_of_storage_original_label">Место хранения оригинала этикетки: </label>
                                 <input type="text" id="loc_of_storage_original_label" name="loc_of_storage_original_label"
-                                value={{ Entity.label_original }} 
+                                value="{{ Entity.label_original }}"
                                 {% if not user.is_authenticated %}
-                                readonly
+                                    readonly
                                 {% endif %}>
                             </div>                        
                             <div class="profile_property"><label>
                                 <input type="date" id="date_of_delivery" name="date_of_delivery"
-                                value={{ Entity.date_delivered|date:"Y-m-d" }} 
+                                value="{{ Entity.date_delivered|date:'Y-m-d' }}"
                                 {% if not user.is_authenticated %}
                                     readonly
-                                {% endif %}>Дата поставки</label for="date_of_delivery">
+                                {% endif %}/>Дата поставки</label for="date_of_delivery">
                             </div>
                             <div class="profile_property">
                                 <label for="delivery_document">Документ поставки: </label>
@@ -149,7 +150,7 @@
                             <div class="profile_property">
                                 <label for="loc_of_storage_original_delivery_document">Место хранения оригинала документа поставки: </label>
                                 <input type="text" id="loc_of_storage_original_delivery_document" name="loc_of_storage_original_delivery_document" 
-                                value={{ Entity.doc_delivered_original }}
+                                value='{{ Entity.doc_delivered_original }}'
                                 {% if not user.is_authenticated %}
                                     readonly
                                 {% endif %}>
@@ -168,7 +169,8 @@
                     <div class="rel_pos">
                         <h2>История</h2>
                         {% if user.is_authenticated %}
-                        <form action=# method="POST" enctype="multipart/form-data"> 
+                        <form action={% url "proccess_history_form" %} method="POST" enctype="multipart/form-data"> 
+                        {% csrf_token %}    
                             <div id="stelth_block" hidden>                            
                                 <input type="submit" class="submit_change" id="submit_history_change" value="Сохранить изменения в истории">
                                 <h4>Редактирование</h4>
@@ -188,14 +190,14 @@
                                         <td class="text_center">Выдача</td>
                                         <td class="text_center">Прием</td>                    
                                     </tr>
-                                    <tr>
-                                        <td class="text_center"><label id="seans_number" name="seans_number"></label></td>
-                                        <td><input type="date" id="date_taken" name="date_taken"></td>
-                                        <td><input type="date" id="date_return" name="date_return"></td>
-                                        <td><textarea id="place" name="place"></textarea></td>
+                                    <tr class="child_center">
+                                        <td class="text_center"><textarea id="seans_number" name="seans_number" class="history_edit_table text_center" readonly></textarea></td>
+                                        <td><input type="date" id="date_taken" name="date_taken"/></td>
+                                        <td><input type="date" id="date_return" name="date_return"/></td>
+                                        <td><textarea id="place" name="place" class="history_edit_table"></textarea></td>
                                         <td>
                                             {% if user.is_authenticated %}
-                                                <select name="admin_taken">
+                                                <select name="user_">
                                                     {% for user_ in users_list %}                                                                
                                                         <option> {{ user_.username }}</option>                                                                  
                                                     {% endfor %}                          
@@ -226,15 +228,15 @@
                                             {% endif %}
 
                                         </td>
-                                        <td><textarea id="comment" name="comment"></textarea></td>
+                                        <td><textarea id="comment" name="comment" class="history_edit_table"></textarea></td>
                                     </tr>
                                 </table>  
                             </div>
+                            <input type="text" name="hidden_type" value="{{ type_sample.name }}" hidden />
+                            <input type="text" name="hidden_serial_num" value="{{ Entity.serial_num }}" hidden />
                         </form>
                         {% endif %}
-                    </div>
-                
-                
+                    </div>                                
                 <div>                 
                     <table class="view_history" id="open_table">
                         <tr>           
@@ -256,10 +258,10 @@
                             <td class="text_center">Прием</td>                    
                         </tr>                          
                         {% for history_sample in history_list %}                
-                            <tr>
+                            <tr class="child_center">
                                 <td class="text_center">{{ history_sample.id }}</td>
-                                <td><input type="date" id="date_taken" value="{{ history_sample.date_taken|date:'Y-m-d' }}"></td>
-                                <td><input type="date" id="date_return" value="{{ history_sample.date_return|date:'Y-m-d' }}"></td>
+                                <td><input type="date" value="{{ history_sample.date_taken|date:'Y-m-d' }}"/></td>
+                                <td><input type="date" value="{{ history_sample.date_return|date:'Y-m-d' }}"/></td>
                                 <td>{{ history_sample.place }}</td>
                                 <td>{{ history_sample.user_taken }}</td>
                                 <td>{{ history_sample.admin_taken }}</td>

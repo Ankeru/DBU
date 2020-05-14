@@ -23,7 +23,8 @@
         <div class="menu">
           <a href="{% url 'index' %}" class="ref_button" id="chosen_page">Главная</a>
           <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
-          <a href="{% url 'login' %}" class="ref_button">Профиль</a>
+          <a href="{% url 'login' %}" class="ref_button">Профили</a>
+          <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
         </div> 
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
         <form action={% url "proccess_index_form" %} method="post">  
@@ -77,7 +78,7 @@
                       <td class="text_center"><input type="date" name="date_taken" id="date_taken" value="{{ history_sample.date.taken|date:'Y-m-d' }}" readonly></td>
                       <td class="text_center"><input type="date" name="date_return" id="date_return" value="{{ history_sample.date.return|date:'Y-m-d' }}"" readonly></td>
                     </tr>
-                    <tr>
+                    <tr class="child_center">
                       <td class="text_center">Пользователь</td>
                       <td>
                         {% if chosen_entity.status == True %}                        
@@ -163,8 +164,7 @@
               >
             </div>
             {% endif %}
-          </div> 
-          
+          </div>           
       </form>       
       </div>
     </main>  

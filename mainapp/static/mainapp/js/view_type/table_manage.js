@@ -52,8 +52,6 @@ $('.table_manager').on("click", function(){
     filtrating_list_direction.splice(initial_ind, 1);
     filtrating_list_queue.unshift(column_name);
     filtrating_list_direction.unshift(new_direction);
-    console.log(filtrating_list_queue);
-    console.log(filtrating_list_direction);
     manage_par_sequence();    
 });
 

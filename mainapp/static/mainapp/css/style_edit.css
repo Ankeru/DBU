@@ -1,0 +1,45 @@
+.relative_container{
+    position: relative;
+}
+
+#submit_edit{
+    float: right;
+}
+
+.new_entity_block{
+    border: 2px solid black;
+    margin: 5px 0 5px 0;
+    padding: 5px;
+}
+
+#type_block{
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+#more_block{
+    height: 130px;
+    border: 2px dotted black;
+    margin-top: 10px;
+    position: relative;
+}
+
+#more_block:hover{
+    background-color: white;
+}
+
+#add{
+    position: relative;
+    top: 30px;
+    left: 30px;
+}
+
+.num_n_delete_block{
+    float: right;
+}
+img.delete {
+    width: 40px;
+    height: auto;
+    
+}

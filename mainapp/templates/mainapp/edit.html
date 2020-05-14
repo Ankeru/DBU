@@ -1,0 +1,101 @@
+{% load static %}
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_edit.css' %}">    
+  </head>
+  <body>
+    <header>        
+      <div class="container">
+        {% if user.is_authenticated %}
+          <a id="login_button"href="{% url 'login' %}">{{ user.get_username }}</a>
+        {% else %}
+          <a id="login_button"href="{% url 'login' %}">Войти</a>
+        {% endif %}             
+        <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+      </div>      
+  </header>   
+    <main>
+        <div class="container">            
+            <div class="menu">
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
+                <a href="{% url 'login' %}" class="ref_button">Профиль</a>
+                <a href="{% url 'edit' %}" class="ref_button" id="chosen_page">Добавление</a>
+            </div>        
+            <div class="mainpart">
+              <div><h1>Добавление содержимого</h1></div>
+              <form action=# method="POST" enctype="multipart/form-data" class="relative_container">
+                <input type="text" value="1" id="hidden_counter" hidden>
+                <input type="submit" class="submit_edit" id="submit_edit" value="Внести изменения">
+                <div>Тип</div> 
+                <div id="type_block">
+                  <select id="chosen_type" name="chosen_type">
+                    {% for type_ in type_list %}
+                      <option>{{ type_.name }}</option>         
+                    {% endfor %}         
+                  </select>
+                  <input type="text" id="new_type" name="new_type" hidden/>
+                  <label><input type="checkbox" id="new_type_cb"/> Новый</label>                
+                </div>
+                <div class="new_entity_block" name="new_entity_block_1">
+                  <div class="num_n_delete_block"><img class="delete" src="{% static 'mainapp/images/edit/delete.png' %}" title="Удалить" alt='Удалить' onclick="deleteBlock(1)" name="img_1"></div>
+                    <div id="view_serial_num">
+                      <div class="one_line_blocks">
+                      <div>Серийный №</div>
+                      <input type="text" name="select_serial_num_1" title='Серийный №'/>                                                            
+                      </div>
+                      <div class="one_line_blocks">
+                          <div class="profile_property">
+                              <input type="checkbox" class="checkbox" name='special_check_1'>
+                              <label for="special_check"> Спецпроверка</label></div>                                                       
+                      </div>                    
+                    </div>                        
+                    <div id="view_profile">
+                      <div>                                                                        
+                          <div class="profile_property">                                                              
+                            <input type="date" name="production_date_1"/><label for="production_date"> Дата изготовления</label> 
+                          </div>
+                          <div class="profile_property">
+                            <label for="label_ref">Этикетка: </label>                                                          
+                            <input type="file" name="label_ref_1">                            
+                          </div>                        
+                          <div class="profile_property">
+                            <label for="loc_of_storage_original_label">Место хранения оригинала этикетки: </label>
+                            <input type="text" name="loc_of_storage_original_label_1">
+                          </div>                        
+                          <div class="profile_property"><label>
+                              <input type="date" name="date_of_delivery_1"/>Дата поставки</label for="date_of_delivery">
+                          </div>
+                          <div class="profile_property">
+                              <label for="delivery_document">Документ поставки: </label>                            
+                              <input type="file" name="delivery_document_1">
+                          </div>
+                          <div class="profile_property">
+                              <label for="loc_of_storage_original_delivery_document">Место хранения оригинала документа поставки: </label>
+                              <input type="text" name="loc_of_storage_original_delivery_document_1">
+                          </div>
+                          <div class="profile_property">
+                              <label for="note">Примечание: </label>
+                              <textarea class="textarea_standart_size1" name="note_1"></textarea>
+                          </div>
+                      </div>
+                  </div>
+                </div>                
+              </form>
+              <div id="more_block">
+                <img id="add" src="{% static 'mainapp/images/edit/add.png' %}" title="Добавить" alt='Добавить'>
+
+              </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>      
+    <script src="{% static 'mainapp/js/edit/edit_manage.js' %}"></script>  
+  </body>
+</html>
+  

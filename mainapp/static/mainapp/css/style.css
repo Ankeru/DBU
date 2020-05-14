@@ -153,3 +153,21 @@ textarea {
 .text_center{
     text-align: center;
 }
+tr.child_center td{
+    text-align: center;
+}
+
+/* Выделение вкладки страницы, на которой
+сейчас находимся */
+a#chosen_page {
+    text-decoration: underline;
+}
+
+.one_line_blocks {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.one_line_blocks div.profile_property {
+    margin-top: 8px;
+}

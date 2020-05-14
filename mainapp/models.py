@@ -11,9 +11,9 @@ def label_path():
 
 class Entity_type(models.Model):
     name = models.CharField(max_length=200, primary_key=True)
-    img_link = models.ImageField(upload_to='images/')
-    soft_link = models.CharField(max_length=200)
-    additional_info = models.CharField(max_length=200)
+    img_link = models.ImageField(upload_to='images/', blank=True)
+    soft_link = models.CharField(max_length=200, blank=True)
+    additional_info = models.CharField(max_length=200, blank=True)
     def __str__(self):
         return self.name
 
@@ -23,21 +23,21 @@ class Entity(models.Model):
     entity_name = models.ForeignKey(Entity_type, on_delete=models.CASCADE)
     status = models.BooleanField()
     spec_check = models.BooleanField()
-    date_made = models.DateField(null=True)
-    date_delivered = models.DateField(null=True)
-    doc_delivered = models.FilePathField(path=label_path())
-    doc_delivered_original = models.CharField(max_length=200)
-    label = models.FilePathField(path=label_path())
-    label_original = models.CharField(max_length=200)
-    note = models.CharField(max_length=400) 
+    date_made = models.DateField(null=True, blank=True)
+    date_delivered = models.DateField(null=True, blank=True)
+    doc_delivered = models.FilePathField(path=label_path(), blank=True)
+    doc_delivered_original = models.CharField(max_length=200, blank=True)
+    label = models.FilePathField(path=label_path(), blank=True)
+    label_original = models.CharField(max_length=200, blank=True)
+    note = models.CharField(max_length=400, blank=True) 
 
 class History(models.Model):    
-    id =  models.AutoField(auto_created=True, primary_key=True, default=1, unique=True)  
+    id =  models.AutoField(auto_created=True, primary_key=True, default=1)  
     serial_num = models.ForeignKey(Entity, on_delete=models.CASCADE)
-    date_taken = models.DateField(null=True)
-    date_return = models.DateField(null=True)
-    user_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
-    admin_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+')
-    admin_return = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+', null=True)
-    place = models.CharField(max_length=200)
+    date_taken = models.DateField(null=True, blank=True)
+    date_return = models.DateField(null=True, blank=True)
+    user_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+', blank=True)
+    admin_taken = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+', blank=True)
+    admin_return = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+', null=True, blank=True)
+    place = models.CharField(max_length=200, blank=True)
     comment = models.CharField(max_length=400, null=True, blank=True)
