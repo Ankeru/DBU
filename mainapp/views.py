@@ -296,3 +296,61 @@ def view_serial_num(request, type_, serial_num):
         "users_list": User.objects.all(),
     }
     return render(request, 'mainapp/view_serial_num.html', context)
+
+# Обработчик кнопки "Сохранить изменения в Анкете"
+def proccess_edit_form(request):
+    go_on_with_entityies = False
+    if request.POST.get('new_type_cb', False):
+        new_type_name = request.POST.get('new_type', "")
+        if new_type_name:
+            extensible_type = Entity_type(name=new_type_name)
+            extensible_type.save()
+            go_on_with_entityies = True
+    else:
+        extensible_type = Entity_type.objects.get(name=request.POST['chosen_type'])
+        go_on_with_entityies = True
+    if go_on_with_entityies:
+        for i in range(1, int(request.POST['hidden_counter'])+1):
+            # Проверяем, существует ли объект в словаре
+            if request.POST.get('select_serial_num_'+str(i), False):
+                if not Entity.objects.filter(serial_num=request.POST['select_serial_num_'+str(i)]):
+                    new_entity = Entity(
+                        serial_num=request.POST['select_serial_num_'+str(i)],
+                        entity_name=extensible_type,
+                        spec_check=request.POST.get('special_check_' + str(i), False),
+                        status=True,
+                        label_original=request.POST['note_'+str(i)],
+                        doc_delivered_original=request.POST['loc_of_storage_original_delivery_document_'+str(i)],
+                        )
+                    if request.POST.get('production_date_'+str(i), False):
+                        new_entity.date_made=request.POST['production_date_'+str(i)]
+                    if request.POST.get('date_of_delivery_'+str(i), False):
+                        new_entity.date_delivered=request.POST['date_of_delivery_'+str(i)]                        
+                    doc_delivered=None,                    
+                    label=None,
+                    # Работа с файлами
+                    doc_delivered_file = request.FILES.get('delivery_document_'+str(i))
+                    if doc_delivered_file is not None:
+                        relative_path = os.path.join("labels", doc_delivered_file.name)
+                        new_entity.doc_delivered = os.path.join(MEDIA_URL, relative_path)             
+                        #Загружаем файл
+                        handle_uploaded_file(doc_delivered_file, relative_path)    
+                    label_ref_file = request.FILES.get('label_ref_'+str(i))
+                    if label_ref_file is not None:
+                        relative_path = os.path.join("labels",label_ref_file.name) 
+                        new_entity.label = os.path.join(MEDIA_URL, relative_path)                
+                        #Загружаем файл
+                        handle_uploaded_file(label_ref_file, relative_path)                   
+                    new_entity.save()
+    return HttpResponseRedirect(reverse( "edit", args=( )))
+
+def profiles(request):
+    if request.user.is_authenticated:
+        context = {
+            'user_list': User.objects.all() 
+            }
+        return render(request, 'mainapp/profiles.html', context)
+    else:
+        context = {}
+        return render(request, 'registration/login.html', context)
+

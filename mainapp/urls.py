@@ -17,5 +17,7 @@ urlpatterns = [
     path('proccess_type_form/', views.proccess_type_form, name='proccess_type_form'),
     path('proccess_profile_form/', views.proccess_profile_form, name='proccess_profile_form'),
     path('proccess_history_form/', views.proccess_history_form, name='proccess_history_form'),
+    path('proccess_edit_form/', views.proccess_edit_form, name='proccess_edit_form'),
+    path('profiles/', views.profiles, name='profiles'),
     
 ]

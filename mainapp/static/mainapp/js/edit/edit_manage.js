@@ -7,8 +7,7 @@ function manage_type_cb_change()
     } else {
         $('#new_type').prop("hidden", true);
         $('#chosen_type').prop("hidden", false);        
-    }
-          
+    }          
 }
 $('#new_type_cb').change(manage_type_cb_change);
 
@@ -25,8 +24,8 @@ function add_new_entity_block(){
                       </div>
                       <div class="one_line_blocks">
                           <div class="profile_property">
-                              <input type="checkbox" class="checkbox" name='special_check_` + last_record_num + `'>
-                              <label for="special_check"> Спецпроверка</label></div>                                                       
+                              <input type="checkbox" class="checkbox" name='special_check_` + last_record_num + `' id='special_check_` + last_record_num + `'>
+                              <label for="special_check_` + last_record_num + `"> Спецпроверка</label></div>                                                       
                       </div>                    
                     </div>    
                     <div id="view_profile">
@@ -61,7 +60,7 @@ function add_new_entity_block(){
                   </div>
                 </div> `        
         );
-        $('img[name="img_' + last_record_num + '"]').attr('src', $('img[name="img_1"]').attr('src'));
+        $('img[name="img_' + last_record_num + '"]').attr('src', $('img[name="img_0"]').attr('src'));
 
 }
 $('#more_block').click(add_new_entity_block);

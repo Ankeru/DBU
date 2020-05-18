@@ -11,7 +11,10 @@
     <header>        
         <div class="container">
           {% if user.is_authenticated %}
-            <a id="login_button"href="{% url 'login' %}">{{ user.get_username }}</a>
+            <div class="login_button">
+              <span>Вы вошли как <a href="{% url 'profiles' %}">{{ user.get_username }}</a></span> 
+              <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
+            </div>
           {% else %}
             <a id="login_button"href="{% url 'login' %}">Войти</a>
           {% endif %}             
@@ -22,82 +25,20 @@
         <div class="container">            
             <div class="menu">
                 <a href="{% url 'index' %}" class="ref_button">Главная</a>
-                <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
-                <a href="{% url 'login' %}" class="ref_button">Профиль</a>
+                <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
+                <a href="{% url 'profiles' %}" class="ref_button" id="chosen_page">Профили</a>
                 <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
             </div>
             
             <div class="mainpart">
-                <div id="tabs"><a href="{% url 'view' %}">Список</a> > <a href="{% url 'view_type' type %}">{{ type }}</a></div>              
-                <form action={% url "proccess_type_form" %} method="POST" enctype="multipart/form-data">                
-                  {% csrf_token %}               
-                  <div id="view_type">
-                      <div id="img_box">
-                          <img id="type_foto" src='{{ type_sample.img_link }}' alt="Фото типа" />                          
-                          {% if user.is_authenticated %}                                                    
-                          <div>                                              
-                            <input id="id_image" type="file" name="img_file" class="form-control" />                            
-                          </div>
-                          {% endif %}
-                      </div>
-                      <div>
-                          <div>Тип</div>
-                          <select name="type_" title='Тип' id="select_type">              
-                              <option disabled>Выберите тип!</option>
-                              {% for type_ in type_list %}                
-                                <option {% if type_.name == type_sample.name %}selected{% endif %}
-                                >{{ type_.name }}</option>                  
-                              {% endfor %}
-                            </select>
-                          <div>Дополнительно</div>
-                          <textarea class="textarea_standart_size1" name="additional_info"
-                          {% if not user.is_authenticated %}
-                          readonly
-                          {% endif %}
-                          >{{ type_sample.additional_info }}</textarea>
-                          <div>
-                              <label for="loc_of_soft">ПО хранится:<br></label>
-                              <textarea class="textarea_standart_size3" id="loc_of_soft" name="loc_of_soft"
-                              {% if not user.is_authenticated %}
-                              readonly
-                              {% endif %}
-                              >{{ type_sample.soft_link }}</textarea>                                                        
-                          </div>        
-                            
-                      </div> 
-                      {% if user.is_authenticated %}
-                      <input type="submit" id="submit_type_change" value="Сохранить изменения для типа">
-                      {% endif %}
-                  </div>
-                </form>
-                <caption>Наименования</caption>
-                <div id="entity_table">                 
-                    <table>
-                        <tr>           
-                          <th title="Серийный номер"><a id="serial_num_button" name="serial_num" class="ref_button table_manager" title="Серийный номер">С/Н</a></th>
-                          <th title="Признак доступности для взятия"><a id="availible_button" name="status" class="ref_button table_manager" title="Признак доступности для взятия">Свободен</a></th>
-                          <th title="Признак спецпроверки"><a id="spec_check_button" name="spec_check" class="ref_button table_manager" title="Признак спецпроверки">С/П</a></th>
-                          <th title="Дата изготовления"><a id="date_made_button" name="date_made" class="ref_button table_manager" title="Дата изготовления">Изготовлен</a></th>                
-                          <th title="Дата поставки"><a id="date_delivery_button" name="date_delivered" class="ref_button table_manager" title="Дата поставки">Поставлен</a></th>
-                          <th title="Место хранения оригинала документа поставки"><a id="doc_delivery_button" name="doc_delivered" class="ref_button table_manager" title="Место хранения оригинала документа поставки">Док. Поставки</a></th>
-                          <th title="Ссылка на этикету"><a id="label_button" name="label" class="ref_button table_manager" title="Ссылка на этикету">Этикетка</a></th>
-                          <th title="Ссылка на необходимое ПО"><a id="soft_button" name="soft_link" class="ref_button table_manager" title="Ссылка на необходимое ПО">ПО</a></th>
-                        </tr>
-                        {% for ent in Entity_list %}
-                        <tr>
-                            <!-- <td><a href="{% url 'view_type' ent.entity_name.name %}">{{ ent.entity_name.name }}</a></td> -->
-                            <td><a href="{% url 'view_serial_num' ent.entity_name.name ent.serial_num %}">{{ ent.serial_num }}</a></td>
-                            <td>{{ ent.status }}</td>
-                            <td>{{ ent.spec_check }}</td>
-                            <td><input type="date" value="{{ ent.date_made }}" readonly></td>
-                            <td><input type="date" value="{{ ent.date_delivered }}" readonly></td>
-                            <td class="fixed_size no_overflow"><a href="{{ ent.doc_delivered }}" download>{{ ent.doc_delivered }}</a></td>
-                            <td class="fixed_size no_overflow"><a href="{{ ent.label }}" download>{{ ent.label }}</a></td>
-                            <td class="fixed_size no_overflow"><a href="{{ ent.note }}" download>{{ ent.note }}</a></td>
-                        </tr>
-                        {% endfor %}                  
-                    </table>
-                </div>
+              <div>Пользователь <select>
+                                  {% for user_ in user_list %}
+                                    <option {% if  user.get_username == user_.username %} checked{% endif %}>{{ user_.username }}</option>
+                                  {% endfor %}
+                                </select>
+
+              </div>
+                
             </div>
         </div>
     </main>  

@@ -18,7 +18,7 @@ class Entity_type(models.Model):
         return self.name
 
 class Entity(models.Model):
-    id = models.AutoField(auto_created=True, primary_key=True, default=1)   
+    id = models.AutoField(auto_created=True, primary_key=True)   
     serial_num = models.CharField(max_length=200)
     entity_name = models.ForeignKey(Entity_type, on_delete=models.CASCADE)
     status = models.BooleanField()
@@ -32,7 +32,7 @@ class Entity(models.Model):
     note = models.CharField(max_length=400, blank=True) 
 
 class History(models.Model):    
-    id =  models.AutoField(auto_created=True, primary_key=True, default=1)  
+    id =  models.AutoField(auto_created=True, primary_key=True)  
     serial_num = models.ForeignKey(Entity, on_delete=models.CASCADE)
     date_taken = models.DateField(null=True, blank=True)
     date_return = models.DateField(null=True, blank=True)

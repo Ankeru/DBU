@@ -65,10 +65,13 @@ header .container a{
     outline: none;
     color: #34e0a1;
 }
-#login_button{
+
+.login_button{
     float: right;
     margin: 10px 10px 0 0;
 }
+
+
 header .container a:hover{
     color: rgb(226, 236, 226);
 }
@@ -170,4 +173,11 @@ a#chosen_page {
 
 .one_line_blocks div.profile_property {
     margin-top: 8px;
+}
+
+/* Кнопка "Выйти" */
+.logout_button{
+    float: right;
+    margin: 5px 0 0 0;
+    color: rgb(128, 17, 17);
 }
