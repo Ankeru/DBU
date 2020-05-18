@@ -52,8 +52,8 @@
                     <td>{{ ent.spec_check }}</td>
                     <td><input type="date" value="{{ ent.date_made }}" readonly></td>
                     <td><input type="date" value="{{ ent.date_delivered }}" readonly></td>
-                    <td class="fixed_size no_overflow"><a href="{{ ent.doc_delivered }}" download>{{ ent.doc_delivered }}</a></td>
-                    <td class="fixed_size no_overflow"><a href="{{ ent.label }}" download>{{ ent.label }}</a></td>
+                    <td class="fixed_size no_overflow"><a href="{{ ent.doc_delivered }}" download>{% if ent.doc_delivered %}Скачать{% endif %}</a></td>
+                    <td class="fixed_size no_overflow"><a href="{{ ent.label }}" download>{% if ent.label %}Скачать{% endif %}</a></td>
                     <td class="fixed_size no_overflow"><a href="{{ ent.note }}" download>{{ ent.note }}</a></td>
                   </tr>
                   {% endfor %}                

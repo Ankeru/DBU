@@ -1,0 +1,3047 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="//intelcdn.com/">
+    <link rel="dns-prefetch" href="//p2.intelcdn.com">
+    <link rel="dns-prefetch" href="//mc.yandex.ru">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+
+            <title>Страница не найдена</title>
+        <meta name="keywords" content=""/>
+        <meta name="description" content=""/>
+    
+    
+    
+
+                <meta name="yandex-verification" content="239f32e511fec3bd"/>
+            
+    <!-- Google Analytics -->
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-69926027-1', 'auto');
+ga('require', 'displayfeatures');
+ga('require', 'linkid', 'linkid.js');
+/* Openstat parser v3 minimized */
+var op={_params:{},_parsed:!1,_decode64:function(a){if('function'==typeof window.atob)return atob(a);var r,t,n,i,e,s,o,p,d='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=',h=0,c=0,f='',m=[];if(!a)return a;a+='';do i=d.indexOf(a.charAt(h++)),e=d.indexOf(a.charAt(h++)),s=d.indexOf(a.charAt(h++)),o=d.indexOf(a.charAt(h++)),p=i<<18|e<<12|s<<6|o,r=p>>16&255,t=p>>8&255,n=255&p,m[c++]=64==s?String.fromCharCode(r):64==o?String.fromCharCode(r,t):String.fromCharCode(r,t,n);while(h<a.length);return f=m.join('')},_parse:function(){var a=window.location.search.substr(1),r=a.split('&');this._params={};for(var t=0;t<r.length;t++){var n=r[t].split('=');this._params[n[0]]=n[1]}this._parsed=!0},hasMarker:function(){return window.location.search.indexOf('utm_')>0?!1:(this._parsed||this._parse(),'undefined'!=typeof this._params._openstat?!0:!1)},buildCampaignParams:function(){if(!this.hasMarker())return!1;var a=this._decode64(this._params._openstat),r=a.split(';');return{campaignName:r[1],campaignSource:r[0],campaignMedium:'cpc',campaignContent:r[2]+' ('+r[3]+')'}}};
+var cp=op.hasMarker()?op.buildCampaignParams():{};
+ga('send', 'pageview', cp);
+/* Accurate bounce rate by time */
+document.referrer&&0==document.referrer.split('/')[2].indexOf(location.hostname)||setTimeout(function(){ga('send','event','Сеансы','Сеансы без отказов',location.pathname)},15000);
+</script>
+<!--/Google Analytics -->
+
+
+
+
+
+<!-- Yandex.Metrika counter --> <script type="text/javascript">intelYaCounterId = 24673400;(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter24673400 = new Ya.Metrika({ id:24673400, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/24673400" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+
+
+
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+      _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://p2.intelcdn.com/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', '2']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="https://p2.intelcdn.com/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        var geoCountry = '',
+            siteLocale = 'ru',
+            geoAllowed = true;
+    </script>
+
+    <link rel="icon" type="image/png" href="https://legalbetweb-a.akamaihd.net/img/favicons4/favicon-32x32.png" sizes="32x32">
+
+    <link rel="stylesheet" href="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/styles/libraries.css">
+<link rel="stylesheet" href="https://legalbetweb-a.akamaihd.net/assets/LB-MB-147/styles/main.css">
+<link rel="stylesheet" href="https://legalbetweb-a.akamaihd.net/assets/LB-TB-66/styles/flag.css">
+<link rel="stylesheet" href="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/css/prettyPhoto.css" />
+<link rel="stylesheet" href="https://legalbetweb-a.akamaihd.net/assets/LB-MB-139/styles/bookmakers-colors.css">
+    <script src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-31/scripts/jquery.documentReady.js"></script>
+    <meta property="og:locale" content="ru_RU"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:site_name" content="legalbet.ru"/>
+    <meta property="og:title" content="Страница не найдена"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content="https://legalbet.ru/post/_ajax/match-center/meeting_table/pageIndex455/"/>
+    <meta name="twitter:url" content="https://legalbet.ru/post/_ajax/match-center/meeting_table/pageIndex455/"/>
+    <meta name="twitter:title" content="Страница не найдена"/>
+    <meta name="twitter:description" content=""/>
+
+                <meta name="twitter:site" content="@Legalbetgr"/>
+        <meta name="twitter:creator" content="@Legalbetgr"/>
+    
+            
+        <meta property="og:image" content="https://legalbetweb-a.akamaihd.net/_images/legalbet.png"/>
+        <meta name="twitter:card" content="summary"/>
+        <meta name="twitter:image" content="https://legalbetweb-a.akamaihd.net/_images/legalbet.png"/>
+    
+    </head>
+<body data-auth="0" class="is-not-mobile  is-legalbet" onunload="" data-locale="ru">
+<div class="site-layout">
+    <main class="site-content">
+        <!--site header begin-->
+        <div class="site-header-sticky">
+            <header class="site-header">
+                <div class="container">
+                    <a class="site-logo" href="/"><img   src="https://legalbetweb-a.akamaihd.net/images/legalbet-logo.svg"></a>
+                    <nav>
+	<ul class="site-nav">
+		<li>
+							<a  href="/rating-user/">Букмекеры</a>
+						<div class="dropdown-body">
+				<ul class="bookmakers-ratings-list">
+            <li><a href="/rating-user/" class="link icon icon-thumbs-up-red">Народный рейтинг</a></li>
+            <li><a href="/rating/" class="link icon icon-reward">Рейтинг надежности</a></li>
+            <li><a href="/rating-odds/" class="link icon icon-odd">Рейтинг по коэф-там</a></li>
+            <li><a href="/rating-line/" class="link icon icon-trend">Рейтинг по выбору ставок</a></li>
+            <li><a href="/rating-live/" class="link icon icon-live">Рейтинг Live</a></li>
+            <li><a href="/rating-cybersport/" class="link icon icon-crosshair">Киберспорт</a></li>
+            <li><a href="/rating-bonus/" class="link icon icon-gift-filled">Букмекеры с бонусами</a></li>
+            <li><a href="/bookmakers-on-mobile-devices/" class="link icon icon-mobile-blue">Букмекеры на мобильных</a></li>
+    </ul>
+			</div>
+		</li>
+
+
+							<li>
+				<a  href="/tips/">Прогнозы</a>
+				<div class="dropdown-body">
+					<ul>
+						<li>
+							<a class="link" href="/tips/today/">
+								На сегодня
+								<div class="count today">
+									1
+								</div>
+							</a>
+						</li>
+													<li>
+								<a class="link" href="/tips/tomorrow/">
+									На завтра
+									<div class="count today">
+										8
+									</div>
+								</a>
+							</li>
+																			<li>
+								<a class="link" href="/tips/category-expert/">
+									От экспертов
+									<div class="count today">
+                                        7
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="link" href="/tips/category-handycaper/">
+									От гандикаперов
+									<div class="count ">
+                                        6
+									</div>
+								</a>
+							</li>
+																		<li>
+							<a class="link" href="/tips/">
+                                Все
+								<div class="count today">
+                                    13
+								</div>
+							</a>
+						</li>
+							<li>
+								<a class="link" href="/expert/stat/all/">Статистика прогнозистов</a>
+							</li>
+					</ul>
+				</div>
+			</li>
+		
+
+		<li>
+			<a  href="/match-center/today/">Беттинг-центр</a>
+			<div class="dropdown-body">
+				    <a class="link" href="/match-center/">
+    Все лиги
+            <div class="count ">
+            854
+        </div>
+    </a>
+    <div class="category">Футбол</div>
+    <ul class="categories-list dropdown-menu-columns">
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/russian-premer-liga/">
+                    Премьер-лига
+                                            <div class="count ">
+                            56
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/fnl/">
+                    ФНЛ
+                                            <div class="count ">
+                            71
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/pfl/">
+                    ПФЛ
+                                            <div class="count ">
+                            189
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/russian-cup/">
+                    Кубок России
+                                            <div class="count ">
+                            2
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-gb-eng" href="/match-center/tournaments/england-premer-liga/">
+                    Премьер-лига
+                                            <div class="count ">
+                            46
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-de" href="/match-center/tournaments/bundesliga/">
+                    Бундеслига
+                                            <div class="count ">
+                            45
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-es" href="/match-center/tournaments/la-liga/">
+                    Ла Лига
+                                            <div class="count ">
+                            61
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-it" href="/match-center/tournaments/seriya-a/">
+                    Серия А
+                                            <div class="count ">
+                            62
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-fr" href="/match-center/tournaments/liga-1/">
+                    Лига 1
+                                            <div class="count ">
+                            61
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ua" href="/match-center/tournaments/liga-pari-match/">
+                    Премьер-лига
+                                            <div class="count ">
+                            48
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-euro" href="/match-center/tournaments/liga-chempionov/">
+                    Лига чемпионов
+                                            <div class="count ">
+                            4
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-euro" href="/match-center/tournaments/liga-evropi/">
+                    Лига Европы
+                                            <div class="count ">
+                            4
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-frendlies" href="/match-center/tournaments/tovarisheskie-matchi/">
+                    Товарищеские
+                                            <div class="count ">
+                            0
+                        </div>
+                                    </a>
+            </li>
+                                                                                                <li><a                         class="link icon flag flag-nations-league" href="/liga-natsiy-uefa-2018/">
+                    Лига наций
+                                            <div class="count ">
+                            2
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-euro-2020" href="/match-center/tournaments/chempionat-evropi-po-futbolu-2020/">
+                    Евро 2020
+                                            <div class="count ">
+                            200
+                        </div>
+                                    </a>
+            </li>
+            </ul>
+    <div class="category">Хоккей</div>
+    <ul class="categories-list dropdown-menu-columns">
+                                                                    <li><a                         class="link icon flag flag-ru" href="/hockey/tournaments/khl/">
+                    КХЛ
+                                            <div class="count ">
+                            3
+                        </div>
+                                    </a>
+            </li>
+            </ul>
+
+			</div>
+		</li>
+        			<li>
+				<a  href="/expert/">Эксперты</a>
+							</li>
+        		<li>
+			<a  href="/best-posts/">Блоги</a>
+			<div class="dropdown-body">
+				<ul>
+					<li><a class="link" href="/blogs/">Все темы</a></li>
+					<li><a class="link" href="/best-posts/">Выбор редакции</a></li>
+																		<li><a class="link" href="/blogs/tag/futbol/">Футбол</a></li>
+													<li><a class="link" href="/blogs/tag/hokkej/">Хоккей</a></li>
+													<li><a class="link" href="/blogs/tag/tennis/">Теннис</a></li>
+													<li><a class="link" href="/blogs/tag/basketbol/">Баскетбол</a></li>
+											                    												<li><a class="link" href="/blogs/bonusi-i-aktcii-bukmekerov/">Акции букмекеров</a></li>
+                    				</ul>
+			</div>
+		</li>
+				<li>
+							<a  href="/shkola-bettinga/">База знаний</a>
+				<div class="dropdown-body">
+					<ul>
+																												
+							<li><a class="link" href="/shkola-bettinga/">Школа ставок</a></li>
+
+																												
+							<li><a class="link" href="/faq/">FAQ</a></li>
+
+																												
+							<li><a class="link" href="/questions/">Вопрос - ответ</a></li>
+
+																												
+							<li><a class="link" href="/tag/soveti-igrokov/">Советы игроков</a></li>
+
+											</ul>
+				</div>
+			
+		</li>
+	</ul>
+</nav>
+<div class="right-side">
+                            <a href="#" class="support-link icon icon-support support-chat online">Поддержка</a>
+<script>
+	var supportChatInfo = [];
+</script>
+
+                
+    <a class="search-link icon icon-search" href="#">
+    Поиск
+</a>
+<form class="search-form" action="/search" data-search-user-url="/_ajax/search-user-select/">
+    <div class="icon icon-search"></div>
+    <div class="select borderless">
+      <input class="borderless search-field" type="text" name="search_query" placeholder="Поиск" autocomplete="off">
+                <div class="select-dropdown search-user-select-wrap scroll-content">
+
+</div>
+<!--div class="hint-search-user">Для поиска по нику пользователя введите @ перед ником.
+    <i class="i-user-search-hint-inner"></i>
+    <div class="cross i-cross-hint12"></div>
+</div-->
+    </div>
+    <button class="button blue" type="submit">
+        Найти
+    </button>
+    <a class="icon icon-close" href=""></a>
+</form>
+            <a class="signin button ghost" href="">Войти</a>
+    </div>
+
+<a class="burger "><img src="https://legalbetweb-a.akamaihd.net/img/burger.svg"></a>
+
+
+
+
+
+                </div>
+            </header>
+        </div>
+        <header class="site-header white-header">
+            <div class="container">
+                <a class="site-logo" href="/"><img  src="https://legalbetweb-a.akamaihd.net/images/legalbet-logo-white.svg"></a>
+                <nav>
+	<ul class="site-nav">
+		<li>
+							<a  href="/rating-user/">Букмекеры</a>
+						<div class="dropdown-body">
+				<ul class="bookmakers-ratings-list">
+            <li><a href="/rating-user/" class="link icon icon-thumbs-up-red">Народный рейтинг</a></li>
+            <li><a href="/rating/" class="link icon icon-reward">Рейтинг надежности</a></li>
+            <li><a href="/rating-odds/" class="link icon icon-odd">Рейтинг по коэф-там</a></li>
+            <li><a href="/rating-line/" class="link icon icon-trend">Рейтинг по выбору ставок</a></li>
+            <li><a href="/rating-live/" class="link icon icon-live">Рейтинг Live</a></li>
+            <li><a href="/rating-cybersport/" class="link icon icon-crosshair">Киберспорт</a></li>
+            <li><a href="/rating-bonus/" class="link icon icon-gift-filled">Букмекеры с бонусами</a></li>
+            <li><a href="/bookmakers-on-mobile-devices/" class="link icon icon-mobile-blue">Букмекеры на мобильных</a></li>
+    </ul>
+			</div>
+		</li>
+
+
+							<li>
+				<a  href="/tips/">Прогнозы</a>
+				<div class="dropdown-body">
+					<ul>
+						<li>
+							<a class="link" href="/tips/today/">
+								На сегодня
+								<div class="count today">
+									1
+								</div>
+							</a>
+						</li>
+													<li>
+								<a class="link" href="/tips/tomorrow/">
+									На завтра
+									<div class="count today">
+										8
+									</div>
+								</a>
+							</li>
+																			<li>
+								<a class="link" href="/tips/category-expert/">
+									От экспертов
+									<div class="count today">
+                                        7
+									</div>
+								</a>
+							</li>
+							<li>
+								<a class="link" href="/tips/category-handycaper/">
+									От гандикаперов
+									<div class="count ">
+                                        6
+									</div>
+								</a>
+							</li>
+																		<li>
+							<a class="link" href="/tips/">
+                                Все
+								<div class="count today">
+                                    13
+								</div>
+							</a>
+						</li>
+							<li>
+								<a class="link" href="/expert/stat/all/">Статистика прогнозистов</a>
+							</li>
+					</ul>
+				</div>
+			</li>
+		
+
+		<li>
+			<a  href="/match-center/today/">Беттинг-центр</a>
+			<div class="dropdown-body">
+				    <a class="link" href="/match-center/">
+    Все лиги
+            <div class="count ">
+            854
+        </div>
+    </a>
+    <div class="category">Футбол</div>
+    <ul class="categories-list dropdown-menu-columns">
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/russian-premer-liga/">
+                    Премьер-лига
+                                            <div class="count ">
+                            56
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/fnl/">
+                    ФНЛ
+                                            <div class="count ">
+                            71
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/pfl/">
+                    ПФЛ
+                                            <div class="count ">
+                            189
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ru" href="/match-center/tournaments/russian-cup/">
+                    Кубок России
+                                            <div class="count ">
+                            2
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-gb-eng" href="/match-center/tournaments/england-premer-liga/">
+                    Премьер-лига
+                                            <div class="count ">
+                            46
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-de" href="/match-center/tournaments/bundesliga/">
+                    Бундеслига
+                                            <div class="count ">
+                            45
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-es" href="/match-center/tournaments/la-liga/">
+                    Ла Лига
+                                            <div class="count ">
+                            61
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-it" href="/match-center/tournaments/seriya-a/">
+                    Серия А
+                                            <div class="count ">
+                            62
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-fr" href="/match-center/tournaments/liga-1/">
+                    Лига 1
+                                            <div class="count ">
+                            61
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-ua" href="/match-center/tournaments/liga-pari-match/">
+                    Премьер-лига
+                                            <div class="count ">
+                            48
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-euro" href="/match-center/tournaments/liga-chempionov/">
+                    Лига чемпионов
+                                            <div class="count ">
+                            4
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-euro" href="/match-center/tournaments/liga-evropi/">
+                    Лига Европы
+                                            <div class="count ">
+                            4
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-frendlies" href="/match-center/tournaments/tovarisheskie-matchi/">
+                    Товарищеские
+                                            <div class="count ">
+                            0
+                        </div>
+                                    </a>
+            </li>
+                                                                                                <li><a                         class="link icon flag flag-nations-league" href="/liga-natsiy-uefa-2018/">
+                    Лига наций
+                                            <div class="count ">
+                            2
+                        </div>
+                                    </a>
+            </li>
+                                                                    <li><a                         class="link icon flag flag-euro-2020" href="/match-center/tournaments/chempionat-evropi-po-futbolu-2020/">
+                    Евро 2020
+                                            <div class="count ">
+                            200
+                        </div>
+                                    </a>
+            </li>
+            </ul>
+    <div class="category">Хоккей</div>
+    <ul class="categories-list dropdown-menu-columns">
+                                                                    <li><a                         class="link icon flag flag-ru" href="/hockey/tournaments/khl/">
+                    КХЛ
+                                            <div class="count ">
+                            3
+                        </div>
+                                    </a>
+            </li>
+            </ul>
+
+			</div>
+		</li>
+        			<li>
+				<a  href="/expert/">Эксперты</a>
+							</li>
+        		<li>
+			<a  href="/best-posts/">Блоги</a>
+			<div class="dropdown-body">
+				<ul>
+					<li><a class="link" href="/blogs/">Все темы</a></li>
+					<li><a class="link" href="/best-posts/">Выбор редакции</a></li>
+																		<li><a class="link" href="/blogs/tag/futbol/">Футбол</a></li>
+													<li><a class="link" href="/blogs/tag/hokkej/">Хоккей</a></li>
+													<li><a class="link" href="/blogs/tag/tennis/">Теннис</a></li>
+													<li><a class="link" href="/blogs/tag/basketbol/">Баскетбол</a></li>
+											                    												<li><a class="link" href="/blogs/bonusi-i-aktcii-bukmekerov/">Акции букмекеров</a></li>
+                    				</ul>
+			</div>
+		</li>
+				<li>
+							<a  href="/shkola-bettinga/">База знаний</a>
+				<div class="dropdown-body">
+					<ul>
+																												
+							<li><a class="link" href="/shkola-bettinga/">Школа ставок</a></li>
+
+																												
+							<li><a class="link" href="/faq/">FAQ</a></li>
+
+																												
+							<li><a class="link" href="/questions/">Вопрос - ответ</a></li>
+
+																												
+							<li><a class="link" href="/tag/soveti-igrokov/">Советы игроков</a></li>
+
+											</ul>
+				</div>
+			
+		</li>
+	</ul>
+</nav>
+<div class="right-side">
+                            <a href="#" class="support-link icon icon-support support-chat online">Поддержка</a>
+<script>
+	var supportChatInfo = [];
+</script>
+
+                
+    <a class="search-link icon icon-search" href="#">
+    Поиск
+</a>
+<form class="search-form" action="/search" data-search-user-url="/_ajax/search-user-select/">
+    <div class="icon icon-search"></div>
+    <div class="select borderless">
+      <input class="borderless search-field" type="text" name="search_query" placeholder="Поиск" autocomplete="off">
+                <div class="select-dropdown search-user-select-wrap scroll-content">
+
+</div>
+<!--div class="hint-search-user">Для поиска по нику пользователя введите @ перед ником.
+    <i class="i-user-search-hint-inner"></i>
+    <div class="cross i-cross-hint12"></div>
+</div-->
+    </div>
+    <button class="button blue" type="submit">
+        Найти
+    </button>
+    <a class="icon icon-close" href=""></a>
+</form>
+            <a class="signin button ghost" href="">Войти</a>
+    </div>
+
+<a class="burger "><img src="https://legalbetweb-a.akamaihd.net/img/burger.svg"></a>
+
+
+
+
+
+            </div>
+        </header>
+        <div class="mobile-aside-bg"></div>
+<div class="mobile-aside">
+    <div class="header">
+        <a class="site-logo" href="/">
+            <img src="https://legalbetweb-a.akamaihd.net/images/legalbet-logo.svg">
+        </a>
+        			<div class="winline-bonus-mobile-btn">
+				<img src="https://legalbetweb-a.akamaihd.net/images/gift-color.svg">
+			</div>
+        				    </div>
+	<ul class="site-menu">
+        			<li><a  class="arrowed" href="/tips/">Прогнозы</a>
+				<ul>
+					<li><a href="/tips/today/">На сегодня<span class="count today">1</span></a></li>
+					<li><a href="/tips/">Все<span class="count today">13</span></a></li>
+                    <li><a href="/expert/stat/all/">Статистика</a></li>
+				</ul>
+			</li>
+        		<li><a  class="arrowed" href="/match-center/">Беттинг-центр</a>
+			<ul>
+				<li><a href="/match-center/today/">Матчи сегодня<span class="count ">0</span></a></li>
+				<li><a href="/match-center/">Все<span class="count ">854</span></a></li>
+			</ul>
+								</li>
+		<li><a  class="arrowed" href="/blogs/">Новости и блоги</a>
+			<ul>
+				<li><a href="/best-posts/">Выбор редакции</a></li>
+                <li><a href="/popular-posts/week/">Выбор пользователей</a></li>
+                <li><a href="/blogs/">Все</a></li>
+			</ul>
+		</li>
+                				<li><a  class="arrowed" href="/rating-user/">Букмекеры</a>
+			<ul>
+				<li><a href="/ratings/">Рейтинги</a></li>
+											</ul>
+		</li>
+		<li>
+							<a  class="arrowed" href="/shkola-bettinga/">База знаний</a>
+					</li>
+
+							<li>
+                    <a class="icon icon-support support-link arrowed online support-chat" href="javascript:;">Поддержка</a>
+                </li>
+						<li>
+				<a class="icon icon-search arrowed" href="#">Поиск</a>
+			</li>
+	</ul>
+        <ul class="profile-menu">
+                <li class="user-li">
+            <a class="signin" href="#_login">Вход</a>
+        </li>
+    </ul>
+
+</div>
+<form class="search-form search-form-mobile" action="/search" data-search-user-url="/_ajax/search-user-select/">
+    <div class="block-section-row">
+        <div class="block-section search-field">
+          <div class="icon icon-search">
+            <input class="inline" type="text" name="search_query" placeholder="Что Вы ищете?">
+          </div>
+        </div>
+        <a class="block-section close" href="#">
+            <div class="icon icon-close"></div>
+        </a>
+    </div>
+    <div class="block-section body">
+        <div class="tip">Подсказка: для поиска по нику пользователя введите @ перед ником</div>
+        <div class="search-user-select-wrapt select-dropdown-mobile"></div>
+    </div>
+    <a class="cancel block-section" href="#">
+        Отмена
+    </a>
+</form>
+        <!--site header end-->
+        <!--site content begin-->
+                <!--site content begin-->
+        <div class="error-page fullpage-section">
+          <div class="page-background img-box"><img src="https://legalbetweb-a.akamaihd.net/img/404.jpg" srcset="https://legalbetweb-a.akamaihd.net/img/404@2x.jpg 2x"></div>
+          <div class="container">
+            <div class="error-page-message">
+              <div class="error-number">404</div>
+              <div class="error-heading">Страница не найдена</div>
+            </div>
+			<h3 class="section-heading"><a href="/tips/today/">Свежие прогнозы</a><a class="more link arrowed sm-hide md-show" href="/tips/today/">Еще</a></h3>
+<div class="row stretch">
+	<div class="col-md-6 col-lg-3">
+    <!-- forecast title -->
+    <a class="article-card forecast-card" href="/tips/kasper-ruud-kristian-garin-prognoz-na-tennis-ot-vladimira-svetlitci/" title="Владимир Светлица">
+        <div class="image img-box lazy" data-src="https://legalbetstatic-a.akamaihd.net/44/16/5cb31aacc98dd_1555241644.jpg">
+            <div class="expert-name">Светлица</div>
+
+                    </div>
+        <div class="body">
+            <div class="title heading-5">
+                Каспер Рууд – Кристиан Гарин: прогноз на теннис от Владимира Светлицы
+            </div>
+            <div class="description">
+                                                                    Гандикапер сайта Legalbet Владимир Светлица предлагает прогноз на количество геймов в матче турнира в Хьюстоне.
+            </div>
+                <div class="voting">
+                    <div class="vote">
+                <div class="fill" style="width: 85%"></div>
+            </div>
+                <div class="results">
+                                                                                85%
+            <span class="caption">голосов&nbsp;«За»</span>
+        </div>
+    </div>
+
+        </div>
+        <footer class="footer">
+            <div class="forecast-result" title="14.04.2019 22:00">
+                                <div class="hidden"
+                         data-adata-key="time-before|tip|2019-04-14T22:00:00+03:00">
+                    <span class="short"></span>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="icon icon-views"><span data-adata-key="views|tip|247386"></span></div>
+                <div class="icon icon-comments"><span data-adata-key="comments-count|tip|247386"></span></div>
+            </div>
+        </footer>
+    </a>
+</div>
+<div class="col-md-6 col-lg-3">
+    <!-- forecast title -->
+    <a class="article-card forecast-card" href="/tips/benfika-vitoriya-setubal-prognoz-na-futbol-ot-jack-07/" title="Jack 07">
+        <div class="image img-box lazy" data-src="https://legalbetstatic-a.akamaihd.net/37/89/5cb2e909a9a8c_1555228937.jpg">
+            <div class="expert-name">Jack 07</div>
+
+                    </div>
+        <div class="body">
+            <div class="title heading-5">
+                «Бенфика» – «Витория» Сетубал: прогноз на футбол от Jack 07
+            </div>
+            <div class="description">
+                                                                    Сторонний каппер сайта Legalbet Jack 07 предлагает ставку на то, что Витория Сетубал не забьет в матче чемпионата Португалии.
+            </div>
+                <div class="voting">
+                    <div class="vote">
+                <div class="fill" style="width: 87%"></div>
+            </div>
+                <div class="results">
+                                                                                87%
+            <span class="caption">голосов&nbsp;«За»</span>
+        </div>
+    </div>
+
+        </div>
+        <footer class="footer">
+            <div class="forecast-result" title="14.04.2019 22:00">
+                                <div class="hidden"
+                         data-adata-key="time-before|tip|2019-04-14T22:00:00+03:00">
+                    <span class="short"></span>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="icon icon-views"><span data-adata-key="views|tip|247281"></span></div>
+                <div class="icon icon-comments"><span data-adata-key="comments-count|tip|247281"></span></div>
+            </div>
+        </footer>
+    </a>
+</div>
+<div class="col-md-6 col-lg-3">
+    <!-- forecast title -->
+    <a class="article-card forecast-card" href="/tips/prognoz-na-tretyu-igru-chto-gde-kogda-ot-rovshana-askerova/" title="Ровшан Аскеров">
+        <div class="image img-box lazy" data-src="https://legalbetstatic-a.akamaihd.net/89/36/5caf792991c10_1555003689.png">
+            
+                    </div>
+        <div class="body">
+            <div class="title heading-5">
+                Прогноз на третью игру весенней серии Что? Где? Когда? от Ровшана...
+            </div>
+            <div class="description">
+                                                                    Эксперт сайта Legalbet Ровшан Аскеров предлагает три ставки на третью игру весенней серии Что? Где? Когда?
+            </div>
+                <div class="voting">
+                    <div class="vote">
+                <div class="fill" style="width: 98%"></div>
+            </div>
+                    <div class="vote">
+                <div class="fill" style="width: 94%"></div>
+            </div>
+                    <div class="vote">
+                <div class="fill" style="width: 22%"></div>
+            </div>
+                <div class="results">
+                                                                                                                                                                                                                                                98%, 94% и 22%
+            <span class="caption">голосов&nbsp;«За»</span>
+        </div>
+    </div>
+
+        </div>
+        <footer class="footer">
+            <div class="forecast-result" title="14.04.2019 22:30">
+                                <div class="hidden"
+                         data-adata-key="time-before|tip|2019-04-14T22:30:00+03:00">
+                    <span class="short"></span>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="icon icon-views"><span data-adata-key="views|tip|246291"></span></div>
+                <div class="icon icon-comments"><span data-adata-key="comments-count|tip|246291"></span></div>
+            </div>
+        </footer>
+    </a>
+</div>
+<div class="col-md-6 col-lg-3">
+    <!-- forecast title -->
+    <a class="article-card forecast-card" href="/tips/vegas-golden-najts-san-hose-sharks-prognoz-na-hokkej-ot-luciano/" title="Luciano">
+        <div class="image img-box lazy" data-src="https://legalbetstatic-a.akamaihd.net/07/24/5cb344b7826bd_1555252407.jpg">
+            <div class="expert-name">Luciano</div>
+
+                    </div>
+        <div class="body">
+            <div class="title heading-5">
+                «Вегас Голден Найтс» – «Сан-Хосе Шаркс»: прогноз на хоккей от Luciano
+            </div>
+            <div class="description">
+                                                                    Сторонний каппер сайта Legalbet Luciano предлагает ставку на результативность Вегас Голден Найтс в третьем матче 1/8 финала плей-офф НХЛ.
+            </div>
+                <div class="voting">
+                    <div class="vote">
+                <div class="fill" style="width: 96%"></div>
+            </div>
+                <div class="results">
+                                                                                96%
+            <span class="caption">голосов&nbsp;«За»</span>
+        </div>
+    </div>
+
+        </div>
+        <footer class="footer">
+            <div class="forecast-result" title="15.04.2019 05:00">
+                                <div class="hidden"
+                         data-adata-key="time-before|tip|2019-04-15T05:00:00+03:00">
+                    <span class="short"></span>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="icon icon-views"><span data-adata-key="views|tip|247421"></span></div>
+                <div class="icon icon-comments"><span data-adata-key="comments-count|tip|247421"></span></div>
+            </div>
+        </footer>
+    </a>
+</div>
+
+</div>
+<a class="block block-section link arrowed md-hide" href="/tips/today/">Еще</a>
+
+			
+
+<h3 class="section-heading"><a href="/blogs/page1/">Новое в блогах</a><a class="more link arrowed sm-hide md-show" href="/blogs/page1/"> Еще </a></h3>
+<div class="row stretch">
+										<div class="col-md-4 col-lg-3">
+			<a class="article-card" href="/blogs/233806/">
+																	<div class="image img-box" style="background-image: url(' https://legalbetweb-a.akamaihd.net/img/no-image.png ')">
+				  				  <div class="author-image img-box" style="background-image: url(' https://legalbetweb-a.akamaihd.net/img/no-photo_little.png ')"></div>
+				</div>
+				<div class="body">
+				  <div class="author">NIKOTIN</div>
+				  <h3 class="title heading-5">Двойничок на Францию и Италию</h3>
+				  <div class="description">21-30
+экспресс: 1.8078  1000$
+Фросиноне - Интер тб2 1.38
+Лилль - ПСЖ тб2 1.31</div>
+				</div>
+				<footer class="footer">
+				  <div class="icon icon-thumbs-up">0</div>
+				  <div class="right-side">
+					<div class="icon icon-views">7</div>
+					<div class="icon icon-comments">0</div>
+				  </div>
+				</footer>
+			</a>	  
+		</div>
+										<div class="col-md-4 col-lg-3">
+			<a class="article-card" href="/blogs/233801/">
+																	<div class="image img-box" style="background-image: url(' https://legalbetweb-a.akamaihd.net/img/no-image.png ')">
+				  				  <div class="author-image img-box" style="background-image: url(' https://legalbetweb-a.akamaihd.net/img/no-photo_little.png ')"></div>
+				</div>
+				<div class="body">
+				  <div class="author">NIKOTIN</div>
+				  <h3 class="title heading-5">лайв 80мин Турция Фенербахче - Галатасарай 1-1</h3>
+				  <div class="description">лайв 80мин Турция Фенербахче - Галатасарай 1-1
+
+тб2.5 1.95 500$</div>
+				</div>
+				<footer class="footer">
+				  <div class="icon icon-thumbs-up">0</div>
+				  <div class="right-side">
+					<div class="icon icon-views">5</div>
+					<div class="icon icon-comments">0</div>
+				  </div>
+				</footer>
+			</a>	  
+		</div>
+										<div class="col-md-4 col-lg-3">
+			<a class="article-card" href="/blogs/233796/">
+																	<div class="image img-box" style="background-image: url(' https://legalbetweb-a.akamaihd.net/img/no-image.png ')">
+				  				  <div class="author-image img-box" style="background-image: url(' https://legalbetweb-a.akamaihd.net/img/no-photo_little.png ')"></div>
+				</div>
+				<div class="body">
+				  <div class="author">NIKOTIN</div>
+				  <h3 class="title heading-5">лайв HT  кьево  наполи 0-1тб2.5 1. 500$</h3>
+				  <div class="description">лайв HT  кьево  наполи 0-1
+тб2.5 1. 500$</div>
+				</div>
+				<footer class="footer">
+				  <div class="icon icon-thumbs-up">0</div>
+				  <div class="right-side">
+					<div class="icon icon-views">5</div>
+					<div class="icon icon-comments">1</div>
+				  </div>
+				</footer>
+			</a>	  
+		</div>
+										<div class="col-md-4 col-lg-3">
+			<a class="article-card" href="/blogs/233791/">
+																	<div class="image img-box" style="background-image: url(' https://legalbetstatic-a.akamaihd.net/16/19/5cb369dcb809f_1555261916.jpg ')">
+				  				  <div class="author-image img-box" style="background-image: url(' https://legalbetweb-a.akamaihd.net/img/no-photo_little.png ')"></div>
+				</div>
+				<div class="body">
+				  <div class="author">Fedor Nadalich</div>
+				  <h3 class="title heading-5">Прогноз на матч Даниил Медведев - Жоао Соуза: россиянин смотрится фаворитом</h3>
+				  <div class="description">Россиянин Медведев стартует на грунтовом турнире в Монте-Карло матчем против португальца Соузы.</div>
+				</div>
+				<footer class="footer">
+				  <div class="icon icon-thumbs-up">0</div>
+				  <div class="right-side">
+					<div class="icon icon-views">33</div>
+					<div class="icon icon-comments">0</div>
+				  </div>
+				</footer>
+			</a>	  
+		</div>
+	</div>
+<a class="block block-section link arrowed md-hide" href="/blogs/page1/">Еще</a>
+          </div>
+        </div>
+        <!--site content end-->
+        <!--site content end-->
+        <!--site footer begin-->
+                                            <section class="bookmakers-in-footer">
+    <div class="container">
+        <div class="header">
+            <div class="heading heading-5">Легальные букмекерские конторы</div>
+                            <a class="more link sm-hide md-show" href="/rating/">Весь список</a>
+                    </div>
+                                <div class="bookmakers-in-footer-row">
+                <div class="row">
+                                            <div class="col-md-6">
+                                                            <div class="bookmaker-row">
+                                    <a class="img-box" href="/bukmekerskye-kontory/winline/">
+                                        <img src="https://legalbetstatic-a.akamaihd.net/70/88/5a3390e65fbc6_1513328870.png"
+                                          alt="Логотип букмекерской конторы Winline - legalbet.ru">
+                                    </a>
+                                                                                                                    <a target="_blank" rel="nofollow" href="/go/winline/?label=footer-bonus" class="icon icon-bonus">
+                                                                                            1 000 ₽
+                                                                                    </a>
+                                                                        <div class="buttons">
+                                                                                    <a href="/bukmekerskye-kontory/winline/" class="button ghost">
+                                                Обзор
+                                            </a>
+                                                                                                                            <a href="/go/winline/?label=books-footer" target="_blank" rel="nofollow" class="button">
+                                                На сайт
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                            <div class="bookmaker-row">
+                                    <a class="img-box" href="/bukmekerskye-kontory/1xstavka/">
+                                        <img src="https://legalbetstatic-a.akamaihd.net/28/37/5b598640c95c7_1532593728.png"
+                                          alt="Логотип букмекерской конторы 1хСтавка - legalbet.ru">
+                                    </a>
+                                                                                                                    <a target="_blank" rel="nofollow" href="/go/1xstavka/?label=footer-bonus" class="icon icon-bonus">
+                                                                                            4 000 ₽
+                                                                                    </a>
+                                                                        <div class="buttons">
+                                                                                    <a href="/bukmekerskye-kontory/1xstavka/" class="button ghost">
+                                                Обзор
+                                            </a>
+                                                                                                                            <a href="/go/1xstavka/?label=books-footer" target="_blank" rel="nofollow" class="button">
+                                                На сайт
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                            <div class="bookmaker-row">
+                                    <a class="img-box" href="/bukmekerskye-kontory/liga-stavok/">
+                                        <img src="https://legalbetstatic-a.akamaihd.net/91/62/5c3d87a3a7f7b_1547536291.png"
+                                          alt="Логотип букмекерской конторы Лига Ставок - legalbet.ru">
+                                    </a>
+                                                                                                                    <a target="_blank" rel="nofollow" href="/go/liga-stavok/?label=footer-bonus" class="icon icon-bonus">
+                                                                                            3 000 ₽
+                                                                                    </a>
+                                                                        <div class="buttons">
+                                                                                    <a href="/bukmekerskye-kontory/liga-stavok/" class="button ghost">
+                                                Обзор
+                                            </a>
+                                                                                                                            <a href="/go/liga-stavok/?label=books-footer" target="_blank" rel="nofollow" class="button">
+                                                На сайт
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                            <div class="bookmaker-row">
+                                    <a class="img-box" href="/bukmekerskye-kontory/bk-leon/">
+                                        <img src="https://legalbetstatic-a.akamaihd.net/79/87/5a33908b5f248_1513328779.png"
+                                          alt="Логотип букмекерской конторы Леон - legalbet.ru">
+                                    </a>
+                                                                                                                    <a target="_blank" rel="nofollow" href="/go/bk-leon/?label=footer-bonus" class="icon icon-bonus">
+                                                                                            3 999 ₽
+                                                                                    </a>
+                                                                        <div class="buttons">
+                                                                                    <a href="/bukmekerskye-kontory/bk-leon/" class="button ghost">
+                                                Обзор
+                                            </a>
+                                                                                                                            <a href="/go/bk-leon/?label=books-footer" target="_blank" rel="nofollow" class="button">
+                                                На сайт
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                    </div>
+                                            <div class="col-md-6">
+                                                            <div class="bookmaker-row">
+                                    <a class="img-box" href="/bukmekerskye-kontory/mostbet-ru/">
+                                        <img src="https://legalbetstatic-a.akamaihd.net/98/18/5bbc86aac26e4_1539081898.png"
+                                          alt="Логотип букмекерской конторы Mostbet - legalbet.ru">
+                                    </a>
+                                                                        <div class="buttons">
+                                                                                    <a href="/bukmekerskye-kontory/mostbet-ru/" class="button ghost">
+                                                Обзор
+                                            </a>
+                                                                                                                            <a href="/go/mostbet-ru/?label=books-footer" target="_blank" rel="nofollow" class="button">
+                                                На сайт
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                            <div class="bookmaker-row">
+                                    <a class="img-box" href="/bukmekerskye-kontory/bk-olimp/">
+                                        <img src="https://legalbetstatic-a.akamaihd.net/27/85/5a338f8f310d8_1513328527.png"
+                                          alt="Логотип букмекерской конторы Олимп - legalbet.ru">
+                                    </a>
+                                                                                                                    <a target="_blank" rel="nofollow" href="/go/bk-olimp/?label=footer-bonus" class="icon icon-bonus">
+                                                                                            10 500 ₽
+                                                                                    </a>
+                                                                        <div class="buttons">
+                                                                                    <a href="/bukmekerskye-kontory/bk-olimp/" class="button ghost">
+                                                Обзор
+                                            </a>
+                                                                                                                            <a href="/go/bk-olimp/?label=books-footer" target="_blank" rel="nofollow" class="button">
+                                                На сайт
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                            <div class="bookmaker-row">
+                                    <a class="img-box" href="/bukmekerskye-kontory/pari-match-ru/">
+                                        <img src="https://legalbetstatic-a.akamaihd.net/92/20/5c5ac33ceabc3_1549452092.png"
+                                          alt="Логотип букмекерской конторы Париматч - legalbet.ru">
+                                    </a>
+                                                                                                                    <a target="_blank" rel="nofollow" href="/go/pari-match-ru/?label=footer-bonus" class="icon icon-bonus">
+                                                                                            2 500 ₽
+                                                                                    </a>
+                                                                        <div class="buttons">
+                                                                                    <a href="/bukmekerskye-kontory/pari-match-ru/" class="button ghost">
+                                                Обзор
+                                            </a>
+                                                                                                                            <a href="/go/pari-match-ru/?label=books-footer" target="_blank" rel="nofollow" class="button">
+                                                На сайт
+                                            </a>
+                                                                            </div>
+                                </div>
+                                                    </div>
+                                    </div>
+            </div>
+                                            <div class="notice icon icon-notice flex">
+                                    На правах рекламы
+                                                    <a class="more link md-hide flex-right" href="/rating/">Весь список</a>
+                                </div>
+                        </div>
+</section>
+<footer class="site-footer">
+    <div class="container">
+        <div class="site-footer-navigation">
+            <div class="row">
+                <div class="col-sm-6 col-lg-2">
+                    <div class="site-footer-nav">
+                        <div class="heading">Букмекеры</div>
+                        <ul class="gapped">
+                            <li><a class="link" href="/rating-user/">Народный рейтинг</a></li>
+                                                            <li><a class="link" href="/rating/">Рейтинг надежности</a></li>
+                                                        <li><a class="link" href="/rating-odds/">Рейтинг по коэф-там</a></li>
+                                                            <li><a class="link" href="/rating-bonus/">Букмекеры с бонусами</a></li>
+                                                                                        <li>
+                                    <a class="link" href="/list-forbidden/">Список запрещенных букмекеров</a>
+                                </li>
+                                                    </ul>
+                    </div>
+                </div>
+                                                                    <div class="col-sm-6 col-lg-2">
+                        <div class="site-footer-nav">
+                            <div class="heading">Прогнозы</div>
+                            <ul class="gapped">
+                                <li><a class="link"  href="/tips/today/">На сегодня</a></li>
+                                                                    <li>
+                                        <a class="link"  href="/tips/sport-futbol/">
+                                            На футбол
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="link"  href="/tips/category-expert/">
+                                            От экспертов
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="link"  href="/tips/category-handycaper/">
+                                            От гандикаперов
+                                        </a>
+                                    </li>
+                                                                <li><a class="link"  href="/tips/">Все прогнозы</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                                <div class="col-sm-6 col-lg-2">
+                    <div class="site-footer-nav">
+                        <div class="heading">Беттинг-центр</div>
+                        <ul class="gapped">
+                            <li><a class="link" href="/match-center/today/">Матчи на сегодня</a></li>
+                            <li><a class="link" href="/match-center/">Все матчи</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="site-footer-nav">
+                        <div class="heading">Блоги</div>
+                        <ul class="gapped">
+                                                                                        <li class="link">
+                                    <a href="/blogs/luchshee-na-legalbet/">
+                                        Лучшее на Legalbet
+                                    </a>
+                                </li>
+                                                        <li><a class="link" href="/best-posts/">Выбор редакции</a></li>
+                            <li><a class="link" href="/popular-posts/week/">Выбор пользователей</a></li>
+                            <li><a class="link" href="/blogs/">Все блоги</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="site-footer-nav">
+                        <div class="heading">База знаний</div>
+                        <ul class="gapped">
+                                                        <li><a class="link" href="/shkola-bettinga/">Школа ставок</a></li>
+                            <li><a class="link" href="/questions/">Вопрос - ответ</a></li>
+                                                                                    <li><a class="link" href="/faq/">FAQ</a></li>
+                                                                                        <li><a class="link" href="/tag/soveti-igrokov/">Советы игроков</a></li>
+                                                    </ul>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-2">
+                    <div class="site-footer-nav">
+                        <div class="heading">О сайте</div>
+                        <ul class="gapped">
+                                                        <li><a class="link" href="/contacts/">Контакты</a></li>
+                            <li><a class="link" href="/terms/">Правила сайта</a></li>
+                                                            <li><a class="link" href="/gdpr-policy/">Пользовательское соглашение</a></li>
+                                                                    <li><a class="link" href="/cookies-policy/">Политика Cookies</a></li>
+                                                                                    </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-center middle-footer">
+                                                <div class="col-sm-12  lg-hide">
+                <div class="age-limit">
+    <img src="https://legalbetweb-a.akamaihd.net/images/18.svg"/>
+    <div class="caption">
+        Для лиц<br>старше 18 лет
+    </div>
+</div>            </div>
+                    </div>
+    </div>
+    <div class="bottom-footer">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-sm-6 col-lg-2">
+                                        <div class="copyrights">© 2007 - 2019 Legalbet. Все права защищены. <!--noindex--><!--/noindex--></div>
+                </div>
+                <div class="sm-hide lg-show col-md-2">
+                    <div class="age-limit">
+    <img src="https://legalbetweb-a.akamaihd.net/images/18.svg"/>
+    <div class="caption">
+        Для лиц<br>старше 18 лет
+    </div>
+</div>                </div>
+                                    <div class="col-sm-6 col-md-3 col-lg-2 col-lg-right">
+                        <div class="developers">
+                                                        <a rel="nofollow" href="//www.scada.lv/ru" target="_blank">
+                                <div class="caption">
+                                    Дизайн<br>и поддержка                                </div>
+                                <div class="logo">
+                                    <img src="https://legalbetweb-a.akamaihd.net/images/scada-logo.svg">
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        <!--site footer end-->
+    </main>
+    <aside class="site-aside">
+                                    <section class="experts-rating aside">
+    <div class="header">
+        <div class="heading">Статистика ставок</div>
+                                    <div class="select inline expert-period">
+                        <div class="select-heading">30 дней</div>
+            <div class="select-dropdown">
+                                <div class="select-option" data-period="month">30 дней</div>
+                <div class="select-option" data-period="all">Всё время</div>
+            </div>
+        </div>
+    </div>
+    <div class="body">
+                    <div class="tabs small expert-group expert-group-select">
+                <a class="link active select-option" href="#" data-group="top">Топ-10</a>
+                <a class="link select-option" href="#" data-group="experts">Эксперты</a>
+                <a class="link select-option" href="#" data-group="handicappers">Гандикаперы</a>
+            </div>
+                
+    <div class="expert-period all tab-panel">
+        <div class="top tab-panel">
+                                        <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/igor-pankov/">
+                    <div class="caption">Панков</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">295</span> /<span class="draws"> 28</span> /<span class="loses"> 177</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +70 060 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/bados/">
+                    <div class="caption">bados</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">181</span> /<span class="draws"> 15</span> /<span class="loses"> 87</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +67 870 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/25/69/5763ee8dc4d7c_1466166925.jpg" srcset="https://legalbetstatic-a.akamaihd.net/32/68/5c88eaa00aeb9_1552476832.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/borha-pardo/">
+                    <div class="caption">Пардо</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">324</span> /<span class="draws"> 1</span> /<span class="loses"> 291</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +59 880 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/millki/">
+                    <div class="caption">Павел Боровко</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">179</span> /<span class="draws"> 3</span> /<span class="loses"> 95</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +52 210 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-svetlitca/">
+                    <div class="caption">Светлица</div>
+                                            <span class="today count">1</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">141</span> /<span class="draws"> 18</span> /<span class="loses"> 81</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +32 160 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/560e6b57ade3f_1443785559.jpg" srcset="https://legalbetstatic-a.akamaihd.net/59/64/5c88e92b9d14f_1552476459.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-vujtek/">
+                    <div class="caption">Вуйтек</div>
+                                            <span class="count">2</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">300</span> /<span class="draws"> 23</span> /<span class="loses"> 243</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +25 930 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/andrej-sadovoj/">
+                    <div class="caption">Садовой</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">131</span> /<span class="draws"> 15</span> /<span class="loses"> 69</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +25 610 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/95/52/576b894f06916_1466665295.jpg" srcset="https://legalbetstatic-a.akamaihd.net/83/66/5c88ea0b17797_1552476683.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladislav-baturin/">
+                    <div class="caption">Батурин</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">266</span> /<span class="draws"> 1</span> /<span class="loses"> 205</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +24 850 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/georgiy-makarov/">
+                    <div class="caption">Макаров</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">68</span> /<span class="draws"> 1</span> /<span class="loses"> 37</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +22 400 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/lucky-forecast/">
+                    <div class="caption">Lucky forecast</div>
+                                            <span class="count">2</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">111</span> /<span class="draws"> 8</span> /<span class="loses"> 75</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +19 230 ₽
+                            </div>
+        </div>
+    
+                    </div>
+        <div class="experts tab-panel">
+                                        <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/25/69/5763ee8dc4d7c_1466166925.jpg" srcset="https://legalbetstatic-a.akamaihd.net/32/68/5c88eaa00aeb9_1552476832.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/borha-pardo/">
+                    <div class="caption">Пардо</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">324</span> /<span class="draws"> 1</span> /<span class="loses"> 291</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +59 880 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/560e6b57ade3f_1443785559.jpg" srcset="https://legalbetstatic-a.akamaihd.net/59/64/5c88e92b9d14f_1552476459.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-vujtek/">
+                    <div class="caption">Вуйтек</div>
+                                            <span class="count">2</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">300</span> /<span class="draws"> 23</span> /<span class="loses"> 243</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +25 930 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/95/52/576b894f06916_1466665295.jpg" srcset="https://legalbetstatic-a.akamaihd.net/83/66/5c88ea0b17797_1552476683.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladislav-baturin/">
+                    <div class="caption">Батурин</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">266</span> /<span class="draws"> 1</span> /<span class="loses"> 205</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +24 850 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/89/18/5aa65bb18ef66_1520851889.jpg" srcset="https://legalbetstatic-a.akamaihd.net/15/67/5c88ea2bbde2a_1552476715.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/dmitrij-gerchikov/">
+                    <div class="caption">Герчиков</div>
+                                            <span class="count">2</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">93</span> /<span class="draws"> 6</span> /<span class="loses"> 69</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +14 200 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/62/96/5ca4bb0e19651_1554299662.png" srcset="https://legalbetstatic-a.akamaihd.net/57/96/5ca4bb0990d65_1554299657.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/rovshan-askerov/">
+                    <div class="caption">Аскеров</div>
+                                            <span class="today count">3</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">8</span> /<span class="draws"> 0</span> /<span class="loses"> 4</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +4 430 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/55ae299423265_1437477268.png" srcset="https://legalbetstatic-a.akamaihd.net/25/62/5c88e8414f339_1552476225.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/svetoch-anatobyshovets/">
+                    <div class="caption">Светоч</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">349</span> /<span class="draws"> 111</span> /<span class="loses"> 293</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -1 635 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/31/07/5c7794bb3b21a_1551340731.png"/>
+                                    </div>
+                <a class="name" href="/expert/valerij-nepomnyashij/">
+                    <div class="caption">Непомнящий</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">10</span> /<span class="draws"> 2</span> /<span class="loses"> 13</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -2 080 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/64/20/5c21b1c0d82fe_1545712064.png" srcset="https://legalbetstatic-a.akamaihd.net/95/67/5c88ea7bd46ec_1552476795.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/artem-baranov/">
+                    <div class="caption">Баранов</div>
+                                            <span class="count">4</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">187</span> /<span class="draws"> 7</span> /<span class="loses"> 192</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -3 860 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/12/51/5bbb0c9801b3e_1538985112.png" srcset="https://legalbetstatic-a.akamaihd.net/81/24/5ca1dfe200870_1554112481.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/georgij-bezshansov/">
+                    <div class="caption">Безшансов</div>
+                                            <span class="count">2</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">230</span> /<span class="draws"> 22</span> /<span class="loses"> 246</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -9 290 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/18/31/591ed61e29ace_1495193118.jpg" srcset="https://legalbetstatic-a.akamaihd.net/35/31/5c88dc2fc1db4_1552473135.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/mihail-mossakovskij/">
+                    <div class="caption">Моссаковский</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">234</span> /<span class="draws"> 18</span> /<span class="loses"> 232</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -10 720 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/65/55/5b83d1bd28d9d_1535365565.jpg" srcset="https://legalbetstatic-a.akamaihd.net/70/71/5c88ebf24a0b9_1552477170.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladislav-radimov/">
+                    <div class="caption">Радимов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">39</span> /<span class="draws"> 11</span> /<span class="loses"> 53</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -12 460 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/55ae2892ce268_1437477010.png" srcset="https://legalbetstatic-a.akamaihd.net/37/70/5c88eb6d83f65_1552477037.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/roman-guttcajt/">
+                    <div class="caption">Гутцайт</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">268</span> /<span class="draws"> 60</span> /<span class="loses"> 264</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -22 050 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/55ae29c43272a_1437477316.png"/>
+                                    </div>
+                <a class="name" href="/expert/storonnie-eksperti/">
+                    <div class="caption">Сторонние</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">264</span> /<span class="draws"> 16</span> /<span class="loses"> 281</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -51 200 ₽
+                            </div>
+        </div>
+    
+                    </div>
+        <div class="handicappers tab-panel">
+                                        <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/igor-pankov/">
+                    <div class="caption">Панков</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">295</span> /<span class="draws"> 28</span> /<span class="loses"> 177</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +70 060 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/bados/">
+                    <div class="caption">bados</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">181</span> /<span class="draws"> 15</span> /<span class="loses"> 87</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +67 870 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/millki/">
+                    <div class="caption">Павел Боровко</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">179</span> /<span class="draws"> 3</span> /<span class="loses"> 95</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +52 210 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-svetlitca/">
+                    <div class="caption">Светлица</div>
+                                            <span class="today count">1</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">141</span> /<span class="draws"> 18</span> /<span class="loses"> 81</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +32 160 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/andrej-sadovoj/">
+                    <div class="caption">Садовой</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">131</span> /<span class="draws"> 15</span> /<span class="loses"> 69</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +25 610 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/georgiy-makarov/">
+                    <div class="caption">Макаров</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">68</span> /<span class="draws"> 1</span> /<span class="loses"> 37</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +22 400 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/lucky-forecast/">
+                    <div class="caption">Lucky forecast</div>
+                                            <span class="count">2</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">111</span> /<span class="draws"> 8</span> /<span class="loses"> 75</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +19 230 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/gregchel/">
+                    <div class="caption">Gregchel</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">143</span> /<span class="draws"> 10</span> /<span class="loses"> 107</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +17 860 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/villi/">
+                    <div class="caption">ViLLi</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">103</span> /<span class="draws"> 27</span> /<span class="loses"> 86</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +17 750 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/evgenij-trifonov/">
+                    <div class="caption">Трифонов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">155</span> /<span class="draws"> 17</span> /<span class="loses"> 106</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +15 310 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/voland96/">
+                    <div class="caption">Voland96</div>
+                                            <span class="count">2</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">69</span> /<span class="draws"> 0</span> /<span class="loses"> 43</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +14 320 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/sven-arvidsson/">
+                    <div class="caption">Sven Arvidsson</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">69</span> /<span class="draws"> 11</span> /<span class="loses"> 51</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +13 230 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/vanyadenver/">
+                    <div class="caption">VanyaDenver</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">223</span> /<span class="draws"> 20</span> /<span class="loses"> 191</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +11 100 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/estonec/">
+                    <div class="caption">estonec</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">68</span> /<span class="draws"> 20</span> /<span class="loses"> 36</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +10 690 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/alex2018/">
+                    <div class="caption">Alex2018</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">133</span> /<span class="draws"> 7</span> /<span class="loses"> 110</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +10 330 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/kawhi2/">
+                    <div class="caption">Kawhi2</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">32</span> /<span class="draws"> 0</span> /<span class="loses"> 21</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +8 030 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/captain7/">
+                    <div class="caption">Captain7</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">78</span> /<span class="draws"> 15</span> /<span class="loses"> 68</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +6 960 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/mma-fan/">
+                    <div class="caption">ММА Fan</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">62</span> /<span class="draws"> 2</span> /<span class="loses"> 44</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +5 780 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/ptolmees/">
+                    <div class="caption">Ptolmees</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">54</span> /<span class="draws"> 28</span> /<span class="loses"> 54</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +3 160 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/timur-almazov/">
+                    <div class="caption">Алмазов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">87</span> /<span class="draws"> 6</span> /<span class="loses"> 60</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +2 800 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/arkadiy_bets/">
+                    <div class="caption">Arkadiy_bets</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">97</span> /<span class="draws"> 6</span> /<span class="loses"> 79</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -1 080 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/storonnie-kapperi/">
+                    <div class="caption">Сторонние капперы</div>
+                                            <span class="today count">5</span>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">1647</span> /<span class="draws"> 174</span> /<span class="loses"> 1434</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -22 180 ₽
+                            </div>
+        </div>
+    
+                    </div>
+    </div>
+    <div class="expert-period month tab-panel active">
+        <div class="top tab-panel active">
+                                        <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/560e6b57ade3f_1443785559.jpg" srcset="https://legalbetstatic-a.akamaihd.net/59/64/5c88e92b9d14f_1552476459.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-vujtek/">
+                    <div class="caption">Вуйтек</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">22</span> /<span class="draws"> 0</span> /<span class="loses"> 8</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +9 860 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/64/20/5c21b1c0d82fe_1545712064.png" srcset="https://legalbetstatic-a.akamaihd.net/95/67/5c88ea7bd46ec_1552476795.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/artem-baranov/">
+                    <div class="caption">Баранов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">23</span> /<span class="draws"> 2</span> /<span class="loses"> 13</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +8 750 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/bados/">
+                    <div class="caption">bados</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">11</span> /<span class="draws"> 0</span> /<span class="loses"> 5</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +5 590 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/alex2018/">
+                    <div class="caption">Alex2018</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">8</span> /<span class="draws"> 0</span> /<span class="loses"> 3</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +4 980 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-svetlitca/">
+                    <div class="caption">Светлица</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">7</span> /<span class="draws"> 1</span> /<span class="loses"> 2</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +3 840 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/villi/">
+                    <div class="caption">ViLLi</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 0</span> /<span class="loses"> 1</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +3 680 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/voland96/">
+                    <div class="caption">Voland96</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">23</span> /<span class="draws"> 0</span> /<span class="loses"> 17</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +3 100 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/55ae299423265_1437477268.png" srcset="https://legalbetstatic-a.akamaihd.net/25/62/5c88e8414f339_1552476225.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/svetoch-anatobyshovets/">
+                    <div class="caption">Светоч</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">6</span> /<span class="draws"> 5</span> /<span class="loses"> 2</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +2 840 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/millki/">
+                    <div class="caption">Павел Боровко</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">23</span> /<span class="draws"> 1</span> /<span class="loses"> 19</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +2 360 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/andrej-sadovoj/">
+                    <div class="caption">Садовой</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">4</span> /<span class="draws"> 1</span> /<span class="loses"> 1</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +2 190 ₽
+                            </div>
+        </div>
+    
+                    </div>
+        <div class="experts tab-panel">
+                                        <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/560e6b57ade3f_1443785559.jpg" srcset="https://legalbetstatic-a.akamaihd.net/59/64/5c88e92b9d14f_1552476459.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-vujtek/">
+                    <div class="caption">Вуйтек</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">22</span> /<span class="draws"> 0</span> /<span class="loses"> 8</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +9 860 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/64/20/5c21b1c0d82fe_1545712064.png" srcset="https://legalbetstatic-a.akamaihd.net/95/67/5c88ea7bd46ec_1552476795.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/artem-baranov/">
+                    <div class="caption">Баранов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">23</span> /<span class="draws"> 2</span> /<span class="loses"> 13</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +8 750 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/55ae299423265_1437477268.png" srcset="https://legalbetstatic-a.akamaihd.net/25/62/5c88e8414f339_1552476225.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/svetoch-anatobyshovets/">
+                    <div class="caption">Светоч</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">6</span> /<span class="draws"> 5</span> /<span class="loses"> 2</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +2 840 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/55ae29c43272a_1437477316.png"/>
+                                    </div>
+                <a class="name" href="/expert/storonnie-eksperti/">
+                    <div class="caption">Сторонние</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 0</span> /<span class="loses"> 4</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +1 890 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/65/55/5b83d1bd28d9d_1535365565.jpg" srcset="https://legalbetstatic-a.akamaihd.net/70/71/5c88ebf24a0b9_1552477170.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladislav-radimov/">
+                    <div class="caption">Радимов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">8</span> /<span class="draws"> 1</span> /<span class="loses"> 7</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +1 480 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/62/96/5ca4bb0e19651_1554299662.png" srcset="https://legalbetstatic-a.akamaihd.net/57/96/5ca4bb0990d65_1554299657.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/rovshan-askerov/">
+                    <div class="caption">Аскеров</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 0</span> /<span class="loses"> 4</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +1 440 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/89/18/5aa65bb18ef66_1520851889.jpg" srcset="https://legalbetstatic-a.akamaihd.net/15/67/5c88ea2bbde2a_1552476715.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/dmitrij-gerchikov/">
+                    <div class="caption">Герчиков</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">6</span> /<span class="draws"> 0</span> /<span class="loses"> 4</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +1 410 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/95/52/576b894f06916_1466665295.jpg" srcset="https://legalbetstatic-a.akamaihd.net/83/66/5c88ea0b17797_1552476683.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/vladislav-baturin/">
+                    <div class="caption">Батурин</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">9</span> /<span class="draws"> 0</span> /<span class="loses"> 7</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +350 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/uploads/img1/default/55ae2892ce268_1437477010.png" srcset="https://legalbetstatic-a.akamaihd.net/37/70/5c88eb6d83f65_1552477037.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/roman-guttcajt/">
+                    <div class="caption">Гутцайт</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">6</span> /<span class="draws"> 0</span> /<span class="loses"> 5</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -270 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/31/07/5c7794bb3b21a_1551340731.png"/>
+                                    </div>
+                <a class="name" href="/expert/valerij-nepomnyashij/">
+                    <div class="caption">Непомнящий</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">8</span> /<span class="draws"> 2</span> /<span class="loses"> 8</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -480 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/18/31/591ed61e29ace_1495193118.jpg" srcset="https://legalbetstatic-a.akamaihd.net/35/31/5c88dc2fc1db4_1552473135.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/mihail-mossakovskij/">
+                    <div class="caption">Моссаковский</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">13</span> /<span class="draws"> 5</span> /<span class="loses"> 15</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -2 350 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/25/69/5763ee8dc4d7c_1466166925.jpg" srcset="https://legalbetstatic-a.akamaihd.net/32/68/5c88eaa00aeb9_1552476832.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/borha-pardo/">
+                    <div class="caption">Пардо</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">4</span> /<span class="draws"> 0</span> /<span class="loses"> 8</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -2 400 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetstatic-a.akamaihd.net/12/51/5bbb0c9801b3e_1538985112.png" srcset="https://legalbetstatic-a.akamaihd.net/81/24/5ca1dfe200870_1554112481.png 2x"/>
+                                    </div>
+                <a class="name" href="/expert/georgij-bezshansov/">
+                    <div class="caption">Безшансов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">36</span> /<span class="draws"> 5</span> /<span class="loses"> 48</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -15 100 ₽
+                            </div>
+        </div>
+    
+                    </div>
+        <div class="handicappers tab-panel">
+                                        <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/bados/">
+                    <div class="caption">bados</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">11</span> /<span class="draws"> 0</span> /<span class="loses"> 5</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +5 590 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/alex2018/">
+                    <div class="caption">Alex2018</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">8</span> /<span class="draws"> 0</span> /<span class="loses"> 3</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +4 980 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/vladimir-svetlitca/">
+                    <div class="caption">Светлица</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">7</span> /<span class="draws"> 1</span> /<span class="loses"> 2</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +3 840 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/villi/">
+                    <div class="caption">ViLLi</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 0</span> /<span class="loses"> 1</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +3 680 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/voland96/">
+                    <div class="caption">Voland96</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">23</span> /<span class="draws"> 0</span> /<span class="loses"> 17</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +3 100 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/millki/">
+                    <div class="caption">Павел Боровко</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">23</span> /<span class="draws"> 1</span> /<span class="loses"> 19</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +2 360 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/andrej-sadovoj/">
+                    <div class="caption">Садовой</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">4</span> /<span class="draws"> 1</span> /<span class="loses"> 1</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +2 190 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/igor-pankov/">
+                    <div class="caption">Панков</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">6</span> /<span class="draws"> 0</span> /<span class="loses"> 4</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +1 770 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/georgiy-makarov/">
+                    <div class="caption">Макаров</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 0</span> /<span class="loses"> 5</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +680 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/estonec/">
+                    <div class="caption">estonec</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 2</span> /<span class="loses"> 3</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +520 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/mma-fan/">
+                    <div class="caption">ММА Fan</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 0</span> /<span class="loses"> 3</span>
+                </div>
+            </div>
+                                                                                                                                    <div class="profit green-text">
+                                    +480 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/lucky-forecast/">
+                    <div class="caption">Lucky forecast</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">7</span> /<span class="draws"> 1</span> /<span class="loses"> 6</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -570 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/ptolmees/">
+                    <div class="caption">Ptolmees</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">2</span> /<span class="draws"> 0</span> /<span class="loses"> 4</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -1 000 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/timur-almazov/">
+                    <div class="caption">Алмазов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">1</span> /<span class="draws"> 0</span> /<span class="loses"> 2</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -1 320 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/kawhi2/">
+                    <div class="caption">Kawhi2</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">1</span> /<span class="draws"> 0</span> /<span class="loses"> 3</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -2 150 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/arkadiy_bets/">
+                    <div class="caption">Arkadiy_bets</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">5</span> /<span class="draws"> 1</span> /<span class="loses"> 6</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -2 150 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/sven-arvidsson/">
+                    <div class="caption">Sven Arvidsson</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">13</span> /<span class="draws"> 2</span> /<span class="loses"> 14</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -2 360 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/evgenij-trifonov/">
+                    <div class="caption">Трифонов</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">1</span> /<span class="draws"> 1</span> /<span class="loses"> 4</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -3 250 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/captain7/">
+                    <div class="caption">Captain7</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">1</span> /<span class="draws"> 1</span> /<span class="loses"> 9</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -8 060 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/vanyadenver/">
+                    <div class="caption">VanyaDenver</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">19</span> /<span class="draws"> 3</span> /<span class="loses"> 26</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -9 700 ₽
+                            </div>
+        </div>
+            <div class="expert-row">
+            <div class="left-side">
+                                <div class="img-box">
+                                            <img src="https://legalbetweb-a.akamaihd.net/img/caper/caper_icon.png"/>
+                                    </div>
+                <a class="name" href="/expert/storonnie-kapperi/">
+                    <div class="caption">Сторонние капперы</div>
+                                    </a>
+                <div class="stats">
+                    <span class="wins">102</span> /<span class="draws"> 13</span> /<span class="loses"> 112</span>
+                </div>
+            </div>
+                                                                                                                <div class="profit red-text">
+                                    -17 890 ₽
+                            </div>
+        </div>
+    
+                    </div>
+    </div>
+
+        <a class="more link" href="/expert/stat/all/">Вся статистика</a>
+    </div>
+</section>
+<script>
+    var selectedStatTab = {"group":"top","period":"month"};
+</script>
+
+
+            
+                            <section class="promo-articles">
+                    							 
+                                                                                <a class="section-banner banner-wrap" href="/tips-contest/" >
+                                                <div class="aside-banner wepay-banner" style="background-color: #004f9a">
+    <div class="heading heading-3">Эксперт по экспертам</div>
+    <div class="image">
+        <div class="img-box">
+            <img src="https://legalbetweb-a.akamaihd.net/img/custom-template/expert-2-x-ill.png" srcset="https://legalbetweb-a.akamaihd.net/img/custom-template/expert-2-x-ill@2x.png 2x">
+        </div>
+        <div class="wave"><img src="https://legalbetweb-a.akamaihd.net/img/custom-template/expert-2-x-ill-bg.svg"></div>
+    </div>
+    <div class="display-text">50 000 ₽</div>
+    <div class="caption">в месяц</div>
+    <div class="description">Пройдет ли прогноз эксперта? Голосуем «за» или «против»!</div>
+    <div class="button banner-btn">
+        Узнайте больше
+        <div class="icon icon-arrow-right" style="background-color: #004f9a"></div>
+    </div>
+</div>
+                                                                </a>
+                    					 
+                                                                                <a class="section-banner banner-wrap" href="/match-center/" >
+                                                <div class="aside-banner betting-banner dark-text" style="background-color: #4edb6a">
+    <div class="heading heading-3">
+        Актуальная информация о матчах
+            </div>
+    <div class="image">
+        <div class="img-box"><img src="https://legalbetweb-a.akamaihd.net/img/betting-ill.png" srcset="https://legalbetweb-a.akamaihd.net/img/betting-ill@2x.png 2x"></div>
+        <div class="wave"><img src="https://legalbetweb-a.akamaihd.net/img/betting-bg.svg"></div>
+    </div>
+    <div class="display-text">
+        Беттинг<br>центр
+    </div>
+    <div class="description">
+        Самые свежие составы, новости, коэффициенты, прогнозы
+    </div>
+    <div class="button banner-btn">
+        Перейти
+        <div class="icon icon-arrow-right" style="background-color: #4edb6a"></div>
+    </div>
+</div>
+                                                                </a>
+                    					 
+                                                                                <a class="section-banner banner-wrap" href="/payout/" >
+                                                <div class="aside-banner wepay-banner" style="background-color: #824db2">
+    <div class="heading heading-3">
+        Мы выплатили
+            </div>
+    <div class="image">
+        <div class="img-box"><img src="https://legalbetweb-a.akamaihd.net/img/wepay-ill.png" srcset="https://legalbetweb-a.akamaihd.net/img/wepay-ill@2x.png 2x"></div>
+        <div class="wave"><img src="https://legalbetweb-a.akamaihd.net/img/wepay-bg.svg"></div>
+    </div>
+    <div class="display-text">8 050 948 ₽</div>
+    <div class="caption">
+        в наших конкурсах с 2007 года
+    </div>
+    <div class="description">
+        Участвуйте в конкурсах на Legalbet
+    </div>
+    <div class="button banner-btn">
+        Перейти
+        <div class="icon icon-arrow-right" style="background-color: #824db2"></div>
+    </div>
+</div>
+                                                                </a>
+                    					 
+                                                                                <a class="section-banner banner-wrap" href="/we-helped/" >
+                                                <div class="aside-banner dark-text" style="background-color: #f7d31b">
+    <div class="heading heading-3">
+        Мы помогаем игрокам
+            </div>
+    <div class="image">
+      <div class="img-box"><img src="https://legalbetweb-a.akamaihd.net/img/help-ill.png" srcset="https://legalbetweb-a.akamaihd.net/img/help-ill@2x.png 2x"></div>
+      <div class="wave"><img src="https://legalbetweb-a.akamaihd.net/img/help-bg.svg"></div>
+    </div>
+            <div class="display-text">15 161 214 ₽</div>
+        <div class="caption">
+        букмекеры выплатили игрокам благодаря нашей помощи
+    </div>
+    <div class="description">
+        Проблемы с букмекерами? Обращайтесь, постараемся помочь
+    </div>
+    <div class="button banner-btn">
+        Перейти
+        <div class="icon icon-arrow-right" style="background-color: #f7d31b"></div>
+    </div>
+</div>
+
+                                                                </a>
+                    	
+                </section>
+                        </aside>
+</div>
+
+
+
+
+		<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.1.11.min.js"></script>
+    <script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/mobile/jquery.mobile.min.js"></script>
+    <script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/mobile/swipeupdown.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-29/scripts/libraries.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/animated_label.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/search.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery-ui-1.10.4.custom.min.js"></script>
+    	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.placeholder.min.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.text-overflow2.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-31/js/application-fix.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-MB-77/js/login-form.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.scroolly.js"></script>
+    <script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/lazy/jquery.lazy.min.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/captcha.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery-scrollto.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.prettyPhoto.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.bpopup.min.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/subscription.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/notify.min.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-MB-76/scripts/notify.styles.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/admin/jquery-file-upload/jquery.iframe-transport.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/admin/jquery-file-upload/jquery.fileupload.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/admin/jquery-file-upload/jquery.fileupload-process.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/lang-ru.js"></script>
+    	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/froala.keys.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-61/js/froala-text.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-66/scripts/intel.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-14/js/comment.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.storageapi.min.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/new_post_menu_count.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/ajax-data.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/search-user-select.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/jquery.scrollbar.min.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/fr-spoiler.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/social_auth/social-auth.js"></script>
+		<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-44/scripts/fileuploader/file_uploader_main.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/dropdown.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-74/scripts/experts/experts.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-61/scripts/infinitepager/infinitepager.js"></script>
+    <script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-61/scripts/datarefresher/datarefresher.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/banners.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-MB-50/scripts/mobile/main.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/bpopup-wrap.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/to-top-side.js"></script>
+	<script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/scripts/dragscroll/dragscroll.js"></script>
+
+    		<!-- Begin Me-Talk -->
+		<script type='text/javascript'>
+            (function(d, w, m) {
+                window.supportAPIMethod = m;
+                var s = d.createElement('script');
+                s.type ='text/javascript'; s.id = 'supportScript'; s.charset = 'utf-8';
+                s.async = true;
+                var id = '8a1401e5cecebc3de29e785505945d1d';
+                s.src = '//me-talk.ru/support/support.js?h='+id;
+                var sc = d.getElementsByTagName('script')[0];
+                w[m] = w[m] || function() { (w[m].q = w[m].q || []).push(arguments); };
+                if (sc) sc.parentNode.insertBefore(s, sc);
+                else d.documentElement.firstChild.appendChild(s);
+				/*
+				 var s2 = d.createElement('script');
+				 s2.type ='text/javascript';
+				 s2.async = true;
+				 s2.src = 'https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/support-chat.js';
+				 if (sc) sc.parentNode.insertBefore(s2, sc);
+				 else d.documentElement.firstChild.appendChild(s2);
+				 */
+            })(document, window, 'MeTalk');
+		</script>
+		<!-- End Me-Talk -->
+		<script defer type='text/javascript' src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/support-chat.js"></script>
+        <script type="text/javascript">
+	$(function(){
+		if((siteLocale == 'kk' && geoCountry == 'RU') || window.location.hash == '#iamvisitorfromru'){
+			return; 
+		}
+    	// referral link: /goto/alRj/
+    	var reRef = /\/goto\/([^\/]+)\//;
+    	// referral link: /go/leon/
+    	// referral link: /click/leon/ - version 2 (adsbridge support)
+    	var reRefGo = /\/go\/([^\/]+)\//;
+    	var refs = {"https:\/\/aff1xstavka.top\/L?tag=s_21666m_1341c_&site=21666&ad=1341":"1xstavka","http:\/\/wlligastavok.iaofr.com\/wl\/clk\/?btag=a_570b_157":"liga-stavok","https:\/\/winline.ru\/freebet1000\/?btag=a_2404b_268c_&3":"winline","https:\/\/www.leon.ru\/?wm=62406609":"bk-leon","https:\/\/www.olimp.bet?utm_medium=refer&utm_source=legalbet.ru&utm_campaign=refer_legalbet.ru_description_rkolimp":"bk-olimp","https:\/\/betcity.ru\/ru?refcode=p18579p3098609pe3e0&icm=2&subid=868_19720&utm_source=19720&utm_medium=directlink&utm_campaign=Ad09":"bk-betcity","http:\/\/www.paripartners.ru\/C.ashx?btag=a_9888b_791c_&affid=5787&siteid=9888&adid=791&c=":"pari-match-ru","https:\/\/bingoboom.ru\/?utm_source=1519&utm_medium=legalbet-ru&utm_campaign=none&utm_content=none":"bingo-bum","https:\/\/sports.bwin.ru\/ru\/sports?wm=4584244&utm_source=legalbet&utm_medium=PP&utm_campaign=&utm_content=profile":"bwin-ru","https:\/\/mostbetlegal.com\/VbfS\/0":"mostbet-ru","Vjya":"1xstavka","jKQb":"liga-stavok","alkX":"pari-match-ru"};
+    	$('a').each(function(){
+        	var ok = false;
+    		if(reRef.test(this.href) || reRefGo.test(this.href) || typeof refs[this.href] != 'undefined'){
+    			var matchedOld = this.href.match(reRef);
+    			var matchedGo = this.href.match(reRefGo);
+    			var matched = matchedOld !== null && typeof matchedOld[1] != 'undefined' && refs[matchedOld[1]] 
+    				? refs[matchedOld[1]] 
+    				: (matchedGo !== null && typeof matchedGo[1] != 'undefined' ? matchedGo[1] : null);
+    			var book = refs[this.href] || matched;
+    			if(book == null){
+    				return;
+    			}
+    			ok = true;
+    			$(this).on('click', function(e){
+    				lauchRefLinkClick(this.href, book, $(this).attr('target') == '_blank', getQueryParam(this.href, 'label'));
+    			});
+    		}
+    		if(!ok){
+        		var book = $(this).attr('data-book');
+        		if(typeof book !== typeof undefined && book !== false){
+        			$(this).on('click', function(e){
+        				lauchRefLinkClick(this.href, book, $(this).attr('target') == '_blank', 'unknown');
+        			});
+        		}
+    		}
+    	});
+	});
+
+	var lauchRefLinkClick = function(href, name, blank, label)
+	{
+		if(typeof ga !== 'undefined'){
+			ga('send', 'event', { 
+				'eventCategory': name,
+				'eventAction': 'conversion',
+				'eventLabel': label
+			});
+			ga('send', 'event', {
+				'eventCategory': 'Реферальные ссылки',
+				'eventAction': 'Переход',
+				'eventLabel': href 
+			});
+		}
+		if(typeof intelYaCounterId !== 'undefined' && typeof window['yaCounter' + intelYaCounterId] == 'object'){
+			window['yaCounter' + intelYaCounterId].reachGoal('goal-' + name, {affcode:href,label:label});
+			window['yaCounter' + intelYaCounterId].reachGoal('goal-referral-links', {affcode:href,label:label});
+		}
+		if(typeof _paq !== 'undefined'){
+			_paq.push(['trackEvent', 'Referral links', name, href]);
+		}
+		if(typeof fbq !== 'undefined'){ 
+			fbq('trackCustom', 'ButtonClick', {content_name: name, label: label});
+		}
+		if(!blank){
+			return false;
+		}
+	}
+	var getQueryParam = function(uri, name)
+	{
+        name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+        var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(uri);
+        if(results == null){
+	    	return "";
+		}else{
+	   		return results[1];
+		}
+	}
+</script>
+
+
+
+<script>
+    $(function () {
+        setTimeout(function () {
+            intel.ajaxData.send();
+        }, 1);
+    });
+</script>
+    
+    <script defer src="https://legalbetweb-a.akamaihd.net/assets/LB-TB-1/js/_base/error.js"></script>
+
+</body>
+</html>

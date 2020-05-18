@@ -262,7 +262,7 @@
                         </tr>                          
                         {% for history_sample in history_list %}                
                             <tr class="child_center">
-                                <td class="text_center">{{ history_sample.id }}</td>
+                                <td class="text_center">{{ history_sample.record_num }}</td>
                                 <td><input type="date" value="{{ history_sample.date_taken|date:'Y-m-d' }}"/></td>
                                 <td><input type="date" value="{{ history_sample.date_return|date:'Y-m-d' }}"/></td>
                                 <td>{{ history_sample.place }}</td>
@@ -272,7 +272,7 @@
                                 <td>{{ history_sample.comment }}</td>
                                 {% if user.is_authenticated %}
                                     <td class="text_center">
-                                        <input type="radio" name="his_radio" value="{{ history_sample.id }}"> 
+                                        <input type="radio" name="his_radio" value="{{ history_sample.record_num }}"> 
                                     </td>
                                 {% endif %}
                             </tr>        

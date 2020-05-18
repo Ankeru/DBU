@@ -9,6 +9,9 @@ def images_path():
 def label_path():
     return os.path.join(settings.MEDIA_ROOT, 'labels/')
 
+def doc_path():
+    return os.path.join(settings.MEDIA_ROOT, 'doc/')
+
 class Entity_type(models.Model):
     name = models.CharField(max_length=200, primary_key=True)
     img_link = models.ImageField(upload_to='images/', blank=True)
@@ -25,14 +28,14 @@ class Entity(models.Model):
     spec_check = models.BooleanField()
     date_made = models.DateField(null=True, blank=True)
     date_delivered = models.DateField(null=True, blank=True)
-    doc_delivered = models.FilePathField(path=label_path(), blank=True)
+    doc_delivered = models.FilePathField(path=doc_path(), blank=True)
     doc_delivered_original = models.CharField(max_length=200, blank=True)
     label = models.FilePathField(path=label_path(), blank=True)
     label_original = models.CharField(max_length=200, blank=True)
     note = models.CharField(max_length=400, blank=True) 
 
 class History(models.Model):    
-    id =  models.AutoField(auto_created=True, primary_key=True)  
+    record_num =  models.BigIntegerField(blank=False)  
     serial_num = models.ForeignKey(Entity, on_delete=models.CASCADE)
     date_taken = models.DateField(null=True, blank=True)
     date_return = models.DateField(null=True, blank=True)

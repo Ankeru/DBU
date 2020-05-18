@@ -88,7 +88,7 @@
                           {% if user.is_authenticated %}
                               <select name="user_taken">
                                 {% for user_ in history_sample.user.taken %}                
-                                  <option> {{ user_.username }}</option>                  
+                                  <option>{{ user_.username }}</option>                  
                                 {% endfor %}                          
                               </select>
                           {% endif %}

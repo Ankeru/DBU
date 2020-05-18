@@ -30,7 +30,7 @@ def proccess_index_form(request):
             ent = None  
         if ent is not None:
             if request.POST['free'] == "0":
-                his = History.objects.get(id=request.POST['number'])
+                his = History.objects.get(record_num=int(request.POST['number']), serial_num=Entity.objects.all().get(serial_num=request.POST.get('serial_num', default="notexist"), entity_name=Entity_type.objects.get(name=request.POST.get('type', default="notexist"))) )
                 his.date_return=request.POST['date_return']
                 his.admin_return=User.objects.get(username=request.POST['admin_return'])
                 his.comment=request.POST['comment']
@@ -39,7 +39,7 @@ def proccess_index_form(request):
                 ent.save()
             else:
                 his = History(   
-                    id = History.objects.all().count()+1,             
+                    record_num = History.objects.all().filter(serial_num=ent).count()+1,             
                     serial_num=ent,
                     date_taken=request.POST['date_taken'],            
                     user_taken=User.objects.get(username=request.POST['user_taken']),
@@ -74,13 +74,13 @@ def proccess_profile_form(request):
         # Работа с файлами
         doc_delivered_file = request.FILES.get('delivery_document')
         if doc_delivered_file is not None:
-            relative_path = os.path.join("labels", doc_delivered_file.name)
+            relative_path = os.path.join("doc", serial_num + "_doc." + doc_delivered_file.name.split('.')[-1])
             entity_sample.doc_delivered = os.path.join(MEDIA_URL, relative_path)             
             #Загружаем файл
             handle_uploaded_file(doc_delivered_file, relative_path)    
         label_ref_file = request.FILES.get('label_ref')
         if label_ref_file is not None:
-            relative_path = os.path.join("labels",label_ref_file.name) 
+            relative_path = os.path.join("labels", serial_num + "_label." + label_ref_file.name.split('.')[-1]) 
             entity_sample.label = os.path.join(MEDIA_URL, relative_path)                
             #Загружаем файл
             handle_uploaded_file(label_ref_file, relative_path)    
@@ -95,7 +95,8 @@ def proccess_type_form(request):
     my_file = request.FILES.get('img_file')
     change_type_sample = Entity_type.objects.get(name=type_)
     if my_file is not None:
-        relative_path = os.path.join("images",my_file.name)
+        # relative_path = os.path.join("images", my_file.name)
+        relative_path = os.path.join("images", type_ + "_img." + my_file.name.split('.')[-1])
         #Меняем путь до картинки        
         change_type_sample.img_link = os.path.join(MEDIA_URL, relative_path)             
         #Загружаем картитнку
@@ -105,12 +106,13 @@ def proccess_type_form(request):
     change_type_sample.save()
 
     return HttpResponseRedirect(reverse( "view_type", args=(type_, )))
+
 # Обработчик формы изменения истории
 def proccess_history_form(request):
     type_ = request.POST["hidden_type"]
     serial_num = request.POST["hidden_serial_num"]
     id_num = request.POST["seans_number"]
-    history_sample = History.objects.get(id=id_num,
+    history_sample = History.objects.get(record_num=int(id_num),
         serial_num=Entity.objects.get(serial_num=serial_num,
          entity_name=Entity_type.objects.get(name=type_)))
     history_sample.date_taken = request.POST["date_taken"]
@@ -166,9 +168,10 @@ def index(request):
         if ent is None:
             history_sample = None
         else:
-            history_sample = History.objects.all().filter(serial_num=ent).order_by('date_taken')  
+            history_sample = History.objects.all().filter(serial_num=ent).order_by('-record_num')  
             if (request.user.is_authenticated and request.user.is_staff) :                
                 should_fill = True
+                # Если сеансы уже были и признак "свободен" выставлен в False
                 if ((len(history_sample) > 0 ) and (not ent.status)):
                     history_sample = history_sample[0]
                     date_taken = history_sample.date_taken
@@ -177,7 +180,7 @@ def index(request):
                     admin_taken = history_sample.admin_taken.username
                     admin_return = request.user.username                    
                     comment = history_sample.comment
-                    number = History.objects.all().count()
+                    number = History.objects.all().filter(serial_num=ent).count()
                     place = history_sample.place
                 else:                   
                     date_taken = datetime.date.today()
@@ -188,9 +191,9 @@ def index(request):
                     comment = ""
                     place =""
                     if (len(history_sample) > 0 ):                
-                        number= History.objects.all().count() + 1
+                        number= History.objects.all().filter(serial_num=ent).count() + 1
                     else:
-                        number = "1"
+                        number = 1
             else:
                 if (len(history_sample) > 0 ):
                     history_sample = history_sample[0]
@@ -201,7 +204,7 @@ def index(request):
                     admin_return = ""                    
                     comment = history_sample.comment
                     place = history_sample.place
-                    number= History.objects.all().count()
+                    number= History.objects.all().filter(serial_num=ent).count()
                     should_fill = True
                 else:
                     should_fill = False              
@@ -230,7 +233,7 @@ def index(request):
                 }
     else:
         hist = {
-                "number": "1",
+                "number": 1,
                 "place": "",
                 "comment": "",
                 "date": {
@@ -284,7 +287,7 @@ def view_serial_num(request, type_, serial_num):
     entity_list = Entity.objects.all()
     entity_ = entity_list.get(entity_name=Entity_type.objects.all().get(name=type_), serial_num=serial_num)    
     type_sample = type_list.get(name=type_) 
-    history_list = History.objects.order_by("-id")
+    history_list = History.objects.all().filter(serial_num=entity_).order_by("-record_num")
     context = {
         "type": type_,
         "type_sample": type_sample,

@@ -39,9 +39,6 @@ function manage_par_sequence()
         td.eq(7).find('a').eq(0).text($(sorted_table).eq(index).attr("label"));
         td.eq(8).find('a').eq(0).text($(sorted_table).eq(index).attr("soft_link"));
       });
-
-
-
 }
 
 $('.table_manager').on("click", function(){    
