@@ -65,6 +65,7 @@ div#img_box{
     height: 267px;
     width: auto;
     float: right;
+    z-index: 2;
 }
 div#img_box div {
     text-align: center;

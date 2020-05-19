@@ -33,6 +33,8 @@ class Entity(models.Model):
     label = models.FilePathField(path=label_path(), blank=True)
     label_original = models.CharField(max_length=200, blank=True)
     note = models.CharField(max_length=400, blank=True) 
+    def __str__(self):
+        return self.serial_num
 
 class History(models.Model):    
     record_num =  models.BigIntegerField(blank=False)  
@@ -44,3 +46,5 @@ class History(models.Model):
     admin_return = models.ForeignKey(User, on_delete=models.DO_NOTHING, related_name='+', null=True, blank=True)
     place = models.CharField(max_length=200, blank=True)
     comment = models.CharField(max_length=400, null=True, blank=True)
+    def __str__(self):
+        return str(self.serial_num) + '_' + str(self.id) + "_history"

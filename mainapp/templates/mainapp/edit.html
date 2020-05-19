@@ -12,7 +12,7 @@
       <div class="container">
         {% if user.is_authenticated %}
           <div class="login_button">
-            <span>Вы вошли как <a href="{% url 'profiles' %}">{{ user.get_username }}</a></span> 
+            <span>Вы вошли как <a href="{% url 'profiles' uname %}">{{ user.get_username }}</a></span> 
             <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
           </div>            
         {% else %}
@@ -26,7 +26,7 @@
             <div class="menu">
                 <a href="{% url 'index' %}" class="ref_button">Главная</a>
                 <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
-                <a href="{% url 'profiles' %}" class="ref_button">Профили</a>
+                <a href="{% url 'profiles' uname %}" class="ref_button">Профили</a>
                 <a href="{% url 'edit' %}" class="ref_button" id="chosen_page">Добавление</a>
             </div>        
             <div class="mainpart">

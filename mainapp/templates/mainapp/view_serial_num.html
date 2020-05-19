@@ -12,7 +12,7 @@
         <div class="container">
           {% if user.is_authenticated %}
             <div class="login_button">
-                <span>Вы вошли как <a href="{% url 'profiles' %}">{{ user.get_username }}</a></span> 
+                <span>Вы вошли как <a href="{% url 'profiles' uname %}">{{ user.get_username }}</a></span> 
                 <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
             </div>            
           {% else %}
@@ -27,13 +27,13 @@
             <div class="menu">
                 <a href="{% url 'index' %}" class="ref_button">Главная</a>
                 <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
-                <a href="{% url 'profiles' %}" class="ref_button">Профили</a>
+                <a href="{% url 'profiles' uname%}" class="ref_button">Профили</a>
                 <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
             </div>
         
             <div class="mainpart">
-                <div id="tabs"><a href="{% url 'view' %}">Список</a>><a href="{% url 'view_type' type %}">{{ type }}</a>><a href="{% url 'view_serial_num' type serial_num %}">{{ serial_num }}</a></div>              
-                <form action={% url "proccess_type_form" %} method="POST" enctype="multipart/form-data">                
+                <div id="tabs"><a href="{% url 'view' %}" class="ref_button">Список</a>><a href="{% url 'view_type' type %}" class="ref_button">{{ type }}</a>><a href="{% url 'view_serial_num' type serial_num %}" class="ref_button" >{{ serial_num }}</a></div>              
+                <form action='{% url "proccess_type_form" %}' method="POST" enctype="multipart/form-data">                
                     {% csrf_token %}               
                     <div id="view_type">
                         <div id="img_box">
@@ -123,7 +123,7 @@
                             </div>
                             <div class="profile_property">
                                 <label for="label_ref">Этикетка: </label>
-                                <a href="{{ Entity.label }}" download>{% if Entity.label %}Скачать{% endif %}</a>
+                                <a href="{{ Entity.label }}" class="ref_button" download>{% if Entity.label %}Скачать{% endif %}</a>
                                 {% if user.is_authenticated %}
                                     <input type="file" id="label_ref" name="label_ref">
                                 {% endif%}
@@ -145,7 +145,7 @@
                             </div>
                             <div class="profile_property">
                                 <label for="delivery_document">Документ поставки: </label>
-                                <a href="{{ Entity.doc_delivered }}" download>{% if Entity.doc_delivered %}Скачать{% endif %}</a>
+                                <a href="{{ Entity.doc_delivered }}" class="ref_button" download>{% if Entity.doc_delivered %}Скачать{% endif %}</a>
                                 {% if user.is_authenticated %}
                                     <input type="file" id="delivery_document" name="delivery_document">
                                 {% endif%}
@@ -263,8 +263,8 @@
                         {% for history_sample in history_list %}                
                             <tr class="child_center">
                                 <td class="text_center">{{ history_sample.record_num }}</td>
-                                <td><input type="date" value="{{ history_sample.date_taken|date:'Y-m-d' }}"/></td>
-                                <td><input type="date" value="{{ history_sample.date_return|date:'Y-m-d' }}"/></td>
+                                <td><input type="date" value="{{ history_sample.date_taken|date:'Y-m-d' }}" readonly/></td>
+                                <td><input type="date" value="{{ history_sample.date_return|date:'Y-m-d' }}"readonly/></td>
                                 <td>{{ history_sample.place }}</td>
                                 <td>{{ history_sample.user_taken }}</td>
                                 <td>{{ history_sample.admin_taken }}</td>

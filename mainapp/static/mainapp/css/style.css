@@ -37,6 +37,8 @@ main {
 .ref_button {
     text-decoration: none;
     outline: none;
+    color: #13583f;
+    /* color: rgb(12, 63, 110) */
 }
 .menu a{    
     color: black;
@@ -52,6 +54,8 @@ main {
     text-decoration: none;  
     outline: none;
 }
+
+
 
 header .container div#pagename {
     height: 76px;

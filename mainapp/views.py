@@ -11,8 +11,10 @@ from django.conf.urls.static import static
 
 import os
 from DBU.settings import MEDIA_ROOT, MEDIA_URL, STATIC_URL
+import sys
 
-
+MAX_FILE_SIZE = 1*1024*1024
+MAX_PHOTO_SIZE = 1*1024*1024
 # Обработчик кнопки "Принять"/"Выдать"
 def proccess_index_form(request):
     try:
@@ -74,16 +76,18 @@ def proccess_profile_form(request):
         # Работа с файлами
         doc_delivered_file = request.FILES.get('delivery_document')
         if doc_delivered_file is not None:
-            relative_path = os.path.join("doc", serial_num + "_doc." + doc_delivered_file.name.split('.')[-1])
-            entity_sample.doc_delivered = os.path.join(MEDIA_URL, relative_path)             
-            #Загружаем файл
-            handle_uploaded_file(doc_delivered_file, relative_path)    
+            if doc_delivered_file.size <= MAX_FILE_SIZE:
+                relative_path = os.path.join("doc", serial_num + "_doc." + doc_delivered_file.name.split('.')[-1])
+                entity_sample.doc_delivered = os.path.join(MEDIA_URL, relative_path)             
+                #Загружаем файл
+                handle_uploaded_file(doc_delivered_file, relative_path)    
         label_ref_file = request.FILES.get('label_ref')
         if label_ref_file is not None:
-            relative_path = os.path.join("labels", serial_num + "_label." + label_ref_file.name.split('.')[-1]) 
-            entity_sample.label = os.path.join(MEDIA_URL, relative_path)                
-            #Загружаем файл
-            handle_uploaded_file(label_ref_file, relative_path)    
+            if label_ref_file.size <= MAX_FILE_SIZE:
+                relative_path = os.path.join("labels", serial_num + "_label." + label_ref_file.name.split('.')[-1]) 
+                entity_sample.label = os.path.join(MEDIA_URL, relative_path)                
+                #Загружаем файл
+                handle_uploaded_file(label_ref_file, relative_path)    
         # Сохранение изменений
         entity_sample.save()
     return HttpResponseRedirect(reverse( "view_serial_num", args=(type_,serial_num, )))
@@ -95,14 +99,20 @@ def proccess_type_form(request):
     my_file = request.FILES.get('img_file')
     change_type_sample = Entity_type.objects.get(name=type_)
     if my_file is not None:
-        # relative_path = os.path.join("images", my_file.name)
-        relative_path = os.path.join("images", type_ + "_img." + my_file.name.split('.')[-1])
-        #Меняем путь до картинки        
-        change_type_sample.img_link = os.path.join(MEDIA_URL, relative_path)             
-        #Загружаем картитнку
-        handle_uploaded_file(my_file, relative_path)    
+        if my_file.size <= MAX_PHOTO_SIZE:
+            # relative_path = os.path.join("images", my_file.name)
+            relative_path = os.path.join("images", type_ + "_img." + my_file.name.split('.')[-1])
+            #Меняем путь до картинки        
+            change_type_sample.img_link = os.path.join(MEDIA_URL, relative_path)             
+            #Загружаем картитнку
+            handle_uploaded_file(my_file, relative_path)    
     change_type_sample.soft_link = request.POST["loc_of_soft"]
     change_type_sample.additional_info = request.POST["additional_info"]
+    if request.POST.get('new_type_name_cb', False):
+        new_type_name = request.POST.get('new_type_name', "")
+        if new_type_name:
+            change_type_sample.name = new_type_name
+
     change_type_sample.save()
 
     return HttpResponseRedirect(reverse( "view_type", args=(type_, )))
@@ -127,9 +137,13 @@ def handle_uploaded_file(f, file_name):
     with open(os.path.join(MEDIA_ROOT, file_name), 'wb+') as dest:
         for chunk in f.chunks():
             dest.write(chunk)
-
+    
 def index(request):
     try:
+        if request.user.is_authenticated:
+            uname = request.user.username 
+        else:
+            uname = 'noname'
         # Entity_type
         type_list = Entity_type.objects.all()        
         if "chosen_type" in request.COOKIES:            
@@ -254,24 +268,46 @@ def index(request):
                 'type_list': type_list,                                      
                 'chosen_entity': ent,
                 'serial_num_list': serial_num_list,   
-                'history_sample':hist,                                                          
+                'history_sample':hist, 
+                'uname': uname,                                                         
                 }
     return render(request, 'mainapp/index.html', context)
 
 def edit(request):
-    type_list = Entity_type.objects.all()
-    context = {
-        "type_list": type_list, 
-    }
-    return render(request, 'mainapp/edit.html', context)
+    if request.user.is_authenticated:
+        type_list = Entity_type.objects.all()
+        if request.user.is_authenticated:
+                uname = request.user.username 
+        else:
+            uname = 'noname'
+        context = {
+            "type_list": type_list, 
+            'uname': uname,
+        }
+        return render(request, 'mainapp/edit.html', context)
+    else:
+        context = {}
+        # return render(request, 'registration/login.html', context)
+        return HttpResponseRedirect(reverse( 'login', args=()))
 
 def view(request):
-    Entity_list = Entity.objects.all()    
-    context = {"Entity_list": Entity_list}
+    Entity_list = Entity.objects.all()
+    if request.user.is_authenticated:
+            uname = request.user.username 
+    else:
+        uname = 'noname'    
+    context = {
+        "Entity_list": Entity_list,
+        'uname': uname,
+    }
     return render(request, 'mainapp/view.html', context)
 
 def view_type(request, type_):
     type_list = Entity_type.objects.all()
+    if request.user.is_authenticated:
+            uname = request.user.username 
+    else:
+        uname = 'noname'
     Entity_list = Entity.objects.all().filter(entity_name=Entity_type.objects.all().get(name=type_)) 
     type_sample = type_list.get(name=type_)
     context = {
@@ -279,11 +315,16 @@ def view_type(request, type_):
         "type": type_,
         "type_list": type_list, 
         "type_sample": type_sample,
+        'uname': uname,
     }
     return render(request, 'mainapp/view_type.html', context)
 
 def view_serial_num(request, type_, serial_num):
     type_list = Entity_type.objects.all()
+    if request.user.is_authenticated:
+            uname = request.user.username 
+    else:
+        uname = 'noname'
     entity_list = Entity.objects.all()
     entity_ = entity_list.get(entity_name=Entity_type.objects.all().get(name=type_), serial_num=serial_num)    
     type_sample = type_list.get(name=type_) 
@@ -297,6 +338,7 @@ def view_serial_num(request, type_, serial_num):
         "serial_num": serial_num,
         "history_list": history_list,
         "users_list": User.objects.all(),
+        'uname': uname,
     }
     return render(request, 'mainapp/view_serial_num.html', context)
 
@@ -313,10 +355,12 @@ def proccess_edit_form(request):
         extensible_type = Entity_type.objects.get(name=request.POST['chosen_type'])
         go_on_with_entityies = True
     if go_on_with_entityies:
+        items_edded = 0
         for i in range(1, int(request.POST['hidden_counter'])+1):
             # Проверяем, существует ли объект в словаре
             if request.POST.get('select_serial_num_'+str(i), False):
-                if not Entity.objects.filter(serial_num=request.POST['select_serial_num_'+str(i)]):
+                # Проверка, нет ли уже такого объекта
+                if not Entity.objects.filter(serial_num=request.POST['select_serial_num_'+str(i)], entity_name=extensible_type):                    
                     new_entity = Entity(
                         serial_num=request.POST['select_serial_num_'+str(i)],
                         entity_name=extensible_type,
@@ -345,15 +389,45 @@ def proccess_edit_form(request):
                         #Загружаем файл
                         handle_uploaded_file(label_ref_file, relative_path)                   
                     new_entity.save()
-    return HttpResponseRedirect(reverse( "edit", args=( )))
+                    items_edded = items_edded + 1
+    return HttpResponseRedirect(reverse( "edit_complete", args=(items_edded, )))
 
-def profiles(request):
+def profiles(request, uname):
     if request.user.is_authenticated:
+        history_list = History.objects.all().filter(user_taken=User.objects.get(username=uname),
+                                                    date_return=None)
         context = {
-            'user_list': User.objects.all() 
+            'user_list': User.objects.all(),
+            'uname': uname,
+            'history_list': history_list,
             }
         return render(request, 'mainapp/profiles.html', context)
     else:
         context = {}
-        return render(request, 'registration/login.html', context)
+        # return render(request, 'registration/login.html', context)
+        return HttpResponseRedirect(reverse( 'login', args=()))
+
+def profiles_edit(request):
+    if request.user.is_authenticated:
+        uname = request.user.username 
+    else:
+        uname = 'noname'
+    context = {
+            'uname': uname,            
+            }
+    return render(request, 'mainapp/profiles_edit.html', context)
+
+
+def edit_complete(request, added):
+    if request.user.is_authenticated:
+        uname = request.user.username 
+    else:
+        uname = 'noname'
+    context = {
+        "added_num": int(added),
+        'uname': uname, 
+            }
+    return render(request, 'mainapp/edit_complete.html', context)
+
+
 

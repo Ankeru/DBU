@@ -12,7 +12,7 @@
         <div class="container">
           {% if user.is_authenticated %}
             <div class="login_button">
-              <span>Вы вошли как <a href="{% url 'profiles' %}">{{ user.get_username }}</a></span> 
+              <span>Вы вошли как <a href="{% url 'profiles' uname %}">{{ user.get_username }}</a></span> 
               <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
             </div>            
           {% else %}
@@ -26,7 +26,7 @@
         <div class="menu">
           <a href="{% url 'index' %}" class="ref_button" id="chosen_page">Главная</a>
           <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
-          <a href="{% url 'profiles' %}" class="ref_button">Профили</a>
+          <a href="{% url 'profiles' uname %}" class="ref_button">Профили</a>
           <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
         </div> 
         {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -55,12 +55,12 @@
                 <select name="serial_num" title='Серийный №' id="select_serial_num">              
                   <option disabled>Выберите серийный №!</option>                
                   {% for serial_num_ in serial_num_list %}                
-                    <option {% if serial_num_.serial_num == chosen_entity.serial_num  %}selected{% endif %}
+                    <option {% if serial_num_.spec_check == True %}class="green_color"{% endif %}{% if serial_num_.serial_num == chosen_entity.serial_num  %}selected{% endif %}
                     >{{ serial_num_.serial_num }}</option>                  
                   {% endfor %}
                 </select>
-                <img id="okay" src={% static 'mainapp/images/index/okay.png' %} title="Признак спецпроверки" alt='Признак спецпроверки'>
-                <a href="#"><img id="history" src={% static 'mainapp/images/index/history.png' %} title="История" alt="История"></a>    
+                <img id="okay" src= {% if chosen_entity.spec_check == True %}"{% static 'mainapp/images/index/okay.png' %}"{% else %}"{% static 'mainapp/images/index/no.png' %}"{% endif %} title="Признак спецпроверки" alt='Признак спецпроверки'>
+                <a href="{% url 'view_serial_num' chosen_entity.entity_name.name chosen_entity.serial_num %}"><img id="history" src={% static 'mainapp/images/index/history.png' %} title="История" alt="История"></a>    
                   <div>Примечание:</div>
                   <textarea class="textarea_standart_size3" id="note" name="note" readonly>{{ chosen_entity.note }}</textarea>
               </div>
@@ -85,7 +85,7 @@
                       <td class="text_center">Пользователь</td>
                       <td>
                         {% if chosen_entity.status == True %}                        
-                          {% if user.is_authenticated %}
+                        {% if user.is_staff %}
                               <select name="user_taken">
                                 {% for user_ in history_sample.user.taken %}                
                                   <option>{{ user_.username }}</option>                  
@@ -97,7 +97,7 @@
                         {% endif %}                              
                       </td>
                       <td>
-                        {% if user.is_authenticated %}                    
+                        {% if user.is_staff %}                  
                         {% else %}
                           {{ history_sample.user.return }}
                           {% if chosen_entity.status == True %}
@@ -109,7 +109,7 @@
                     <tr>
                       <td class="text_center">Администратор</td>
                       {% if chosen_entity.status == False %}
-                        {% if user.is_authenticated %}
+                      {% if user.is_staff %}
                         <td><input class="submit_input" type="text" name="admin_taken" value="{{ history_sample.admin.taken }}" readonly></td>
                         <td><input class="submit_input" type="text" name="admin_return" value="{{ user.get_username }}" readonly></td>
                         {% else %}
@@ -117,7 +117,7 @@
                           <td><input class="submit_input" type="text" name="admin_return" value="" readonly></td>                            
                         {% endif %}
                       {% else %}
-                        {% if user.is_authenticated %}
+                      {% if user.is_staff %}
                           <td><input class="submit_input" type="text" name="admin_taken" value="{{ user.get_username }}" readonly></td>
                           <td><input class="submit_input" type="text" name="admin_return" value="" readonly></td>
                         {% else %}
@@ -132,7 +132,7 @@
                   <div>
                     <caption>Комментарий</caption>
                     <textarea class="textarea_standart_size2" name="comment"
-                    {% if user.is_authenticated %}
+                    {% if user.is_staff %}
                     {% else %}                     
                     readonly
                     {% endif %}
@@ -141,7 +141,7 @@
                   <div>
                     <caption>Куда</caption>
                     <textarea class="textarea_standart_size2" name="location" 
-                    {% if user.is_authenticated %}
+                    {% if user.is_staff %}
                     {% else %}                     
                     readonly
                     {% endif %}
@@ -156,7 +156,7 @@
               {% else %}
               value="0"
               {% endif %}>
-            {% if user.is_authenticated %}
+              {% if user.is_staff %}
             <div class="process_buttons">
               <input type="submit" value=
               {% if chosen_entity.status == True %}

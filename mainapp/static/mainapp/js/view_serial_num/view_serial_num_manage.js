@@ -9,6 +9,19 @@ function manage_view_type_cookies()
 const type_element = $('#select_type');
 type_element.change(manage_view_type_cookies);
 
+// Устанавливает куки при изменении cерийного номера и перезагружает страницу
+function manage_view_type_serial_num_cookies()
+{
+    var type_ = $('#select_type').prop('selected', 'true').val();
+    document.cookie = "chosen_type="+type_;
+    var serial_num = $('#select_serial_num').prop('selected', 'true').val();
+    document.cookie = "serial_num="+serial_num;
+    // Спускаемся на два уровня и заходим на страницу нового типа
+    window.location.replace('../../../'+type_ + "/"+ serial_num + "/view_serial_num/");
+}
+const serial_num_element = $('#select_serial_num');
+serial_num_element.change(manage_view_type_serial_num_cookies);
+
 // Устанавливает куки типа при нажатии submit Анкеты
 function manage_edit_profile_cookies()
 {

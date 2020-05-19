@@ -18,6 +18,8 @@ urlpatterns = [
     path('proccess_profile_form/', views.proccess_profile_form, name='proccess_profile_form'),
     path('proccess_history_form/', views.proccess_history_form, name='proccess_history_form'),
     path('proccess_edit_form/', views.proccess_edit_form, name='proccess_edit_form'),
-    path('profiles/', views.profiles, name='profiles'),
+    path('<str:uname>/profiles/', views.profiles, name='profiles'),
+    path('<int:added>/edit_complete/', views.edit_complete, name='edit_complete'),
+    
     
 ]

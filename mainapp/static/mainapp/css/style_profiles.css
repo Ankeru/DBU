@@ -1,0 +1,18 @@
+#edit_profiles{
+    display: block;
+    float: right
+}
+
+table#open_table,
+table#open_table tr,
+table#open_table td, 
+table#open_table th{
+    border: solid 1px black;
+    border-spacing: 0;
+    text-align: center;
+}
+
+table#open_table{
+    width: 100%;
+    /* height: 150px; */
+}
