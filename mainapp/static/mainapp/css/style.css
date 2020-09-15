@@ -7,43 +7,39 @@ body {
     border-spacing: 0;
     border-collapse: collapse;
     background: 
-    rgb(180, 170, 170); 
+    #EEEEEE;
     margin-bottom: 50px; 
 }
 /* Класс, задающий размер страницы и выравнивание по центру */
 .container {
     margin: auto;
     width: 1024px;
+    max-width: 100%;
     display: block;
     position: relative;
 }
 
 header {
-    background: #333;
+    background: #628DB6;
     display: block;
 }
+
 main {
     display: block;
 }
 
 .menu{
-    /* float: left; */
     display: block;
     margin: 10px 0;
     padding-bottom: 5px;
-    border-bottom: 10px #333 solid;
+    border-bottom: 10px #628DB6 solid;
     
 }
+
 .ref_button {
     text-decoration: none;
     outline: none;
     color: #13583f;
-    /* color: rgb(12, 63, 110) */
-}
-.menu a{    
-    color: black;
-    margin: 5px 50px 0 0;
-
 }
 
 .ref_button:hover{
@@ -55,7 +51,27 @@ main {
     outline: none;
 }
 
+.form_link {
+    text-decoration: none;
+    outline: none;
+    color: #13583f;
+}
+.form_link:hover{
+    color: rgb(10, 190, 64);
+    /* font-weight: bold; */
+}
 
+.form_link:visited {
+    text-decoration: none;  
+    outline: none;
+    
+}
+
+.menu a{    
+    color: black;
+    margin: 5px 50px 0 0;
+
+}
 
 header .container div#pagename {
     height: 76px;
@@ -67,7 +83,7 @@ header .container div#pagename {
 header .container a{        
     text-decoration: none;
     outline: none;
-    color: #34e0a1;
+    color: white;
 }
 
 .login_button{
@@ -108,7 +124,6 @@ img#type_foto{
 }
 
 /* Стили для чекбоксов */
-
 .checkbox {
 	position: absolute;
 	z-index: -1;
@@ -184,4 +199,23 @@ a#chosen_page {
     float: right;
     margin: 5px 0 0 0;
     color: rgb(128, 17, 17);
+}
+
+table td{
+    padding: 2px;
+}
+
+.large_font{
+    font-size: large;
+}
+
+.large_date{
+    font-size:20px;
+    color:#000000;
+    width: 150px;
+}
+
+.hover_line:hover{
+    background-color: white;
+
 }

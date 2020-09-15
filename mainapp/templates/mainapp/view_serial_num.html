@@ -27,55 +27,16 @@
             <div class="menu">
                 <a href="{% url 'index' %}" class="ref_button">Главная</a>
                 <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
+                <a href="{% url 'types' %}" class="ref_button" >Типы</a>
                 <a href="{% url 'profiles' uname%}" class="ref_button">Профили</a>
                 <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
             </div>
         
             <div class="mainpart">
-                <div id="tabs"><a href="{% url 'view' %}" class="ref_button">Список</a>><a href="{% url 'view_type' type %}" class="ref_button">{{ type }}</a>><a href="{% url 'view_serial_num' type serial_num %}" class="ref_button" >{{ serial_num }}</a></div>              
-                <form action='{% url "proccess_type_form" %}' method="POST" enctype="multipart/form-data">                
-                    {% csrf_token %}               
-                    <div id="view_type">
-                        <div id="img_box">
-                            <img id="type_foto" src='{{ type_sample.img_link }}' alt="Фото типа" />                          
-                            {% if user.is_authenticated %}                                                    
-                            <div>                                              
-                              <input id="id_image" type="file" name="img_file" class="form-control" />                            
-                            </div>
-                            {% endif %}
-                        </div>
-                        <div>
-                            <div>Тип</div>
-                            <select name="type_" title='Тип' id="select_type">              
-                                <option disabled>Выберите тип!</option>
-                                {% for type_ in type_list %}                
-                                  <option {% if type_.name == type_sample.name %}selected{% endif %}
-                                  >{{ type_.name }}</option>                  
-                                {% endfor %}
-                              </select>
-                            <div>Дополнительно</div>
-                            <textarea class="textarea_standart_size1" name="additional_info"
-                            {% if not user.is_authenticated %}
-                            readonly
-                            {% endif %}
-                            >{{ type_sample.additional_info }}</textarea>
-                            <div>
-                                <label for="loc_of_soft">ПО хранится:<br></label>
-                                <textarea class="textarea_standart_size3" id="loc_of_soft" name="loc_of_soft"
-                                {% if not user.is_authenticated %}
-                                readonly
-                                {% endif %}
-                                >{{ type_sample.soft_link }}</textarea>                                                        
-                            </div>        
-                              
-                        </div> 
-                        {% if user.is_authenticated %}
-                        <input type="submit" id="submit_type_change" value="Сохранить изменения для типа">
-                        {% endif %}
-                    </div>
-                </form>
-                <form action={% url "proccess_profile_form" %} method="POST" enctype="multipart/form-data"> 
-                    {% csrf_token %}   
+                <div id="tabs"><a href="{% url 'view' %}" class="ref_button">Список</a>><a href="{% url 'view_serial_num' type serial_num %}" class="ref_button" >{{ serial_num }}</a></div>                        
+                <form action={% url 'proccess_profile_form' type_sample.name %} method="POST" enctype="multipart/form-data"> 
+                    {% csrf_token %} 
+                    <input type="hidden" id="select_type" name="serial_num" value="{{ type_sample.name }}" >                 
                     <div class="rel_pos">
                         <h2>Анкета</h2>
                         {% if user.is_authenticated %}
@@ -86,7 +47,7 @@
                     <div id="view_serial_num">
                         <div class="one_line_blocks">
                         <div>Серийный №</div>
-                        <select name="serial_num" title='Серийный №' id="select_serial_num">              
+                        <select name="serial_num" title='Серийный №' id="select_serial_num" class="large_font">              
                             <option disabled>Выберите серийный №!</option>
                             {% for one_entity in entity_list %}                
                                 <option {% if one_entity == Entity %}selected{% endif %}
@@ -100,21 +61,13 @@
                                 name='special_check' {% if Entity.spec_check %}checked="checked"{% endif %}
                                 {% if not user.is_authenticated %}disabled{% endif%}>
                                 <label for="special_check"> Спецпроверка</label></div>                                                       
-                        </div>
-                        <div class="one_line_blocks">
-                            <div class="profile_property">
-                                <input type="checkbox" class="checkbox" id="available" 
-                                name="available" {% if Entity.status %}checked="checked"{% endif %} 
-                                {% if not user.is_authenticated %}disabled{% endif%}>
-                                <label for="available"> Свободен</label>
-                            </div>                             
-                        </div>
+                        </div>                      
                     </div>                
                     <div id="view_profile">
                         <div>                                                                        
                             <div class="profile_property">                                
                                 </label>
-                                    <input type="date" id="production_date" name="production_date" 
+                                    <input type="date" id="production_date" class='large_date input_date_margin' name="production_date" 
                                     value="{{ Entity.date_made|date:'Y-m-d' }}"
                                     {% if not user.is_authenticated %}
                                     readonly
@@ -123,40 +76,34 @@
                             </div>
                             <div class="profile_property">
                                 <label for="label_ref">Этикетка: </label>
-                                <a href="{{ Entity.label }}" class="ref_button" download>{% if Entity.label %}Скачать{% endif %}</a>
+                                {% if Entity.label %}<a href="{{ Entity.label }}" class="ref_button" download>Скачать</a>{% else %}Файл не загружен.{% endif %}
                                 {% if user.is_authenticated %}
                                     <input type="file" id="label_ref" name="label_ref">
                                 {% endif%}
                             </div>                        
                             <div class="profile_property">
                                 <label for="loc_of_storage_original_label">Место хранения оригинала этикетки: </label>
-                                <input type="text" id="loc_of_storage_original_label" name="loc_of_storage_original_label"
-                                value="{{ Entity.label_original }}"
-                                {% if not user.is_authenticated %}
-                                    readonly
-                                {% endif %}>
+                                <textarea id="loc_of_storage_original_label" class="textarea_standart_size1" name="loc_of_storage_original_label" {% if not user.is_authenticated %}
+                                readonly {% endif %}>{{ Entity.label_original }}</textarea>                                
                             </div>                        
                             <div class="profile_property"><label>
-                                <input type="date" id="date_of_delivery" name="date_of_delivery"
+                                <input type="date" id="date_of_delivery" name="date_of_delivery" class='large_date input_date_margin'
                                 value="{{ Entity.date_delivered|date:'Y-m-d' }}"
                                 {% if not user.is_authenticated %}
                                     readonly
-                                {% endif %}/>Дата поставки</label for="date_of_delivery">
+                                {% endif %}/> Дата поставки</label for="date_of_delivery">
                             </div>
                             <div class="profile_property">
                                 <label for="delivery_document">Документ поставки: </label>
-                                <a href="{{ Entity.doc_delivered }}" class="ref_button" download>{% if Entity.doc_delivered %}Скачать{% endif %}</a>
+                                {% if Entity.doc_delivered %}<a href="{{ Entity.doc_delivered }}" class="ref_button" download>Скачать</a>{% else %}Файл не загружен.{% endif %}
                                 {% if user.is_authenticated %}
                                     <input type="file" id="delivery_document" name="delivery_document">
                                 {% endif%}
                             </div>
                             <div class="profile_property">
                                 <label for="loc_of_storage_original_delivery_document">Место хранения оригинала документа поставки: </label>
-                                <input type="text" id="loc_of_storage_original_delivery_document" name="loc_of_storage_original_delivery_document" 
-                                value='{{ Entity.doc_delivered_original }}'
-                                {% if not user.is_authenticated %}
-                                    readonly
-                                {% endif %}>
+                                <textarea id="loc_of_storage_original_delivery_document" class="textarea_standart_size1" name="loc_of_storage_original_delivery_document" {% if not user.is_authenticated %}
+                                readonly {% endif %}>{{ Entity.doc_delivered_original }}</textarea>                                
                             </div>
                             <div class="profile_property">
                                 <label for="note">Примечание: </label>
@@ -168,6 +115,7 @@
                             </div>
                         </div>
                     </div>
+                    <input type="text" name="hidden_type" value="{{ type_sample.name }}" hidden />
                 </form>                
                     <div class="rel_pos">
                         <h2>История</h2>
@@ -180,11 +128,11 @@
                                 <table class="view_history" id="stelth_table">
                                     <tr>           
                                         <th title="Номер сеанса" rowspan="2">Сеанс №</th>
-                                        <th colspan="2" title="Дата взятия и возвращения">Дата</th>
-                                        <th title="Место взятия" rowspan="2">Куда</th>
-                                        <th title="Имя пользователь" rowspan="2">Пользователь</th>                
-                                        <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
+                                        <th colspan="2" title="Дата взятия и возвращения">Дата</th>                                        
+                                        <th title="Имя пользователь" rowspan="2">Пользователь</th> 
+                                        <th title="Место взятия" rowspan="2">Куда</th>                                                       
                                         <th title="Комментарий к сеансу" rowspan="2">Комментарий</th>
+                                        <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
                                     </tr>
                                     <tr>    
                                         <!-- Подразделы пунктов таблицы -->
@@ -195,9 +143,8 @@
                                     </tr>
                                     <tr class="child_center">
                                         <td class="text_center"><textarea id="seans_number" name="seans_number" class="history_edit_table text_center" readonly></textarea></td>
-                                        <td><input type="date" id="date_taken" name="date_taken"/></td>
-                                        <td><input type="date" id="date_return" name="date_return"/></td>
-                                        <td><textarea id="place" name="place" class="history_edit_table"></textarea></td>
+                                        <td><input type="date" id="date_taken" name="date_taken" class='large_date'/></td>
+                                        <td><input type="date" id="date_return" name="date_return" class='large_date'/></td>
                                         <td>
                                             {% if user.is_authenticated %}
                                                 <select name="user_">
@@ -206,8 +153,9 @@
                                                     {% endfor %}                          
                                                 </select>
                                             {% endif %}
-
                                         </td>
+                                        <td><textarea id="place" name="place" class="history_edit_table"></textarea></td>                                       
+                                        <td><textarea id="comment" name="comment" class="history_edit_table"></textarea></td>
                                         <td>
                                             {% if user.is_authenticated %}
                                                 <select name="admin_taken">
@@ -230,8 +178,7 @@
                                                 </select>
                                             {% endif %}
 
-                                        </td>
-                                        <td><textarea id="comment" name="comment" class="history_edit_table"></textarea></td>
+                                        </td>                                        
                                     </tr>
                                 </table>  
                             </div>
@@ -245,10 +192,10 @@
                         <tr>           
                             <th title="Номер сеанса" rowspan="2">Сеанс №</th>
                             <th colspan="2" title="Дата взятия и возвращения">Дата</th>
-                            <th title="Место взятия" rowspan="2">Куда</th>
-                            <th title="Имя пользователь" rowspan="2">Пользователь</th>                
-                            <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
+                            <th title="Имя пользователь" rowspan="2">Пользователь</th>
+                            <th title="Место взятия" rowspan="2">Куда</th>                                                                        
                             <th title="Комментарий к сеансу" rowspan="2">Комментарий</th>
+                            <th colspan="2" title="Имя администратора выдачи и приема">Администратор</th>
                             {% if user.is_authenticated %}
                                 <th title="Выберите для редактирования" rowspan="2">Править</th>
                             {% endif %}
@@ -263,13 +210,13 @@
                         {% for history_sample in history_list %}                
                             <tr class="child_center">
                                 <td class="text_center">{{ history_sample.record_num }}</td>
-                                <td><input type="date" value="{{ history_sample.date_taken|date:'Y-m-d' }}" readonly/></td>
-                                <td><input type="date" value="{{ history_sample.date_return|date:'Y-m-d' }}"readonly/></td>
-                                <td>{{ history_sample.place }}</td>
+                                <td><input type="date" class='large_date' value="{{ history_sample.date_taken|date:'Y-m-d' }}" readonly/></td>
+                                <td><input type="date" class='large_date' value="{{ history_sample.date_return|date:'Y-m-d' }}"readonly/></td>
                                 <td>{{ history_sample.user_taken }}</td>
+                                <td>{{ history_sample.place }}</td>                                                                
+                                <td>{{ history_sample.comment }}</td>
                                 <td>{{ history_sample.admin_taken }}</td>
                                 <td>{{ history_sample.admin_return }}</td>
-                                <td>{{ history_sample.comment }}</td>
                                 {% if user.is_authenticated %}
                                     <td class="text_center">
                                         <input type="radio" name="his_radio" value="{{ history_sample.record_num }}"> 
@@ -282,7 +229,7 @@
             </div>
         </div>
     </main> 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>   
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>   
     <script src="{% static 'mainapp/js/view_serial_num/view_serial_num_manage.js' %}"></script>    
   </body>
 </html>

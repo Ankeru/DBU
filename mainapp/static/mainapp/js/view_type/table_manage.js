@@ -1,4 +1,4 @@
-const filtrating_list_queue = [ "serial_num", "status", "spec_check", "date_made", "date_delivered", "doc_delivered", "label", "soft_link"];
+const filtrating_list_queue = [ "serial_num", "status", "place", "spec_check", "date_made", "date_delivered", "doc_delivered", "label"];
 const filtrating_list_direction = ["desc", "desc", "desc", "desc", "desc", "desc", "desc", "desc"];
 
 function manage_par_sequence()
@@ -11,12 +11,12 @@ function manage_par_sequence()
             serial_num: td.eq(0).text(),
             serial_num_href: td.eq(0).children('a').eq(0).attr('href'),
             status: td.eq(1).text(),
-            spec_check: td.eq(2).text(),
-            date_made: td.eq(3).find('input[type="date"]').val(),
-            date_delivered: td.eq(4).find('input[type="date"]').val(),
-            doc_delivered: td.eq(5).text(),
-            label: td.eq(6).text(),
-            soft_link: td.eq(7).text()
+            place: td.eq(2).text(),
+            spec_check: td.eq(3).text(),
+            date_made: td.eq(4).find('input[type="date"]').val(),
+            date_delivered: td.eq(5).find('input[type="date"]').val(),
+            doc_delivered: td.eq(6).text(),
+            label: td.eq(7).text(),   
         };
       }); 
       //Производим фильтрацию по всем полям - меняется только порядок признаков и направление (asc/desc)     
@@ -26,14 +26,14 @@ function manage_par_sequence()
       table.each(function(index, element){
         const td = $(element).find("td");                
         td.eq(0).find('a').eq(0).text($(sorted_table).eq(index).attr("serial_num"));
-        td.eq(0).find('a').eq(0).attr('href', $(sorted_table).eq(index).attr("serial_num_href"));
+        td.eq(0).find('a').eq(0).attr('href', $(sorted_table).eq(index).attr("serial_num_href"));        
         td.eq(1).text($(sorted_table).eq(index).attr("status"));
-        td.eq(2).text($(sorted_table).eq(index).attr("spec_check"));
-        td.eq(3).find('input[type="date"]').val($(sorted_table).eq(index).attr("date_made"));
-        td.eq(4).find('input[type="date"]').val($(sorted_table).eq(index).attr("date_delivered"));
-        td.eq(5).find('a').eq(0).text($(sorted_table).eq(index).attr("doc_delivered"));
-        td.eq(6).find('a').eq(0).text($(sorted_table).eq(index).attr("label"));
-        td.eq(7).find('a').eq(0).text($(sorted_table).eq(index).attr("soft_link"));
+        td.eq(2).text($(sorted_table).eq(index).attr("place"));
+        td.eq(3).text($(sorted_table).eq(index).attr("spec_check"));
+        td.eq(4).find('input[type="date"]').val($(sorted_table).eq(index).attr("date_made"));
+        td.eq(5).find('input[type="date"]').val($(sorted_table).eq(index).attr("date_delivered"));
+        td.eq(6).find('a').eq(0).text($(sorted_table).eq(index).attr("doc_delivered"));
+        td.eq(7).find('a').eq(0).text($(sorted_table).eq(index).attr("label"));    
       });
 }
 
@@ -50,8 +50,7 @@ $('.table_manager').on("click", function(){
     filtrating_list_queue.unshift(column_name);
     filtrating_list_direction.unshift(new_direction);
     console.log(filtrating_list_direction);
-    console.log(filtrating_list_queue);
-    
+    console.log(filtrating_list_queue);    
     manage_par_sequence();    
 });
 

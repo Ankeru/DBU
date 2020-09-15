@@ -1,3 +1,9 @@
+
+.container {
+    width: 1760px;
+    max-width: 100%;
+}
+
 .relative_container{
     position: relative;
 }
@@ -8,7 +14,7 @@
 
 .new_entity_block{
     border: 2px solid black;
-    margin: 5px 0 5px 0;
+    margin: 5px 0 1px 0;
     padding: 5px;
 }
 
@@ -19,9 +25,8 @@
 }
 
 #more_block{
-    height: 130px;
+    height: 70px;
     border: 2px dotted black;
-    margin-top: 10px;
     position: relative;
 }
 
@@ -30,16 +35,132 @@
 }
 
 #add{
-    position: relative;
-    top: 30px;
-    left: 30px;
+    position:absolute;
+    top: 3px;
+    right: 3px;
 }
 
 .num_n_delete_block{
     float: right;
+    margin-left: 5px;;
 }
 img.delete {
     width: 40px;
     height: auto;
     
 }
+
+table{
+    width: 100%;    
+}
+
+table,
+table tr,
+table td, 
+table th{
+    border: solid 1px black;
+    border-spacing: 0;
+    text-align: center;   
+}
+
+.link_content {
+    width: 220px;
+}
+
+.loc_content {
+    width: 170px;
+}
+
+.textarea_standart_size_content{
+    width: auto;
+    height: auto;
+}
+
+.short_content_td {
+    width: 70px;
+}
+
+.modal {
+    /* Не обязательно  block */
+    display: block;
+    
+    width: 450px;
+    max-width: 100%;
+    
+    height: 130px;
+    max-height: 100%;
+    
+    position: fixed;
+    
+    z-index: 100;
+    
+    left: 50%;
+    top: 50%;
+    
+    /* Центруем */
+    transform: translate(-50%, -50%);
+        
+    background: white;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+  }
+  .closed {
+    display: none;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .modal-guts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    padding: 20px 50px 20px 20px;
+  }
+  
+  .modal .close-button {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    right: 20px;
+    
+    border: 0;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+  }
+  
+  .open-button {
+    border: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: lightgreen;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 21px;
+  }
+
+.shift_block{
+      display: block;
+      margin-left: 10px;
+  }
+
+.sticky {
+    position: sticky;
+    top: 0;
+    background: #EEEEEE;
+    z-index: 1;
+ }

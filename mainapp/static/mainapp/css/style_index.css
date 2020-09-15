@@ -36,10 +36,10 @@ div.seans div{
     
 }
 div.seans div#seans_table{
-    width: 70%;
+    width: 62%;
 }
 div.seans div#seans_data{
-    width: 30%;
+    width: 26%;
     /* margin: 0 2px 0 0; */
 }
 
@@ -62,7 +62,12 @@ div.seans div table th{
 }
 
 div.process_buttons {
-    border-top: solid 1px black;
+    /* padding-top: 5px; */
+    /* border-top: solid 1px black; */
+    display: inline-block;
+    position: absolute;
+    right:0;
+    bottom: 34px;
 }
 div.process_buttons input[type=button]{
     display: block;
@@ -77,11 +82,19 @@ a#chosen_page {
     text-decoration: underline;
 }
 
-.submit_input{
-    background: 
-    rgb(180, 170, 170); 
+.submit_input{     
     color: black;
     text-align: center;
 }
 
+#status_free{
+    color: green;
+}
+
+.shift_block{
+    margin: 5px 0 5px 0;
+}
+.date_div{
+    width: 150px;
+}
 

@@ -23,7 +23,7 @@ class Entity_type(models.Model):
 class Entity(models.Model):
     id = models.AutoField(auto_created=True, primary_key=True)   
     serial_num = models.CharField(max_length=200)
-    entity_name = models.ForeignKey(Entity_type, on_delete=models.CASCADE)
+    entity_type_name = models.ForeignKey(Entity_type, on_delete=models.CASCADE)
     status = models.BooleanField()
     spec_check = models.BooleanField()
     date_made = models.DateField(null=True, blank=True)
@@ -38,6 +38,7 @@ class Entity(models.Model):
 
 class History(models.Model):    
     record_num =  models.BigIntegerField(blank=False)  
+    entity_id = models.IntegerField()
     serial_num = models.ForeignKey(Entity, on_delete=models.CASCADE)
     date_taken = models.DateField(null=True, blank=True)
     date_return = models.DateField(null=True, blank=True)

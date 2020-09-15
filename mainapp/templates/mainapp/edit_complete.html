@@ -26,6 +26,7 @@
             <div class="menu">
                 <a href="{% url 'index' %}" class="ref_button">Главная</a>
                 <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
+                <a href="{% url 'types' %}" class="ref_button" >Типы</a>
                 <a href="{% url 'profiles' uname %}" class="ref_button">Профили</a>
                 <a href="{% url 'edit' %}" class="ref_button" id="chosen_page">Добавление</a>
             </div>        
@@ -35,9 +36,9 @@
             </div>
         </div>
     </main>
-    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script> 
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>      
-    <script src="{% static 'mainapp/js/edit/edit_manage.js' %}"></script>  
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script> 
+    <script src="{% static 'js/lodash.js' %}"></script>       
+    
   </body>
 </html>
   

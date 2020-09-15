@@ -26,6 +26,7 @@
         <div class="menu">
           <a href="{% url 'index' %}" class="ref_button" id="chosen_page">Главная</a>
           <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
+          <a href="{% url 'types' %}" class="ref_button" >Типы</a>
           <a href="{% url 'profiles' uname %}" class="ref_button">Профили</a>
           <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
         </div> 
@@ -36,31 +37,46 @@
             <img id="type_foto" src="{{ chosen_type.img_link }}" alt="Фото типа">
             <div>
               <div>Тип</div>
-              <select name="type" title='Тип' id="select_type">              
+              <select name="type" title='Тип' id="select_type" class="large_font">              
                 <option disabled>Выберите тип!</option>
                 {% for type_ in type_list %}                
                   <option {% if type_.name == chosen_type.name %}selected{% endif %}
                   >{{ type_.name }}</option>                  
                 {% endfor %}
               </select>
-              <div>Дополнительно</div>
+              <!-- <div>Дополнительно</div>
               <textarea id="additional_info" class="textarea_standart_size1" name="additional_info" readonly>{{ chosen_type.additional_info }}</textarea>
               <div>
                 <label for="loc_of_soft">ПО хранится:<br></label>
-                <textarea class="textarea_standart_size3" id="loc_of_soft" name="loc_of_soft" readonly>{{ chosen_type.soft_link }}</textarea></div>
+                <textarea class="textarea_standart_size3" id="loc_of_soft" name="loc_of_soft" readonly>{{ chosen_type.soft_link }}</textarea></div> -->
             </div>              
             <div>
               <div id="serial_num_block">
                 <div>Серийный №</div>
-                <select name="serial_num" title='Серийный №' id="select_serial_num">              
+                <select name="serial_num" title='Серийный №' id="select_serial_num" class="large_font">              
                   <option disabled>Выберите серийный №!</option>                
                   {% for serial_num_ in serial_num_list %}                
                     <option {% if serial_num_.spec_check == True %}class="green_color"{% endif %}{% if serial_num_.serial_num == chosen_entity.serial_num  %}selected{% endif %}
                     >{{ serial_num_.serial_num }}</option>                  
                   {% endfor %}
                 </select>
-                <img id="okay" src= {% if chosen_entity.spec_check == True %}"{% static 'mainapp/images/index/okay.png' %}"{% else %}"{% static 'mainapp/images/index/no.png' %}"{% endif %} title="Признак спецпроверки" alt='Признак спецпроверки'>
-                <a href="{% url 'view_serial_num' chosen_entity.entity_name.name chosen_entity.serial_num %}"><img id="history" src={% static 'mainapp/images/index/history.png' %} title="История" alt="История"></a>    
+                <div class="shift_block">
+                  <img id="okay" src= {% if chosen_entity.status %}"{% static 'mainapp/images/index/okay.png' %}"{% else %}"{% static 'mainapp/images/index/no.png' %}"{% endif %} title="Доступность объекта" alt='Доступность объекта'>
+                  {% if chosen_entity.status %}
+                  <span id="status_free">  Объект свободен!</span>
+                  {% else %}
+                  <span id="status_not_free"> Объект взят.</span>
+                  {% endif %}
+                </div>
+                <div class="shift_block">
+                  <img id="okay" src= {% if chosen_entity.spec_check == True %}"{% static 'mainapp/images/index/okay.png' %}"{% else %}"{% static 'mainapp/images/index/no.png' %}"{% endif %} title="Признак спецпроверки" alt='Признак спецпроверки'>
+                  {% if chosen_entity.spec_check %}
+                  <span id="status_free">  Спецпроверен!</span>
+                  {% else %}
+                  <span id="status_not_free"> Спецпроверка не проводилась.</span>
+                  {% endif %}
+                </div>
+                 <!-- <a href="{ url 'view_serial_num' chosen_entity.entity_type_name.name chosen_entity.serial_num %}"><img id="history" src={% static 'mainapp/images/index/history.png' %} title="История" alt="История"></a>     -->
                   <div>Примечание:</div>
                   <textarea class="textarea_standart_size3" id="note" name="note" readonly>{{ chosen_entity.note }}</textarea>
               </div>
@@ -77,15 +93,15 @@
                       <th>Сдача</th>                
                     </tr>
                     <tr>
-                      <td class="text_center">Дата</td>
-                      <td class="text_center"><input type="date" name="date_taken" id="date_taken" value="{{ history_sample.date.taken|date:'Y-m-d' }}" readonly></td>
-                      <td class="text_center"><input type="date" name="date_return" id="date_return" value="{{ history_sample.date.return|date:'Y-m-d' }}"" readonly></td>
+                      <td class="text_center">Дата</td>    
+                      <td class="text_center"><input type="date" name="date_taken" id="date_taken" class='large_date' value="{{ history_sample.date.taken|date:'Y-m-d' }}" readonly></td>                  
+                      <td class="text_center"><input type="date" name="date_return" id="date_return" class='large_date'value="{{ history_sample.date.return|date:'Y-m-d' }}"" readonly></td>
                     </tr>
                     <tr class="child_center">
                       <td class="text_center">Пользователь</td>
                       <td>
-                        {% if chosen_entity.status == True %}                        
-                        {% if user.is_staff %}
+                        {% if chosen_entity.status %}                        
+                          {% if user.is_staff %}
                               <select name="user_taken">
                                 {% for user_ in history_sample.user.taken %}                
                                   <option>{{ user_.username }}</option>                  
@@ -106,10 +122,10 @@
                         {% endif %}
                       </td>
                     </tr>
-                    <tr>
+                    <tr class="child_center">
                       <td class="text_center">Администратор</td>
                       {% if chosen_entity.status == False %}
-                      {% if user.is_staff %}
+                        {% if user.is_staff %}
                         <td><input class="submit_input" type="text" name="admin_taken" value="{{ history_sample.admin.taken }}" readonly></td>
                         <td><input class="submit_input" type="text" name="admin_return" value="{{ user.get_username }}" readonly></td>
                         {% else %}
@@ -117,7 +133,7 @@
                           <td><input class="submit_input" type="text" name="admin_return" value="" readonly></td>                            
                         {% endif %}
                       {% else %}
-                      {% if user.is_staff %}
+                       {% if user.is_staff %}
                           <td><input class="submit_input" type="text" name="admin_taken" value="{{ user.get_username }}" readonly></td>
                           <td><input class="submit_input" type="text" name="admin_return" value="" readonly></td>
                         {% else %}
@@ -128,16 +144,7 @@
                     </tr>
                   </table>
                 </div>
-                <div id="seans_data">
-                  <div>
-                    <caption>Комментарий</caption>
-                    <textarea class="textarea_standart_size2" name="comment"
-                    {% if user.is_staff %}
-                    {% else %}                     
-                    readonly
-                    {% endif %}
-                    >{{ history_sample.note }}</textarea>
-                  </div>
+                <div id="seans_data">                  
                   <div>
                     <caption>Куда</caption>
                     <textarea class="textarea_standart_size2" name="location" 
@@ -145,10 +152,31 @@
                     {% else %}                     
                     readonly
                     {% endif %}
-                    required>{{ history_sample.place }}</textarea>
+                    required
+                    >{% if chosen_entity.status %}{% else %}{{ history_sample.place }}{% endif %}</textarea>
+                  </div>
+                  <div>
+                    <caption>Комментарий</caption>
+                    <textarea class="textarea_standart_size2" name="comment"
+                    {% if user.is_staff %}
+                    {% else %}                     
+                    readonly
+                    {% endif %}
+                    >{{ history_sample.comment }}</textarea>
                   </div>
                 </div>
               </div>
+              {% if user.is_staff %}
+              <div class="process_buttons">
+                <input type="submit" class="large_font" value=
+                {% if chosen_entity.status == True %}
+                "Выдать"
+                {% else %}
+                "Принять"
+                {% endif %}
+                >
+              </div>
+              {% endif %}
             </div>
             <input type="text" hidden="true" name='free' id="free"
               {% if chosen_entity.status == True %}
@@ -156,22 +184,12 @@
               {% else %}
               value="0"
               {% endif %}>
-              {% if user.is_staff %}
-            <div class="process_buttons">
-              <input type="submit" value=
-              {% if chosen_entity.status == True %}
-              "Выдать"
-              {% else %}
-              "Принять"
-              {% endif %}
-              >
-            </div>
-            {% endif %}
+              
           </div>           
       </form>       
       </div>
     </main>  
-    <script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script> 
     <script src="{% static 'mainapp/js/index/index_manage.js' %}"></script>  
   </body>
 </html>
