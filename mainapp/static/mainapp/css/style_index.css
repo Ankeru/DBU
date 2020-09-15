@@ -1,0 +1,100 @@
+.mainpart {
+    /* width: 70%; */
+}
+
+div.mainpart div textarea.textarea_standart_size2{
+    width: 96%;
+    height: 53px;
+}
+
+#serial_num_block {
+    margin: 20px 0;
+}
+
+select[name="serial_num"]{
+    display: inline;
+    vertical-align: middle;
+}
+img#okay, img#history {
+    display: inline-block;
+    width: 40px;
+    height: auto;
+    float: none;
+    vertical-align: middle;
+}
+img#history {
+    margin-left: 15px;
+}
+
+div#seans_block {
+    height: 200px;
+}
+
+div.seans div{
+    /* width: 50%; */
+    float: left;
+    
+}
+div.seans div#seans_table{
+    width: 62%;
+}
+div.seans div#seans_data{
+    width: 26%;
+    /* margin: 0 2px 0 0; */
+}
+
+div.seans div div{
+    width: 90%;
+    float: right;
+}
+
+div.seans div table{
+    width: 100%;
+    height: 150px;
+}
+
+div.seans div table,
+div.seans div table tr,
+div.seans div table td, 
+div.seans div table th{
+    border: solid 1px black;
+    border-spacing: 0;
+}
+
+div.process_buttons {
+    /* padding-top: 5px; */
+    /* border-top: solid 1px black; */
+    display: inline-block;
+    position: absolute;
+    right:0;
+    bottom: 34px;
+}
+div.process_buttons input[type=button]{
+    display: block;
+    position: relative;
+    margin-top: 5px;
+
+}
+
+/* Выделение вкладки страницы, на которой
+сейчас находимся */
+a#chosen_page {
+    text-decoration: underline;
+}
+
+.submit_input{     
+    color: black;
+    text-align: center;
+}
+
+#status_free{
+    color: green;
+}
+
+.shift_block{
+    margin: 5px 0 5px 0;
+}
+.date_div{
+    width: 150px;
+}
+

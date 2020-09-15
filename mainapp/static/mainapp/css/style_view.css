@@ -1,0 +1,132 @@
+.mainpart {
+    width: 100%;
+}
+
+
+
+.menu {    
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+}
+
+div#entity_table table{
+    width: 100%;
+}
+
+img#type_foto{
+    display: block;
+    position: relative;    
+    height: 248px;
+    width: auto;
+    float: right;
+    border: solid 1px black;
+}
+
+div#entity_table table,
+div#entity_table table tr,
+div#entity_table table td, 
+div#entity_table table th{
+    border: solid 1px black;
+    border-spacing: 0;
+    text-align: center;
+}
+
+.fixed_size {
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+div#tabs {
+    margin-bottom: 10px;
+}
+
+div#view_type {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    height: 320px;
+}
+
+div#view_type div {
+    position: relative;
+}
+
+img#type_foto{
+    float: none;
+}
+div#img_box{
+    display: block;
+    position: relative;    
+    height: 267px;
+    width: auto;
+    float: right;
+    z-index: 2;
+}
+div#img_box div {
+    text-align: center;
+}
+div#img_box div a{
+    text-decoration: none;
+    outline: none;
+}
+
+.mainpart div#view_type div input[type="submit"]{
+    display: block;
+    margin-top: 5px;
+}
+
+table.view_history,
+table.view_history tr,
+table.view_history td, 
+table.view_history th{
+    border: solid 1px;
+    border-spacing: 0;
+    
+}
+table.view_history{
+    width: 1024px;
+}
+
+input#submit_type_change {
+    display: block;
+    margin-top: 15px;
+    color: rgb(48, 42, 63);
+}
+
+input.submit_change {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background: #34e0a1; */
+    color: rgb(48, 42, 63);
+}
+
+.rel_pos {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+div#view_profile {
+    padding-bottom: 10px;
+    border-bottom: solid black 1px;
+    margin-bottom: 10px;
+
+}
+
+textarea.history_edit_table{
+    width: 135px;
+    padding: 5px;
+}
+
+.input_date_margin{
+    margin: 5px 0 5px 0;
+}
+
+#select_type{
+    display: block;
+    margin-bottom: 10px;
+}
+

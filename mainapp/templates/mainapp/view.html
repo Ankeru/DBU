@@ -1,0 +1,84 @@
+{% load static %}
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_view.css' %}">    
+  </head>
+  <body>
+    <header>        
+      <div class="container">
+        {% if user.is_authenticated %}
+          <div class="login_button">
+            <span>Вы вошли как <a href="{% url 'profiles' uname %}">{{ user.get_username }}</a></span> 
+            <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
+          </div>            
+        {% else %}
+          <a class="login_button" href="{% url 'login' %}">Войти</a>
+        {% endif %}             
+        <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+      </div>      
+  </header>   
+    <main>
+        <div class="container">            
+            <div class="menu">
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="{% url 'view' %}" class="ref_button" id="chosen_page">Просмотр</a>
+                <a href="{% url 'types' %}" class="ref_button" >Типы</a>
+                <a href="{% url 'profiles' uname %}" class="ref_button">Профили</a>
+                <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
+            </div>        
+            <div class="mainpart">          
+              <div>Тип</div>
+              <div>
+              <select name="type" title='Тип' id="select_type" class="large_font">              
+                <option disabled>Выберите тип!</option>
+                {% for type_ in type_list %}                
+                  <option {% if type_.name == chosen_type.name %}selected{% endif %}
+                  >{{ type_.name }}</option>                  
+                {% endfor %}
+              </select>
+              </div>                        
+              <div id="entity_table">
+                <table>
+                  <tr >                                                      
+                    <th title="Серийный номер"><a id="serial_num_button" name="serial_num" class="ref_button table_manager">С/Н</a></th>
+                    <th title="Признак доступности для взятия"><a id="availible_button" name="status" class="ref_button table_manager">Свободен</a></th>
+                    <th title="Пользователь, взявший объект"><a id="user_taken_button" name="user_taken" class="ref_button table_manager" >Пользователь</a></th>
+                    <th title="Место, куда был забран объект"><a id="place_button" name="place" class="ref_button table_manager">Куда</a></th> 
+                    <th title="Комментарий к сеансу"><a id="comment_button" name="comment" class="ref_button table_manager">Комментарий</a></th>                    
+                    <th title="Дата взятия"><a id="date_taken_button" name="date_taken" class="ref_button table_manager">Когда</a></th> 
+                    <th title="Признак спецпроверки"><a id="spec_check_button" name="spec_check" class="ref_button table_manager">С/П</a></th>              
+                    <th title="Примечание к объекту"><a id="note_button" name="note" class="ref_button table_manager">Примечание</a></th>
+                  </tr>
+                  {% for ent in Entity_list %}
+                  <tr class="hover_line">                  
+                    <td><a href="{% url 'view_serial_num' ent.entity_type_name.name ent.serial_num %}" class="form_link" title="Перейти к редактированию анкеты">{{ ent.serial_num }}</a></td>
+                    <td>{{ ent.status }}</td>
+                    <td>
+                    {{ Last_utu_list|get_item:ent.id }}  
+                    </td>
+                    <td>
+                      {{ Where_list|get_item:ent.id }}
+                    </td>
+                    <td>
+                      {{ Last_comment_list|get_item:ent.id }}
+                    </td>          
+                    <td><input type="date" class='large_date' value="{{ Last_date_taken_list|get_item:ent.id|date:'Y-m-d' }}" ></td>
+                    <td>{{ ent.spec_check }}</td>
+                    <td>{{ ent.note }}</td>
+                  </tr>
+                  {% endfor %}                
+                </table>
+              </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script> 
+    <script src="{% static 'js/lodash.js' %}"></script>      
+    <script src="{% static 'mainapp/js/view/table_manage.js' %}"></script>  
+  </body>
+</html>
+  

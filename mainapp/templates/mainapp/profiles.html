@@ -1,0 +1,74 @@
+{% load static %}
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_profiles.css' %}">
+  </head>
+  <body>
+    <header>        
+        <div class="container">
+          {% if user.is_authenticated %}
+            <div class="login_button">
+              <span>Вы вошли как <a href="{% url 'profiles' uname %}">{{ user.get_username }}</a></span> 
+              <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
+            </div>
+          {% else %}
+            <a id="login_button"href="{% url 'login' %}">Войти</a>
+          {% endif %}             
+          <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+        </div>      
+    </header> 
+    <main>
+        <div class="container">            
+            <div class="menu">
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
+                <a href="{% url 'types' %}" class="ref_button" >Типы</a>
+                <a href="{% url 'profiles' uname %}" class="ref_button" id="chosen_page">Профили</a>
+                <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
+            </div>            
+            <div class="mainpart">
+              {% if user.is_staff %}
+                <a href="{% url 'admin:index' %}" id="edit_profiles" name="edit_profiles" class='ref_button'>Админская панель</a>
+              {% endif %}
+              <div>Выбран пользователь 
+                <select id="select_uname" name="select_uname" class="large_font">
+                  {% for user_ in user_list %}
+                    <option {% if user_.username == uname %}selected{% endif %} >{{ user_.username }}</option>
+                  {% endfor %}
+                </select>
+                {% if uname == user.get_username %} Это вы! {% endif %}
+              </div>  
+              <div><h3>Незавершенные сеансы</h3></div>   
+              <table class="view_history" id="open_table">
+                <tr>           
+                    <th title="Номер сеанса">Серийный №</th>
+                    <th title="Дата взятия и возвращения">Дата взятия</th>
+                    <th title="Имя пользователь">Пользователь</th>
+                    <th title="Место взятия">Куда</th>                                                        
+                    <th title="Комментарий к сеансу">Комментарий</th>   
+                    <th ctitle="Имя администратора выдачи и приема">Администратор выдачи</th>                 
+                </tr>                                         
+                {% for history_sample in history_list %}                
+                    <tr class="child_center">
+                        <td class="text_center"><a href="{% url 'view_serial_num' history_sample.serial_num.entity_type_name.name history_sample.serial_num.serial_num %}" class="ref_button">{{ history_sample.serial_num.serial_num }}</a></td>
+                        <td><input type="date" value="{{ history_sample.date_taken|date:'Y-m-d' }}" readonly/></td>                      
+                        <td>{{ history_sample.user_taken }}</td>
+                        <td>{{ history_sample.place }}</td>                                                                      
+                        <td>{{ history_sample.comment }}</td>                      
+                        <td>{{ history_sample.admin_taken }}</td>  
+                    </tr>        
+                {% endfor %}                                         
+            </table>           
+            </div>
+    </main>  
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script> 
+    <script src="{% static 'js/lodash.js' %}"></script>     
+    <script src="{% static 'mainapp/js/view_type/table_manage.js' %}"></script>    
+    <script src="{% static 'mainapp/js/profiles/profiles_manage.js' %}"></script>  
+  </body>
+</html>
+  

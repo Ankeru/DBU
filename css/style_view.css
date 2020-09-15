@@ -1,0 +1,131 @@
+.mainpart {
+    /* float: left; */
+    width: 100%;
+}
+
+/* Выделение вкладки страницы, на которой
+сейчас находимся */
+a#chosen_page {
+    text-decoration: underline;
+}
+
+.menu {    
+    box-sizing: border-box;
+    width: 100%;
+    float: left;
+}
+
+div#entity_table table{
+    width: 100%;
+    /* height: 150px; */
+}
+
+img#type_foto{
+    display: block;
+    position: relative;    
+    height: 248px;
+    width: auto;
+    float: right;
+    border: solid 1px black;
+}
+
+div#entity_table table,
+div#entity_table table tr,
+div#entity_table table td, 
+div#entity_table table th{
+    border: solid 1px black;
+    border-spacing: 0;
+    text-align: center;
+}
+
+.fixed_size {
+    width: 100%;
+    overflow: hidden;
+    
+}
+
+div#tabs {
+    margin-bottom: 10px;
+}
+
+div#view_type {
+    position: relative;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px black;
+    height: 320px;
+}
+
+div#view_type div {
+    position: relative;
+}
+
+img#type_foto{
+    float: none;
+}
+div#img_box{
+    display: block;
+    position: relative;    
+    height: 267px;
+    width: auto;
+    float: right;
+}
+div#img_box div {
+    text-align: center;
+}
+div#img_box div a{
+    text-decoration: none;
+    outline: none;
+}
+
+.mainpart div#view_type div input[type="submit"]{
+    display: block;
+    margin-top: 5px;
+}
+
+div#view_history table,
+div#view_history table tr,
+div#view_history table td, 
+div#view_history table th{
+    border: solid 1px black;
+    border-spacing: 0;
+}
+
+input#submit_type_change {
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    /* background: #34e0a1; */
+    color: rgb(48, 42, 63);
+}
+
+input.submit_change {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* background: #34e0a1; */
+    color: rgb(48, 42, 63);
+}
+
+.one_line_blocks {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.one_line_blocks div.profile_property {
+    margin-top: 8px;
+}
+
+.rel_pos {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+div#view_profile {
+    padding-bottom: 10px;
+    border-bottom: solid black 1px;
+    margin-bottom: 10px;
+
+}

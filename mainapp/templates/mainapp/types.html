@@ -1,0 +1,62 @@
+{% load static %}
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_view.css' %}">    
+  </head>
+  <body>
+    <header>        
+      <div class="container">
+        {% if user.is_authenticated %}
+          <div class="login_button">
+            <span>Вы вошли как <a href="{% url 'profiles' uname %}">{{ user.get_username }}</a></span> 
+            <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
+          </div>            
+        {% else %}
+          <a class="login_button" href="{% url 'login' %}">Войти</a>
+        {% endif %}             
+        <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+      </div>      
+  </header>   
+    <main>
+        <div class="container">            
+            <div class="menu">
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="{% url 'view' %}" class="ref_button">Просмотр</a>
+                <a href="{% url 'types' %}" class="ref_button" id="chosen_page">Типы</a>
+                <a href="{% url 'profiles' uname %}" class="ref_button">Профили</a>
+                <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
+            </div>        
+            <div class="mainpart">                                               
+              <div id="entity_table">
+                <table>
+                  <tr>    
+                    <th title="Серийный номер"><a id="type_button" name="type" class="ref_button table_manager" title="Тип">Тип</a></th>
+                    <th title="Серийный номер"><a id="note_button" name="note" class="ref_button table_manager" title="Информация о данном типе">Описание</a></th>                                        
+                    <th title="Серийный номер"><a id="soft_button" name="soft" class="ref_button table_manager" title="Скопировать ссылку на папку с ПО">ПО</a></th>                                        
+                  </tr>
+                  {% for type_ in type_list %}
+                  <tr class="hover_line"> 
+                    <td><a href="{% url 'view_type' type_.name %}" class="form_link" title="Редактировать тип">{{ type_.name }}</a></td>                 
+                    <td>{{ type_.additional_info }}</td>
+                    <td>
+                      {% if type_.soft_link %}
+                      <button onclick="copytext('{{ type_.soft_link|char_ecp }}')">Скопировать</button>
+                      {% endif %}
+                    </td>                                    
+                  </tr>
+                  {% endfor %}                
+                </table>
+              </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script> 
+    <script src="{% static 'js/lodash.js' %}"></script>      
+    <script src="{% static 'mainapp/js/types/table_manage.js' %}"></script>  
+  </body>
+</html>
+  

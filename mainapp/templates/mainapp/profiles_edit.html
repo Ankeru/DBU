@@ -1,0 +1,43 @@
+{% load static %}
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style_profiles.css' %}">
+  </head>
+  <body>
+    <header>        
+        <div class="container">
+          {% if user.is_authenticated %}
+            <div class="login_button">
+              <span>Вы вошли как <a href="{% url 'profiles' uname %}">{{ user.get_username }}</a></span> 
+              <a class="logout_button" href="{% url 'logout'%}?next={{request.path}}">Выйти</a>
+            </div>
+          {% else %}
+            <a id="login_button"href="{% url 'login' %}">Войти</a>
+          {% endif %}             
+          <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+        </div>      
+    </header> 
+    <main>
+        <div class="container">            
+            <div class="menu">
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="{% url 'view' %}" class="ref_button" >Просмотр</a>
+                <a href="{% url 'types' %}" class="ref_button" >Типы</a>
+                <a href="{% url 'profiles' uname %}" class="ref_button" id="chosen_page">Профили</a>
+                <a href="{% url 'edit' %}" class="ref_button" >Добавление</a>
+            </div>            
+            <div class="mainpart">
+                    
+            </div>
+    </main>  
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script> 
+    <script src="{% static 'js/lodash.js' %}"></script>     
+    <script src="{% static 'mainapp/js/view_type/table_manage.js' %}"></script>    
+    <script src="{% static 'mainapp/js/profiles/profiles_manage.js' %}"></script>  
+  </body>
+</html>
+  

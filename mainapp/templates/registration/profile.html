@@ -1,0 +1,61 @@
+{% load static %}
+<!Doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>DBU</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'mainapp/css/style.css' %}">
+  </head>
+  <body>
+    <header>        
+        <div class="container">
+            {% if user.is_authenticated %}
+            <a id="login_button"href="{% url 'admin:index' %}">{{ user.get_username }}</a>
+            {% else %}
+            <a id="login_button"href="{% url 'admin:index' %}">Войти</a>
+            {% endif %}             
+            <div id="pagename"><a href="{% url 'index' %}">DBU</a></div>        
+        </div>      
+    </header>  
+    <main>
+        <div class="container">
+            
+            <div class="menu">
+                <a href="{% url 'index' %}" class="ref_button">Главная</a>
+                <a href="view.html" class="ref_button" id="chosen_page">Просмотр</a>
+                <a href="." class="ref_button">Профиль</a>
+            </div>
+        
+            <div class="mainpart">
+            {% if user.is_authenticated %} 
+                <ul class="sidebar-nav">
+                    <li>Вы зашли как {{ user.get_username }}</li>
+                    <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>      
+                </ul>
+            {% else %}   
+                <form method="post" action="{% url 'login' %}">
+                    {% csrf_token %}
+                    <table>
+                        <tr>
+                            <td>{{ form.username.label_tag }}</td>
+                            <td>{{ form.username }}</td>
+                        </tr>
+                        <tr>
+                            <td>{{ form.password.label_tag }}</td>
+                            <td>{{ form.password }}</td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="login" />
+                    <input type="hidden" name="next" value="{{ next }}" />
+                </form>
+            {% endif %}
+        
+
+            
+              
+            </div>
+        </div>
+    </main>
+  </body>
+</html>
+  
